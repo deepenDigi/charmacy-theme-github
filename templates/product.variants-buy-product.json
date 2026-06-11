@@ -152,25 +152,6 @@
     },
     "1739860830b0297931": {
       "type": "apps",
-      "blocks": {
-        "whatmore_shoppable_videos_app_block_rnHmYE": {
-          "type": "shopify://apps/whatmore-shoppable-videos/blocks/app-block/20db8a72-315a-4364-8885-64219ee48303",
-          "settings": {
-            "heading": "Take a look and shop",
-            "template-type": "template-a",
-            "title-font-size": 30,
-            "title-font-size-portrait": 26,
-            "landscape-padding": 50,
-            "top-bottom-padding": 0,
-            "scroll-video-tile-size": 80,
-            "scroll-video-tile-size-portrait": 80,
-            "min-height": 380
-          }
-        }
-      },
-      "block_order": [
-        "whatmore_shoppable_videos_app_block_rnHmYE"
-      ],
       "settings": {
         "full_width": false,
         "space_around": true

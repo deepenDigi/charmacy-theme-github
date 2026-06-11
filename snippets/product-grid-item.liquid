@@ -368,6 +368,16 @@
                   style="background-image: url('https://cdn.shopify.com/s/files/1/0558/4584/7231/files/01-meher-mauve_50x50.png');"
                 {% elsif value == '04 Rani Pink' %}
                   style="background-image: url('https://cdn.shopify.com/s/files/1/0558/4584/7231/files/04-rani-pink_50x50.png');"
+                {% elsif product.handle == 'cmc-skin-tint' %}
+                  {% if value == '01' %}
+                  style="background-image: url(https://cdn.shopify.com/s/files/1/0558/4584/7231/files/skin-tint-01_50x50.png);"
+                  {% elsif value == '02' %}
+                  style="background-image: url(https://cdn.shopify.com/s/files/1/0558/4584/7231/files/skin-tint-02_50x50.png);"
+                  {% elsif value == '03' %}
+                  style="background-image: url(https://cdn.shopify.com/s/files/1/0558/4584/7231/files/skin-tint-03_50x50.png);"
+                  {% elsif value == '04' %}
+                  style="background-image: url(https://cdn.shopify.com/s/files/1/0558/4584/7231/files/skin-tint-04_50x50.png);"
+                  {% endif %}
                 {% else %}
                   style="
                     background-color: {{ color_swatch_fallback }};

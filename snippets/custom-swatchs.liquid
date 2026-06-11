@@ -1,0 +1,5 @@
+{{ product.handle }}-{{ option.name }}-{{ value }}
+
+{% if product.handle == "cmc-skin-tint" and option.name == "color" and value == "01" %}
+    style="background-color: {{ color_swatch_fallback }};{% if images[color_file_name] != blank %}  background-image: url(https://cdn.shopify.com/s/files/1/0558/4584/7231/files/1_27607681-762d-414b-9d9c-d44f096ea561.jpg?v=1781072613);{% endif %}"
+{% endif %}

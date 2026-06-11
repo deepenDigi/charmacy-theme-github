@@ -59,16 +59,6 @@
             "show_gift_card_recipient": false
           }
         },
-        "wishlister_wishlist_icon_9yznNX": {
-          "type": "shopify://apps/wishlister/blocks/wishlist_icon/5388a9a0-ff31-4ea0-9af2-97c89467ccb0",
-          "disabled": true,
-          "settings": {}
-        },
-        "wishlist_wishify_product_HqKWn4": {
-          "type": "shopify://apps/wishlist-wishify/blocks/product/e14a43b5-34c6-492d-b46f-3ad2eda08696",
-          "disabled": true,
-          "settings": {}
-        },
         "custom_nPhtPD": {
           "type": "custom",
           "settings": {
@@ -146,8 +136,6 @@
         "inventory_status",
         "sales_point",
         "buy_buttons",
-        "wishlister_wishlist_icon_9yznNX",
-        "wishlist_wishify_product_HqKWn4",
         "custom_nPhtPD",
         "custom_RrXKqr",
         "custom_9iBEEp",
@@ -175,25 +163,6 @@
     },
     "1739860830b0297931": {
       "type": "apps",
-      "blocks": {
-        "whatmore_shoppable_videos_app_block_rnHmYE": {
-          "type": "shopify://apps/whatmore-shoppable-videos/blocks/app-block/20db8a72-315a-4364-8885-64219ee48303",
-          "settings": {
-            "heading": "Take a look and shop",
-            "template-type": "template-a",
-            "title-font-size": 30,
-            "title-font-size-portrait": 26,
-            "landscape-padding": 50,
-            "top-bottom-padding": 0,
-            "scroll-video-tile-size": 80,
-            "scroll-video-tile-size-portrait": 80,
-            "min-height": 380
-          }
-        }
-      },
-      "block_order": [
-        "whatmore_shoppable_videos_app_block_rnHmYE"
-      ],
       "settings": {
         "full_width": false,
         "space_around": true

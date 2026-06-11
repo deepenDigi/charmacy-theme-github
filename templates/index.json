@@ -34,6 +34,7 @@
         "variant_picker_qJVtHj",
         "buy_buttons_9tVnaK"
       ],
+      "disabled": true,
       "custom_css": [
         "#ProductSection-template--19234415902977__featured_product_CDJRKz {display: none;}"
       ],
