@@ -1,0 +1,171 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<style>
+  
+  .custom-collections-card {
+    margin-top: 40px;
+  }
+  .cc-main-title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .custom-collections-card .swiper-button-next,
+  .custom-collections-card .swiper-button-prev {
+    color: #951e49;
+    display: flex;
+    width: 33px;
+    height: 33px;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 50%;
+
+    img{
+      width: 12px;
+      height: 12px;
+    }
+  }
+  .custom-collections-card .swiper-button-next:after,
+  .custom-collections-card .swiper-button-prev:after {
+    font-size: 20px;
+    background: url(https://cdn.shopify.com/s/files/1/0558/4584/7231/files/right-arrow-svgrepo-com.svg?v=1742216698);
+    font-weight: bold;
+  }
+  .custom-collections-card .swiper-button-prev{
+      transform: scaleX(-1);
+  }
+  .custom-collections-card .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+  .ccc-item {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  .ccc-link {
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+  .ccc-link img {
+    transition: all .7s ease;
+    aspect-ratio: 1 / 1;
+  }
+  .ccc-link:hover img {
+    scale: 1.1;
+  }
+  .cc-card-info {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    text-align: left;
+  }
+  .cc-card-info span {
+    color: #fff;
+    font-size: 30px;
+    display: inline-block;
+  }
+  .cc-card-info h3 {
+    color: #fff;
+    font-size: 22px;
+  }
+  @media (max-width: 768px) {
+    .cc-card-info {
+      top: 12px;
+      left: 16px;
+    }
+    .cc-card-info span {
+      font-size: 26px;
+    }
+    .cc-card-info h3 {
+      font-size: 18px;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+  }
+  @media (min-width: 768px){
+    .custom-collections-card .swiper-button-next,
+    .custom-collections-card .swiper-button-prev{
+      display: none !important;
+    }
+  }
+</style>
+<div class="custom-collections-card">
+  <div class="cc-main-title">
+    <h2>Shop By Category</h2>
+  </div>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide ccc-item">
+        <a href="https://charmacyworld.com/collections/face-makeup" class="ccc-link">
+          <img src="https://cdn.shopify.com/s/files/1/0558/4584/7231/files/2_4d10bd94-28c5-47d2-9e77-7e8c0af64761.png?v=1741863701" alt="Charmacy cosmetic products for glowing skin and trendy makeup styles">
+          <div class="cc-card-info">
+            <span>Face</span>
+            <h3>Perfect skin, every time.</h3>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-slide ccc-item">
+        <a href="https://charmacyworld.com/collections/lip-makeup" class="ccc-link">
+          <img src="https://cdn.shopify.com/s/files/1/0558/4584/7231/files/1_70b3a575-0b39-4a25-a24f-65793e5a2abf.png?v=1741863701" alt="Charmacy lipstick products  for everyday glam looks">
+          <div class="cc-card-info">
+            <span>Lips</span>
+            <h3>Bold. Beautiful. Unstoppable</h3>
+          </div>
+        </a>
+      </div>
+      <div class="swiper-slide ccc-item">
+        <a href="https://charmacyworld.com/collections/eye-makeup" class="ccc-link">
+          <img src="https://cdn.shopify.com/s/files/1/0558/4584/7231/files/3_5f4113ce-b6ff-4d56-818a-5a3eaaffb5cb.png?v=1741859511" alt="Charmacy premium makeup products collection for flawless beauty looks">
+          <div class="cc-card-info">
+            <span>Eyes</span>
+            <h3>Eyes that mesmerize.</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="swiper-button-next">
+      <img src="https://cdn.shopify.com/s/files/1/0558/4584/7231/files/right-arrow-svgrepo-com.svg?v=1742216698" alt="Right arrow icon for Charmacy website navigation and user interface">
+    </div>
+    <div class="swiper-button-prev">
+      <img src="https://cdn.shopify.com/s/files/1/0558/4584/7231/files/right-arrow-svgrepo-com.svg?v=1742216698" alt="Right arrow icon for Charmacy website navigation and user interface">
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+         navigation: false,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+         navigation: false,
+      }
+    }
+  });
+</script>
+
+
+{% schema %}
+  {
+    "name": "Custom Collection Cards",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Custom Collection Cards"
+      }
+    ]
+  }
+{% endschema %}

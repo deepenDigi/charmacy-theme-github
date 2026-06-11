@@ -1,0 +1,250 @@
+<style>
+  /* Desktop View (Accordions) */
+.desktopView .collapsibles-wrapper--border-bottom {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.accordion_description {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  /* font-weight: bold; */
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion_description.active {
+  color: #64112f;
+}
+
+.panel {
+  padding: 10px;
+  display: none;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+
+.accordion_description.active + .panel {
+  display: block;
+}
+
+/* Mobile View (Tabs) */
+.mobileView {
+  display: none;
+}
+
+.tab {
+  display: flex;
+  overflow-x: auto;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab button {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.tab button.active {
+  color: #64112f;
+}
+
+.tabcontent {
+  display: none;
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+.tabcontent:first-child {
+  display: block;
+}
+
+/* Responsive Settings */
+@media screen and (max-width: 768px) {
+  .desktopView {
+    display: none;
+  }
+  .mobileView {
+    display: block;
+  }
+
+}
+
+   .tabcontent:first-child {
+  display: block;
+}
+
+</style>
+
+{% capture description %}
+  {%- if product.empty? -%}
+    {{ 'home_page.onboarding.product_description' | t }}
+  {%- else -%}
+    {{ product.description }}
+  {%- endif -%}
+{% endcapture %}
+{%- liquid
+
+   if description_title != blank
+     assign tab1 = description_title
+   else
+     assign tab1 = 'products.product.description' | t
+   endif
+   
+  assign tab2 = metatab2
+  assign content2 = metacontent2
+  
+  assign tab3 = metatab3
+  assign content3 = metacontent3
+
+  assign tab4 = metatab4
+  assign content4 = metacontent4
+
+  assign tab5 = metatab5
+  assign content5 = metacontent5
+   
+ -%}
+
+{%- if tab1 != blank or tab2 != blank or tab3 != blank or tab4 != blank or tab5 != blank -%}
+  <div class="medium-down--hide desktopView">
+    {%- if tab1 != blank and description != blank -%}
+      <div class="collapsibles-wrapper--border-bottom">
+        <button class="accordion_description"><h2 style="font-size:16px;">{{ tab1 }}</h2>{%- render 'collapsible-icons' -%}</button>
+        {% if description != blank %}
+          <div class="panel">
+            {{ description }}
+          </div>
+        {% endif %}
+      </div>
+    {%- endif -%}
+    
+    {%- if tab2 != blank and content2 != blank -%}
+      <div class="collapsibles-wrapper--border-bottom">
+         <button class="accordion_description"><h2 style="font-size:16px;">{{ tab2 }}</h2>{%- render 'collapsible-icons' -%}</button>
+        {% if content2 != blank %}   
+        <div class="panel">
+            <p>{{ content2 }}</p>
+          </div>
+        {% endif %}
+      </div>
+    {%- endif -%}
+     {%- if tab3 != blank and content3 != blank -%}
+      <div class="collapsibles-wrapper--border-bottom">
+          <button class="accordion_description"><h2 style="font-size:16px;">{{ tab3 }}</h2>{%- render 'collapsible-icons' -%}</button>
+        {% if content3 != blank %}   
+        <div class="panel">
+            <p>{{ content3 }}</p>
+          </div>
+        {% endif %}
+      </div>
+    {%- endif -%}
+     {%- if tab4 != blank and content4 != blank -%}
+      <div class="collapsibles-wrapper--border-bottom">
+          <button class="accordion_description"><h2 style="font-size:16px;">{{ tab4 }}</h2>{%- render 'collapsible-icons' -%}</button>
+        {% if content4 != blank %}   
+        <div class="panel">
+            <p>{{ content4 }}</p>
+          </div>
+        {% endif %}
+      </div>
+    {%- endif -%}
+     {%- if tab5 != blank and content5 != blank -%}
+      <div class="collapsibles-wrapper--border-bottom">
+          <button class="accordion_description"><h2 style="font-size:16px;">{{ tab5 }}</h2>{%- render 'collapsible-icons' -%}</button>
+          {% if content4 != blank %}   
+          <div class="panel">
+            <p>{{ content5 }}</p>
+          </div>
+          {% endif %}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="mobileView medium-down--show large-up--hide">
+    <div class="mobileContainer">
+      <div class="mobileSlide">
+        <div class="tab">
+          {% if tab1 != blank %}<button class="tablinks active" onclick="openCity(event, 'tab1')">{{ tab1 }}</button>{% endif %}
+          {% if tab2 != blank %}<button class="tablinks" onclick="openCity(event, 'tab2')">{{ tab2 }}</button>{% endif %}
+          {% if tab3 != blank %}<button class="tablinks" onclick="openCity(event, 'tab3')">{{ tab3 }}</button>{% endif %}
+          {% if tab4 != blank %}<button class="tablinks" onclick="openCity(event, 'tab4')">{{ tab4 }}</button>{% endif %}
+          {% if tab5 != blank %}<button class="tablinks" onclick="openCity(event, 'tab5')">{{ tab5 }}</button>{% endif %}
+        </div>    
+      </div>
+      {% if tab1 != blank and  description != blank %}
+        <div id="tab1" class="tabcontent">{{ description }}</div>
+      {% endif %}
+      
+      {% if tab2 != blank and  content2 != blank %}
+        <div id="tab2" class="tabcontent">{{ content2 }}</div>
+      {% endif %}
+      
+      {% if tab3 != blank and  content3 != blank %}
+        <div id="tab3" class="tabcontent">{{ content3 }}</div>
+      {% endif %}
+      
+      {% if tab4 != blank and  content4 != blank %}
+        <div id="tab4" class="tabcontent">{{ content4 }}</div>
+      {% endif %}
+      
+      {% if tab5 != blank and  content5 != blank %}
+        <div id="tab5" class="tabcontent">{{ content5 }}</div>
+      {% endif %}
+    </div>
+  </div>
+  
+{% endif %}
+
+<script>
+var acc = document.getElementsByClassName("accordion_description");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.height === "auto") {
+      setTimeout(function() {
+        panel.style.height = "0";
+        panel.style.opacity = "0";
+      }, 400);
+    } else {
+      panel.style.height = "auto";
+      panel.style.opacity = "1";
+    }
+  });
+}
+
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+  document.addEventListener("DOMContentLoaded", function() {
+  document.querySelector(".tabcontent").style.display = "block"; // Ensure the first tab content is shown
+  document.querySelector(".tablinks").classList.add("active"); // Ensure the first tab button is active
+});
+
+</script>

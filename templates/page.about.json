@@ -1,0 +1,150 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slideshow-0": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/about_desktop_Banner.png",
+            "image_mobile": "shopify://shop_images/about_mobile_Banner.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "slideshow-0"
+      ],
+      "settings": {
+        "section_height": "natural",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "lazyload_images": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "text-columns": {
+      "type": "text-columns",
+      "blocks": {
+        "column3": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/txt_overlay_img.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Aspirational Yet Attainable...",
+            "text": "<p>The brand originated from a genuine love for and understanding of cosmetics. We truly take pride in being our own manufacturers, having complete quality control over the products. Our goal, starting with our first line, is to move towards organic and environmentally-friendly products. This philosophy will eventually extend to our packaging as well, ensuring that they are safe, biodegradable/recyclable and non-toxic.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column3"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "divider": false
+      }
+    },
+    "slideshow_DPBWQr": {
+      "type": "slideshow",
+      "blocks": {
+        "image_8m8wb8": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/charmacy_milano_about_desktop.png",
+            "image_mobile": "shopify://shop_images/charmacy_milano_about_mobile.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_8m8wb8"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_height": "natural",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "arrows",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "lazyload_images": true
+      }
+    },
+    "advanced_content_yDgd46": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_zDdjDJ": {
+          "type": "liquid",
+          "settings": {
+            "code": "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css\">\n<style>\n\n\n.brand-section {\n  background: #FFF4F3;\n  padding: 50px 20px;\nmargin-bottom: 30px;\n}\n\n@media (max-width: 768px) {\n  .brand-section {\n    padding: 30px 20px;\n  }\n}\n\n.brand-inner {\n  max-width: 1300px;\n  margin: 0 auto;\n}\n\n.brand-tag {\n  border: 1px solid #64112F;\n  color: #64112F;\n  padding: 6px 14px;\n  font-size: 13px;\n  width: fit-content;\n  letter-spacing: 1px;\n  border-radius: 6px;\n  margin-bottom: 0px;\n  background: transparent;\n  @media(max-width: 768px){\n    margin-inline: auto;\n  }\n}\n\n.brand-title {\n  font-size: 38px;\n  font-weight: 600;\n  margin-top: 10px !important;\n  margin-bottom: 30px !important;\n  color: #64112F;\n}\n\n@media (max-width: 768px) {\n  .brand-title {\n      font-size: 19px !important;\n      margin-inline: auto;\n      text-align: center;\n      margin-block: 17px 20px !important;\n  }\n}\n\n/* ── DESKTOP: static 3-column grid ── */\n.brand-desktop-grid {\n  display: none;\n}\n\n@media (min-width: 769px) {\n  .brand-desktop-grid {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 30px;\n  }\n\n  /* Hide the Splide markup entirely on desktop */\n  #brand-slider {\n    display: none;\n  }\n}\n\n/* ── MOBILE: hide the static grid, show Splide ── */\n@media (max-width: 768px) {\n  .brand-desktop-grid {\n    display: none;\n  }\n\n  #brand-slider {\n    display: block;\n  }\n}\n\n/* ── Shared card styles ── */\n.brand-card {\n  background: #64112f;\n  color: #333;\n  padding: 25px 30px 35px;\n  border-radius: 16px;\n  text-align: left;\n  border: 1px solid #64112f;\n  box-shadow: 0 10px 30px rgba(193, 31, 69, 0.08);\n  @media(max-width: 768px) {\n    padding: 13px 13px 20px;\n    border-radius: 6px;\n  }\n}\n\n.brand-card h3 {\n    font-size: 17px;\n    margin-bottom: 12px;\n    background: #ffffff;\n    border-radius: 50px;\n    color: #64112f;\n    width: max-content;\n    padding: 10px 20px;\n    line-height: 1;\n  @media(max-width: 768px){\n    font-size: 15px;\n    padding: 8px 16px;\n  }\n}\n\n.brand-card p {\n  font-size: 16px;\n  line-height: 1.6;\n  color: white;\n\n  @media(max-width: 768px){\n    font-size: 12px;\n  }\n}\n\n/* ── Splide (mobile) overrides ── */\n.splide__slide {\n  display: flex;\n  justify-content: center;\n}\n\n.splide__slide .brand-card {\n  width: 100%;\n  max-width: 400px;\n  transition: opacity 0.4s ease, border-color 0.4s ease;\n}\n\n\n\n.splide__slide.is-active .brand-card h3,\n.splide__slide.is-active .brand-card p {\n  display: inline-block;\n  transition: transform 0.4s ease;\n  transform-origin: left center;\n}\n\n\n\n.splide__slide:not(.is-active) .brand-card h3,\n.splide__slide:not(.is-active) .brand-card p {\n  transform: scale(1);\n  transition: transform 0.4s ease;\n}\n\n/* Hide arrows & dots */\n.splide__pagination,\n.splide__arrow {\n  display: none;\n}\n</style>\n\n<section class=\"brand-section\">\n  <div class=\"brand-inner\">\n    <div class=\"brand-tag\">BRAND PHILOSOPHY</div>\n    <h2 class=\"brand-title\">Why \"Charmacy Milano\"?</h2>\n\n    <!-- DESKTOP: static 3-column layout -->\n    <div class=\"brand-desktop-grid\">\n      <div class=\"brand-card\">\n        <h3>Charmacy</h3>\n        <p>The fusion of <strong>Charm</strong> and <strong>Pharmacy</strong> represents our unique philosophy where <strong>beauty meets science</strong> in perfect harmony.</p>\n      </div>\n      <div class=\"brand-card\">\n        <h3>Milano</h3>\n        <p>Embodies Italian sophistication, artistry, and the timeless elegance that defines global beauty excellence.</p>\n      </div>\n      <div class=\"brand-card\">\n        <h3>Our Vision</h3>\n        <p>Performance-first, clean formulations rooted in global aesthetics, delivering results without compromise.</p>\n      </div>\n    </div>\n\n    <!-- MOBILE: Splide slider -->\n    <div class=\"splide\" id=\"brand-slider\">\n      <div class=\"splide__track\">\n        <ul class=\"splide__list\">\n          <li class=\"splide__slide\">\n            <div class=\"brand-card\">\n              <h3>Charmacy</h3>\n              <p>The fusion of <strong>Charm</strong> and <strong>Pharmacy</strong> represents our unique philosophy where <strong>beauty meets science</strong> in perfect harmony.</p>\n            </div>\n          </li>\n          <li class=\"splide__slide\">\n            <div class=\"brand-card\">\n              <h3>Milano</h3>\n              <p>Embodies Italian sophistication, artistry, and the timeless elegance that defines global beauty excellence.</p>\n            </div>\n          </li>\n          <li class=\"splide__slide\">\n            <div class=\"brand-card\">\n              <h3>Our Vision</h3>\n              <p>Performance-first, clean formulations rooted in global aesthetics, delivering results without compromise.</p>\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n\n  </div>\n</section>\n\n<script src=\"https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js\"></script>\n<script>\n  // Only mount Splide on mobile; destroy/skip on desktop\n  let splideInstance = null;\n\n  function initSplide() {\n    if (window.innerWidth <= 768) {\n      if (!splideInstance) {\n        splideInstance = new Splide('#brand-slider', {\n          type        : 'loop',\n          perPage     : 1,\n          focus       : 'center',\n          gap         : '20px',\n          autoplay    : true,\n          interval    : 5000,\n          pauseOnHover: false,\n          arrows      : false,\n          pagination  : false,\n          padding: '10%'\n        }).mount();\n      }\n    } else {\n      if (splideInstance) {\n        splideInstance.destroy();\n        splideInstance = null;\n      }\n    }\n  }\n\n  initSplide();\n\n  // Re-evaluate on resize without requiring refresh\n  window.addEventListener('resize', initSplide);\n</script>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_zDdjDJ"
+      ],
+      "name": "t:sections.advanced-content.presets.custom_content.name",
+      "settings": {
+        "full_width": true,
+        "space_around": false,
+        "lazyload_images": true
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "custom_css": [
+        ".index-section .page-width.page-width--narrow {max-width: 600px;}"
+      ],
+      "settings": {
+        "title": "Contact us",
+        "text": "",
+        "show_phone": true,
+        "narrow_column": true
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "main",
+    "text-columns",
+    "slideshow_DPBWQr",
+    "advanced_content_yDgd46",
+    "form"
+  ]
+}

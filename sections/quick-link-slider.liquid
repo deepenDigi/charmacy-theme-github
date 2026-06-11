@@ -1,0 +1,217 @@
+{%- style -%}
+.logo-bar--{{ section.id }} {
+  opacity: {{ section.settings.logo_opacity | divided_by: 100.0 }};
+}
+{%- endstyle -%}
+
+{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
+<div class="page-full customLogoSlider">
+  {%- if section.settings.title != blank -%}
+    <div class="section-header">
+      <h2 class="section-header__title">{{ section.settings.title | escape }}</h2>
+    </div>
+  {% endif %}
+<div class="logoWrapperLink">
+  {% if section.blocks.size > 0 %}
+    <div class="logo-bar logo-bar-sliderLink logo-bar--{{ section.id }} {% if section.settings.enable_slider %}swiper quickLinkSlider{% endif %}">
+      {% if section.settings.enable_slider %} <div class="swiper-wrapper"> {% endif %}
+        {%- for block in section.blocks -%}
+          <div class="logo-bar__item {% if section.settings.enable_slider %}swiper-slide{% endif %}  {{ block.settings.title | handle }} " {{ block.shopify_attributes }}>
+            {% if block.settings.link != blank %}
+              <a href="{{ block.settings.link }}" class="logo-bar__link">
+            {% endif %}
+            {% if block.settings.image != blank %}
+              {%- render 'image-element',
+                img: block.settings.image,
+                widths: '60, 180, 360, 540, 720',
+                classes: 'logo-bar__image',
+                fallback: '110px',
+              -%}
+            {% else %}
+              {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+            {% if block.settings.link != blank %}
+              </a>
+            {% endif %}
+            {% if block.settings.title != blank %}
+              {% if block.settings.link != blank %}
+              <a href="{{ block.settings.link }}" class="logo-bar__link">
+              {% endif %}
+                <span class="logoTitle">
+                  {{ block.settings.title }}    
+                </span>
+              {% if block.settings.link != blank %}
+                </a>
+              {% endif %}
+            {% endif %}
+          </div>
+        {%- endfor -%}
+      {% if section.settings.enable_slider %}</div>{% endif %}
+    </div>
+  {% endif %}
+  </div>
+</div>
+
+{%- if section.settings.divider -%}</div>{%- endif -%}
+
+<script>
+var swiperQuickLink = new Swiper(".quickLinkSlider", {
+  grabCursor: true,
+  slidesOffsetAfter:0,
+  breakpoints: {
+      0: {
+        slidesPerView: 3.4,
+        freeMode: true,
+        grabCursor: false,
+      },
+      769: {
+        slidesPerView: 6,
+      },
+    1200: {
+        slidesPerView: 9,
+    }
+  }
+});
+</script>
+
+{% style %}
+  {% if section.settings.bg_image != blank or section.settings.bg_color != blank %}
+   #shopify-section-{{ section.id }}.quicklink_list{
+     {% if section.settings.bg_image != blank %} background: url({{ section.settings.bg_image | image_url  }}) no-repeat; {% endif %}
+     {% unless section.settings.bg_image != blank %} background-color: {{ section.settings.bg_color }};{% endunless %}
+      background-size: cover;
+      background-position: center;
+    }
+  {% endif %}
+
+  {% if section.settings.font_size or section.settings.text_color %}
+    #shopify-section-{{ section.id }} .logoTitle {
+      {% if section.settings.font_size != blank %}font-size: {{ section.settings.font_size }}px;{% endif %}
+      {% if section.settings.text_color != blank %}color: {{ section.settings.text_color }};{% endif %}
+    }     
+  {% endif %}
+  
+  {% if section.settings.mobile_font_size != blank %}
+    @media only screen and (max-width:768px) {
+       #shopify-section-{{ section.id }} .logoTitle {
+          {% if section.settings.mobile_font_size != blank %}font-size: {{ section.settings.mobile_font_size }}px;{% endif %}
+        }
+     }
+  {% endif %}
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Quicklink list slider",
+  "class": "index-section quicklink_list",
+  "max_blocks": 20,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.logo-list.settings.title.label"
+    },
+    {
+      "type": "range",
+      "id": "logo_opacity",
+      "label": "t:sections.logo-list.settings.logo_opacity.label",
+      "default": 76,
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "%"
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:sections.logo-list.settings.divider.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider",
+      "label": "Display as slider",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Customize colors",
+      "info": "Customization of background images and colors"
+    },
+    {
+      "id": "bg_image",
+      "type": "image_picker",
+      "label": "Background Image"
+    },
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background Color"
+    },
+    {
+      "id": "text_color",
+      "type": "color",
+      "label": "Text Color"
+    },
+    {
+      "id": "font_size",
+      "type": "number",
+      "label": "Font size",
+      "default": 14
+    },
+    {
+      "id": "mobile_font_size",
+      "type": "number",
+      "label": "Mobile font size",
+      "default": 12
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo_image",
+      "name": "t:sections.logo-list.blocks.logo.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.logo-list.blocks.logo.settings.image.label"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Add title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.logo-list.blocks.logo.settings.link.label",
+          "info": "t:sections.logo-list.blocks.logo.settings.link.info"
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quicklink list slider",
+      "blocks": [
+        {
+          "type": "logo_image"
+        },
+        {
+          "type": "logo_image"
+        },
+        {
+          "type": "logo_image"
+        },
+        {
+          "type": "logo_image"
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

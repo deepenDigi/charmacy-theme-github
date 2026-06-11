@@ -1,0 +1,98 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "advanced_content_cFaYB3": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_KY6K3g": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/CHARMACY_BANNER_3.jpg",
+            "link": "",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_KY6K3g"
+      ],
+      "settings": {
+        "full_width": true,
+        "space_around": false,
+        "lazyload_images": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        ".rte h1,.rte h2,.rte h3,.rte h4,.rte h5,.rte h6 {margin-top: 1em;}",
+        "li[aria-level=\"1\"]::marker {font-size: 20px;}"
+      ],
+      "settings": {}
+    },
+    "rich_text_w9LM3z": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QenhWM": {
+          "type": "heading",
+          "settings": {
+            "title": "CMC Beauty Bonanza TnC"
+          }
+        },
+        "text_GXWYLh": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h3>Terms and Conditions of Sale - (T&Cs) </h3>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_QenhWM",
+        "text_GXWYLh"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "rich_text_WGfPn6": {
+      "type": "rich-text",
+      "blocks": {
+        "text_MqDR3Q": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h4>1. Discount Policy</h4><ul><li>Discounts are non-transferable, non-refundable, and cannot be exchanged for cash or other benefits.</li><li>Discounts may apply only to selected products and cannot be combined with other promotions or offers.</li></ul><h4>2. Order Processing & Delivery</h4><ul><li>Orders will be processed and shipped as per Charmacy India Pvt Ltd’s standard procedures.</li><li>Delivery times may vary depending on location and are subject to delays due to factors beyond the Company’s control.</li></ul><h3>3. Returns & Refunds</h3><ul><li>Products purchased during the Event are subject to the Company’s standard return and refund policy.</li><li>If you receive a damaged product, you must shoot an opening video as proof to initiate the return process.</li><li>Return policy for free products:</li><li></li></ul><p></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_MqDR3Q"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "left",
+        "narrow_column": true,
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "advanced_content_cFaYB3",
+    "main",
+    "rich_text_w9LM3z",
+    "rich_text_WGfPn6"
+  ]
+}

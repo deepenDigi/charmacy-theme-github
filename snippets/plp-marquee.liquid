@@ -1,0 +1,61 @@
+<style>
+    .announcement-bar-div {
+      width: 100%;
+      overflow: hidden;
+      color: black;
+      padding: 10px 0;
+      background: #64112f;
+      color: #fff;
+      font-weight: 300;
+      FONT-SIZE: 20PX;
+
+    }
+ 
+    .announcement-content-div {
+        white-space: nowrap;
+        animation: scroll 20s linear infinite;
+    }
+  .announcement-content-div span{
+    margin-right: 20px;
+  }
+    .announcement-bar-div:hover .announcement-content-div {
+        animation-play-state: paused;
+    }
+  
+    @keyframes scroll {
+        0% {
+            transform: translateX(0%);
+        }
+  
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+  
+    @media only screen and (max-width: 400px) {
+        .announcement-bar-div{
+          font-size: 13px;
+        }
+    }
+    @media only screen and (max-width: 400px) {
+        .announcement-content-div {
+            animation: scroll 14s linear infinite;
+        }
+    }
+    .promo-marquee__link{
+    color:white !important;
+    text-decoration:none !important;
+    border:none !important;
+  }
+  </style>
+
+<div class="announcement-bar-div" style="margin-bottom:0 !important;">
+  <div class="announcement-content-div">
+    {% for i in (1..5) %}
+       <span>✦</span>
+       <span>Charmacy Milano App is now LIVE.</span>
+       {% comment %} <span>✦</span>
+       <span>Enjoy an exclusive 10% off on your first app purchase.</span> {% endcomment %}
+    {% endfor %}
+  </div>
+</div>

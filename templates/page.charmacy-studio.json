@@ -1,0 +1,148 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "advanced_content_ekGT4T": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_fQKPkC": {
+          "type": "liquid",
+          "settings": {
+            "code": "<script>\n(function() {\n  function openLibrary(maxAttempts = 25) {\n    let attempts = 0;\n    function tryOpen() {\n      if (typeof window.openVideoLibrary === 'function') {\n        window.openVideoLibrary();\n        return true;\n      }\n      return false;\n    }\n    if (tryOpen()) return;\n    attempts++;\n    const interval = setInterval(() => {\n      if (tryOpen() || ++attempts >= maxAttempts) {\n        clearInterval(interval);\n      }\n    }, 800);\n  }\n  if (document.readyState === 'complete') {\n    openLibrary();\n  } else {\n    window.addEventListener('load', () => {\n      setTimeout(openLibrary, 500);\n    });\n  }\n})();\n</script>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_fQKPkC"
+      ],
+      "disabled": true,
+      "name": "t:sections.advanced-content.presets.custom_content.name",
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        ".section-header {margin-bottom: 0;}"
+      ],
+      "settings": {}
+    },
+    "17466176637d7a7b25": {
+      "type": "apps",
+      "blocks": {
+        "shoppable_video_instagram_reel_story_reels_block_NKtU9D": {
+          "type": "shopify://apps/shoppable-video-instagram-reel/blocks/story-reels-block/f19e5d4b-198e-478b-9f10-15eb1964910e",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "shoppable_video_instagram_reel_story_reels_block_NKtU9D"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "1746617687a8856121": {
+      "type": "apps",
+      "blocks": {
+        "shoppable_video_instagram_reel_app_block_Cc7Hnm": {
+          "type": "shopify://apps/shoppable-video-instagram-reel/blocks/app-block/f19e5d4b-198e-478b-9f10-15eb1964910e",
+          "settings": {
+            "carousel_name": "Homepage 1"
+          }
+        }
+      },
+      "block_order": [
+        "shoppable_video_instagram_reel_app_block_Cc7Hnm"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "17424452039f3c7ea1": {
+      "type": "apps",
+      "blocks": {
+        "whatmore_shoppable_videos_app_block_stories_nKXrVG": {
+          "type": "shopify://apps/whatmore-shoppable-videos/blocks/app-block-stories/20db8a72-315a-4364-8885-64219ee48303",
+          "settings": {
+            "template-type": "template-stories-a",
+            "stories-top-bottom-padding": 0,
+            "story-tile-size": 40,
+            "story-tile-size-desktop": 40
+          }
+        }
+      },
+      "block_order": [
+        "whatmore_shoppable_videos_app_block_stories_nKXrVG"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": false
+      }
+    },
+    "17424453027fe8ed72": {
+      "type": "apps",
+      "blocks": {
+        "whatmore_shoppable_videos_app_block_Rb7gPW": {
+          "type": "shopify://apps/whatmore-shoppable-videos/blocks/app-block/20db8a72-315a-4364-8885-64219ee48303",
+          "settings": {
+            "heading": "",
+            "template-type": "template-feed-a",
+            "title-font-size": 40,
+            "title-font-size-portrait": 24,
+            "landscape-padding": 40,
+            "top-bottom-padding": 20,
+            "scroll-video-tile-size": 65,
+            "scroll-video-tile-size-portrait": 80,
+            "min-height": 380
+          }
+        }
+      },
+      "block_order": [
+        "whatmore_shoppable_videos_app_block_Rb7gPW"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "featured_collection_VRMkC7": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured collection",
+        "home_featured_products": "best-seller-25",
+        "per_row": 4,
+        "rows": 1,
+        "view_all": false,
+        "divider": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "advanced_content_ekGT4T",
+    "main",
+    "17466176637d7a7b25",
+    "1746617687a8856121",
+    "17424452039f3c7ea1",
+    "17424453027fe8ed72",
+    "featured_collection_VRMkC7"
+  ]
+}

@@ -1,0 +1,79 @@
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const csvUrl = "https://cdn.shopify.com/s/files/1/0558/4584/7231/files/PincodeTAT_Charmacy_new.csv?v=1720205314";
+    let pincodeData = {};
+
+    // Fetch and parse CSV
+    fetch(csvUrl)
+        .then(response => response.text())
+        .then(data => {
+            const rows = data.split("\n").map(row => row.split(","));
+
+            const pincodeIndex = rows[0].indexOf("Destination_Pincode"); // Find column index for pincodes
+            const tatIndex = rows[0].indexOf("TAT"); // Find column index for TAT
+
+            if (pincodeIndex === -1 || tatIndex === -1) {
+                console.error("Destination_Pincode or TAT column not found in CSV.");
+                return;
+            }
+
+            rows.slice(1).forEach(row => {
+                const pincode = row[pincodeIndex]?.trim();
+                const tat = row[tatIndex]?.trim();
+
+                if (pincode && !isNaN(pincode) && tat && !isNaN(tat)) {
+                    pincodeData[pincode] = parseInt(tat); // Store pincode with numerical TAT
+                }
+            });
+        })
+        .catch(error => console.error("Error loading CSV:", error));
+
+    // Function to calculate estimated delivery date
+    function getDeliveryDate(tatDays) {
+        let currentTime = new Date();
+        let currentHour = currentTime.getHours();
+
+        // If time is outside 6 AM - 4 PM, add 1 extra day
+        if (currentHour < 6 || currentHour >= 16) {
+            tatDays += 1;
+        }
+
+        let deliveryDate = new Date();
+        deliveryDate.setDate(deliveryDate.getDate() + tatDays);
+
+        const dayName = deliveryDate.toLocaleDateString("en-GB", { weekday: "long" }); // Saturday
+        const day = deliveryDate.getDate(); // 15
+        const month = deliveryDate.toLocaleDateString("en-GB", { month: "short" }); // Feb
+
+        return { tatDays, formattedDate: `${dayName}, ${day} ${month}` };
+    }
+
+    // Pincode check event
+    document.querySelector(".pincode_check").addEventListener("click", function () {
+        const inputField = document.querySelector(".pincode-input");
+        const resultContainer = document.querySelector(".product_order_text");
+        const enteredPincode = inputField.value.trim();
+
+        if (enteredPincode.length !== 6 || isNaN(enteredPincode)) {
+            resultContainer.innerText = "Please enter a valid 6-digit pincode.";
+            resultContainer.style.color = "red";
+            return;
+        }
+
+        if (pincodeData[enteredPincode] !== undefined) {
+            let tatDays = pincodeData[enteredPincode];
+            let { tatDays: finalTatDays, formattedDate } = getDeliveryDate(tatDays);
+
+            {% comment %} resultContainer.innerHTML = `✅ <b>This pincode is serviceable.</b><br>
+                                         Estimated delivery in ${finalTatDays} days. (${formattedDate})`; {% endcomment %}
+            resultContainer.innerHTML = `✅ <b>This pincode is serviceable.</b><br>
+                                         Estimated delivery in 4 to 5 days.`;
+            resultContainer.style.color = "green";
+        } else {
+            resultContainer.innerText = "❌ This pincode is not serviceable.";
+            resultContainer.style.color = "red";
+        }
+    });
+});
+
+</script>

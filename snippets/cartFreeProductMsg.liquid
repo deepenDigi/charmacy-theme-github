@@ -1,0 +1,94 @@
+<div id="freeProductMsg"></div>
+
+<style>
+#freeProductMsg {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+}
+
+.bb-msg {
+  position: absolute;
+  width: 100%;
+  padding: 8px 10px;
+  text-align: center;
+  background: #aeecae;
+  color: #035803;
+  font-size: 12px;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.bb-msg.active {
+  opacity: 1;
+  position: relative;
+}
+
+@media(width <= 768px) {
+  .bb-msg {
+    font-size: 10px;
+  }
+}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const freeGifts = [
+      {
+        id: 7746405564673,
+        message: 'Free Beauty Blender Added on Checkout'
+      },
+      {
+        id: 8678237864193,
+        message: 'Free Finger Blender Added on Checkout'
+      }
+    ];
+
+    function checkFreeProductsInCart() {
+      fetch('/cart.js')
+        .then(res => res.json())
+        .then(cart => {
+          const msgElement = document.querySelector('#freeProductMsg');
+          if (!msgElement) return;
+
+          msgElement.innerHTML = ''; // Clear messages
+
+          const matchedGifts = freeGifts.filter(gift =>
+            cart.items.some(item => item.product_id == gift.id)
+          );
+
+          if (matchedGifts.length === 0) return;
+
+          // Create message divs
+          matchedGifts.forEach((gift, index) => {
+            const span = document.createElement('div');
+            span.className = 'bb-msg';
+            span.textContent = gift.message;
+            if (index === 0) span.classList.add('active'); // show first by default
+            msgElement.appendChild(span);
+          });
+
+          // If more than 1, rotate messages
+          if (matchedGifts.length > 1) {
+            let currentIndex = 0;
+            const allMessages = msgElement.querySelectorAll('.bb-msg');
+
+            setInterval(() => {
+              allMessages[currentIndex].classList.remove('active');
+              currentIndex = (currentIndex + 1) % allMessages.length;
+              allMessages[currentIndex].classList.add('active');
+            }, 3000); // Change message every 3 seconds
+          }
+        });
+    }
+
+    checkFreeProductsInCart();
+
+    document.body.addEventListener('click', function (e) {
+      if (e.target.closest('.add-to-cart')) {
+        setTimeout(checkFreeProductsInCart, 1000);
+      }
+    });
+  });
+</script>

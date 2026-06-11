@@ -1,0 +1,198 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "advanced_content_tFAV8E": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_C3jQMz": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/013-29-sep-banner_2a29db18-e373-43f6-a6b7-81e9c637e408.png",
+            "link": "",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_C3jQMz"
+      ],
+      "disabled": true,
+      "name": "t:sections.advanced-content.presets.custom_content.name",
+      "settings": {
+        "full_width": true,
+        "space_around": false,
+        "lazyload_images": false
+      }
+    },
+    "advanced_content_NcQJff": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_fKxxmc": {
+          "type": "liquid",
+          "disabled": true,
+          "settings": {
+            "code": "{%render'plp-timer2'%}",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_fKxxmc"
+      ],
+      "disabled": true,
+      "name": "t:sections.advanced-content.presets.custom_content.name",
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    },
+    "advanced_content_wHpqPB": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_EYVHAF": {
+          "type": "liquid",
+          "disabled": true,
+          "settings": {
+            "code": "{% render 'christmas-coll-banner' %}",
+            "width": "100%",
+            "alignment": "center"
+          }
+        },
+        "liquid_zrXGDN": {
+          "type": "liquid",
+          "settings": {
+            "code": "{% if collection.handle == 'b2g1-collection' %}\n<style>\n  /* Hide mobile image on desktop */\n.desktop-imageb2 {\n  display: block;\n}\n\n.mobile-imageb2 {\n  display: none;\n}\n\n/* Show mobile image only on mobile */\n@media (max-width: 768px) {\n  .desktop-imageb2 {\n    display: none;\n  }\n\n  .mobile-imageb2 {\n    display: block;\n  }\n}\n\n</style>\n  <!-- Desktop Image -->\n  <div class=\"desktop-imageb2\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0558/4584/7231/files/banner_web_view_cmc_..png?v=1768887658\" class=\"desktop-img\" alt=\"Desktop Image\"/>\n  </div>\n\n  <!-- Mobile Image -->\n  <div class=\"mobile-imageb2\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0558/4584/7231/files/banner_M_view_cmc_faf97f21-8f66-4cc5-b0cb-af1ffb1373d7.png?v=1768887658\" class=\"mobile-img\" alt=\"Mobile Image\"/>\n  </div>\n{% else %}\n\n{% endif %}",
+            "width": "100%",
+            "alignment": "center"
+          }
+        },
+        "liquid_wtYBr3": {
+          "type": "liquid",
+          "disabled": true,
+          "settings": {
+            "code": "{% render 'plp-timer' %}",
+            "width": "100%",
+            "alignment": "center"
+          }
+        },
+        "liquid_3aYD6w": {
+          "type": "liquid",
+          "settings": {
+            "code": "{% render 'plp-marquee' %}",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_EYVHAF",
+        "liquid_zrXGDN",
+        "liquid_wtYBr3",
+        "liquid_3aYD6w"
+      ],
+      "settings": {
+        "full_width": true,
+        "space_around": false,
+        "lazyload_images": true
+      }
+    },
+    "advanced_content_iTMFxh": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_d3hHny": {
+          "type": "liquid",
+          "settings": {
+            "code": "{% if collection.handle == 'artistry-kit' %}\n<img src=\"https://cdn.shopify.com/s/files/1/0558/4584/7231/files/17_Nov_si_bannerr.jpg?v=1763366094\" style=\"width: 100%; height: auto; display: block;\" />\n<style>\n    .announcement-bar-div {\n      width: 100%;\n      overflow: hidden;\n      color: black;\n      padding: 10px 0;\n      background: #64112f;\n      color: #fff;\n      font-weight: 300;\n      FONT-SIZE: 20PX;\n\n    }\n \n    .announcement-content-div {\n        white-space: nowrap;\n        animation: scroll 20s linear infinite;\n    }\n  .announcement-content-div span{\n    margin-right: 20px;\n  }\n    .announcement-bar-div:hover .announcement-content-div {\n        animation-play-state: paused;\n    }\n  \n    @keyframes scroll {\n        0% {\n            transform: translateX(0%);\n        }\n  \n        100% {\n            transform: translateX(-100%);\n        }\n    }\n  \n    @media only screen and (max-width: 400px) {\n        .announcement-bar-div{\n          font-size: 13px;\n        }\n    }\n    @media only screen and (max-width: 400px) {\n        .announcement-content-div {\n            animation: scroll 14s linear infinite;\n        }\n    }\n    .promo-marquee__link{\n    color:white !important;\n    text-decoration:none !important;\n    border:none !important;\n  }\n  </style>\n\n<div class=\"announcement-bar-div\" style=\"margin-bottom:0 !important;\">\n  <div class=\"announcement-content-div\">\n   \n    {% for i in (1..5) %}\n       <span>✦</span>\n       <span>Blend better with our Artistry Combos —   </span>\n       <span>✦</span>\n       <span>save on every Combo!!</span>\n       <span>✦</span>\n       <span>Extra 5% Off on Prepaid Order</span>\n    {% endfor %}\n  </div>\n</div>\n{% else %}\n{% endif %}",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_d3hHny"
+      ],
+      "name": "t:sections.advanced-content.presets.custom_content.name",
+      "settings": {
+        "full_width": true,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "collection_description": {
+          "type": "collection_description",
+          "disabled": true,
+          "settings": {}
+        },
+        "collection_meta_product_CnMbiF": {
+          "type": "collection_meta_product",
+          "disabled": true,
+          "settings": {}
+        },
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "collection_subnav_style": "none",
+            "per_row": 5,
+            "mobile_flush_grid": false
+          }
+        }
+      },
+      "block_order": [
+        "collection_description",
+        "collection_meta_product_CnMbiF",
+        "product_grid"
+      ],
+      "custom_css": [],
+      "settings": {
+        "collection_image_enable": false,
+        "collection_image_height": 350,
+        "parallax": false,
+        "parallax_direction": "top",
+        "enable_sidebar": true,
+        "collapsed": true,
+        "enable_color_swatches": true,
+        "enable_swatch_labels": true,
+        "enable_sort": true
+      }
+    },
+    "home_footer_read_more_7W3346": {
+      "type": "home-footer-read-more",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "content": "{{ collection.metafields.custom.collection_footer_read_more_read_less_description | metafield_tag }}"
+      }
+    },
+    "collection_footer_read_more_XUrdNr": {
+      "type": "collection-footer-read-more",
+      "settings": {
+        "title": "",
+        "content": "{{ collection.metafields.custom.collection_footer_read_more_read_less_description | metafield_tag }}"
+      }
+    }
+  },
+  "order": [
+    "advanced_content_tFAV8E",
+    "advanced_content_NcQJff",
+    "advanced_content_wHpqPB",
+    "advanced_content_iTMFxh",
+    "main-collection",
+    "home_footer_read_more_7W3346",
+    "collection_footer_read_more_XUrdNr"
+  ]
+}

@@ -1,0 +1,95 @@
+{%- if section.settings.content != blank -%}
+<div class="page-full readMoreContainer">
+  {%- if section.settings.title != blank -%}
+    <div class="section-header">
+      <h3 class="header">{{ section.settings.title }}</h3>
+    </div>
+  {%- endif -%} 
+  {% assign content = section.settings.content %}
+  <div class="meta_content_wrapper">
+    <div class="meta_content ">
+      <p>{{ content }}</p>
+    </div>
+    <div class="text-center">
+      <span class="moreless-button">Read more</span>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $(document).ready(function(){
+    // function countLines(element) {
+    //   // console.log(element, "element")
+    //   const rects = element[0]?.getClientRects(); 
+    //   // console.log(rects, "rects");
+    //   return rects.length;
+    // }
+    const paragraph = $('.meta_content .metafield-rich_text_field');
+    console.log(paragraph, "paragraph")
+    // const lineCount = countLines(paragraph);
+    let strongCount = 0;
+    const restParagraphs = [];
+    const initialParagraphs = [];
+    
+      paragraph?.[0]?.childNodes?.forEach(nodes => {
+        if(nodes?.childNodes) {
+          if(strongCount <= 2) {
+            initialParagraphs.push(`${nodes.outerHTML}`);
+          }
+          strongCount += 1
+        };
+       if(strongCount > 3) {
+          restParagraphs.push(`${nodes.outerHTML}`);
+        }
+      });
+
+         console.log(initialParagraphs, "== initialParagraphs");
+         console.log(restParagraphs, "== restParagraphs");
+
+    let winUrl = window.location.href.includes('products/cmc-soft-satin-matte-lipstick');
+    if(winUrl == false){ }
+    $(".meta_content .metafield-rich_text_field").children().detach();    
+    $('.meta_content .metafield-rich_text_field').append(`<div class="wrappedElementsTop">${initialParagraphs.join('')}</div>`);
+    $('.meta_content .metafield-rich_text_field').append(`<div class="wrappedElementsBottom">${restParagraphs.join('')}</div>`);
+      
+    
+    $(".wrappedElementsBottom").slideUp();
+    $('.moreless-button').click(function() {
+      $(".wrappedElementsBottom").slideToggle("slow");
+      if ($('.moreless-button').text() == "Read more") {
+        $(this).text("Read less")
+      } else {
+        $(this).text("Read more")
+      }
+    });
+  });
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Read more/less",
+  "class": "metaContent",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Read more/less"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

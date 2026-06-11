@@ -1,0 +1,206 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "shop_the_collection_xbt3eL": {
+      "type": "shop-the-collection",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "text": "",
+        "image": "shopify://shop_images/Sangeet_look_OG.jpg",
+        "image_mask": "none",
+        "subtitle": "",
+        "title": "Sangeet look",
+        "collection": "sangeet-look",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "shop_the_look_HiEXmq": {
+      "type": "shop-the-look",
+      "blocks": {
+        "collection_LkVatm": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Date Night Look",
+            "card_image": "shopify://shop_images/Date-Night-Look.jpg",
+            "button_url": "shopify://pages/date-night",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_aJq6YN": {
+          "type": "collection",
+          "settings": {
+            "card_title": "smokey eyes",
+            "card_image": "shopify://shop_images/Smokey-Eyes.jpg",
+            "button_url": "shopify://pages/smokey-eye-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_NAqtpt": {
+          "type": "collection",
+          "settings": {
+            "card_title": "wedding look",
+            "card_image": "shopify://shop_images/wedding-look.jpg",
+            "button_url": "shopify://pages/bridal-wedding-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_3RLY3L": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Haldi Mehendi Look",
+            "card_image": "shopify://shop_images/Haldi-Mehendi-Look.jpg",
+            "button_url": "shopify://pages/haldi-mehendi-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_WFaAjM": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Cocktail Look",
+            "card_image": "shopify://shop_images/Cocktail-Look.jpg",
+            "button_url": "shopify://pages/cocktail-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_xqPihd": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Soft Glam Look",
+            "card_image": "shopify://shop_images/Soft-Glam-Look.jpg",
+            "button_url": "shopify://pages/soft-glam-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_BAAMAL": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Valentine's Look",
+            "card_image": "shopify://shop_images/Valentine_look.jpg",
+            "button_url": "shopify://pages/valentines-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_AWGw44": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Retro look",
+            "card_image": "shopify://shop_images/Retro_Look.jpg",
+            "button_url": "shopify://pages/retro-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_gbPYNg": {
+          "type": "collection",
+          "settings": {
+            "card_title": "No Makeup Makeup Look",
+            "card_image": "shopify://shop_images/No_Makeup_Makeup_Look.jpg",
+            "button_url": "shopify://pages/no-makeup-makeup-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_8VhtxY": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Double Winged Eyeliner",
+            "card_image": "shopify://shop_images/Double_Winged_Eyeliner.jpg",
+            "button_url": "shopify://pages/double-winged-eyeliner",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_dDUJyw": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Waterproof makeup",
+            "card_image": "shopify://shop_images/Date-Night-Look.jpg",
+            "button_url": "shopify://pages/waterproof-makeup",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        }
+      },
+      "block_order": [
+        "collection_LkVatm",
+        "collection_aJq6YN",
+        "collection_NAqtpt",
+        "collection_3RLY3L",
+        "collection_WFaAjM",
+        "collection_xqPihd",
+        "collection_BAAMAL",
+        "collection_AWGw44",
+        "collection_gbPYNg",
+        "collection_8VhtxY",
+        "collection_dDUJyw"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "divider": false,
+        "enable_gutter": false,
+        "enable_slider": false,
+        "bg_color": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "advanced_content_JghrmT": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_qEpwg9": {
+          "type": "liquid",
+          "settings": {
+            "code": "<div id=\"shopify-section-template--19234415902977__shop_the_look_LRnw7p\" class=\"shopify-section index-section shop__the__look\"><style data-shopify=\"\">.section-template--19234415902977__shop_the_look_LRnw7p-padding {\n    padding-top: 18px;\n    padding-bottom: 18px;\n  }\n\n  @media screen and (min-width: 750px) {\n    .section-template--19234415902977__shop_the_look_LRnw7p-padding {\n      padding-top: 36px;\n      padding-bottom: 36px;\n    }\n  }</style><div class=\"page-full section-template--19234415902977__shop_the_look_LRnw7p-padding shop-the-look\"><div class=\"section-header\">\n      <h2 class=\"section-header__title\">Shop The Look</h2>\n    </div>\n  \n\n  <div class=\"grid grid--small-gutters category_container swiper lookSlider swiper-initialized swiper-horizontal\">\n  \n  \n    <div class=\"swiper-wrapper\" id=\"swiper-wrapper-108a1d577dd55ff1c\" aria-live=\"polite\">\n  \n<div class=\"grid__item medium-up--one-quarter small--one-half card--square-small skrim__item swiper-slide swiper-slide-active aos-init aos-animate\" data-aos=\"skrim__animation\" style=\"width: 360.25px;\" role=\"group\" aria-label=\"1 / 12\">\n        \n          <a href=\"/pages/date-night\" class=\"skrim__link skrim__item-content loaded\">\n        \n<div class=\"skrim__overlay grid__image\">\n              \n              \n      \n              <style data-shopify=\"\">\n                .grid__image--collection_C9Jxd9{\n                  object-position: center center;\n                }\n              </style>\n      \n              \n\n              \n              \n              <image-element data-aos=\"image-fade-in\" data-aos-offset=\"150\" class=\"aos-init aos-animate\">\n              \n              \n                \n<img src=\"//charmacyworld.com/cdn/shop/files/Date-Night-Look.jpg?v=1721992539&amp;width=700\" alt=\"Elegant and flawless makeup for Date Night look - Charmacy Milano\" srcset=\"//charmacyworld.com/cdn/shop/files/Date-Night-Look.jpg?v=1721992539&amp;width=352 352w, //charmacyworld.com/cdn/shop/files/Date-Night-Look.jpg?v=1721992539&amp;width=700 700w\" width=\"700\" height=\"990.0\" loading=\"lazy\" class=\"image-fit grid__image--collection_C9Jxd9\" sizes=\"(min-width: 769px) 25vw, 50vw\">\n                \n              \n              \n              </image-element>\n              \n            </div><div class=\"skrim__title\">\n            <div class=\"skrim__underline-me\">\n              Date Night Look\n            </div>\n          </div>\n        \n          </a>\n        \n      </div><div class=\"grid__item medium-up--one-quarter small--one-half card--square-small skrim__item swiper-slide swiper-slide-next aos-init aos-animate\" data-aos=\"skrim__animation\" style=\"width: 360.25px;\" role=\"group\" aria-label=\"2 / 12\">\n        \n          <a href=\"/pages/smokey-eye-look\" class=\"skrim__link skrim__item-content loaded\">\n        \n<div class=\"skrim__overlay grid__image\">\n              \n              \n      \n              <style data-shopify=\"\">\n                .grid__image--collection_m3gpTn{\n                  object-position: center center;\n                }\n              </style>\n      \n              \n\n              \n              \n              <image-element data-aos=\"image-fade-in\" data-aos-offset=\"150\" class=\"aos-init aos-animate\">\n              \n              \n                \n<img src=\"//charmacyworld.com/cdn/shop/files/Smokey-Eyes.jpg?v=1721992538&amp;width=700\" alt=\"Elegant and flawless makeup for Date Night look - Charmacy Milano\" srcset=\"//charmacyworld.com/cdn/shop/files/Smokey-Eyes.jpg?v=1721992538&amp;width=352 352w, //charmacyworld.com/cdn/shop/files/Smokey-Eyes.jpg?v=1721992538&amp;width=700 700w\" width=\"700\" height=\"990.0\" loading=\"lazy\" class=\"image-fit grid__image--collection_m3gpTn\" sizes=\"(min-width: 769px) 25vw, 50vw\">\n                \n              \n              \n              </image-element>\n              \n            </div><div class=\"skrim__title\">\n            <div class=\"skrim__underline-me\">\n              Smokey Eye Look\n            </div>\n          </div>\n        \n          </a>\n        \n      </div><div class=\"grid__item medium-up--one-quarter small--one-half card--square-small skrim__item swiper-slide aos-init aos-animate\" data-aos=\"skrim__animation\" style=\"width: 360.25px;\" role=\"group\" aria-label=\"3 / 12\">\n        \n          <a href=\"/pages/bridal-wedding-look\" class=\"skrim__link skrim__item-content loaded\">\n        \n<div class=\"skrim__overlay grid__image\">\n              \n              \n      \n              <style data-shopify=\"\">\n                .grid__image--collection_aanx33{\n                  object-position: center center;\n                }\n              </style>\n      \n              \n\n              \n              \n              <image-element data-aos=\"image-fade-in\" data-aos-offset=\"150\" class=\"aos-init aos-animate\">\n              \n              \n                \n<img src=\"//charmacyworld.com/cdn/shop/files/wedding-look.jpg?v=1721992538&amp;width=700\" alt=\"Elegant and flawless makeup for Date Night look - Charmacy Milano\" srcset=\"//charmacyworld.com/cdn/shop/files/wedding-look.jpg?v=1721992538&amp;width=352 352w, //charmacyworld.com/cdn/shop/files/wedding-look.jpg?v=1721992538&amp;width=700 700w\" width=\"700\" height=\"990.0\" loading=\"lazy\" class=\"image-fit grid__image--collection_aanx33\" sizes=\"(min-width: 769px) 25vw, 50vw\">\n                \n              \n              \n              </image-element>\n              \n            </div><div class=\"skrim__title\">\n            <div class=\"skrim__underline-me\">\n              Bridal Wedding Look\n            </div>\n          </div>\n        \n          </a>\n        \n      </div><div class=\"grid__item medium-up--one-quarter small--one-half card--square-small skrim__item swiper-slide aos-init aos-animate\" data-aos=\"skrim__animation\" style=\"width: 360.25px;\" role=\"group\" aria-label=\"4 / 12\">\n        \n          <a href=\"/pages/haldi-mehendi-look\" class=\"skrim__link skrim__item-content loaded\">\n        \n<div class=\"skrim__overlay grid__image\">\n              \n              \n      \n              <style data-shopify=\"\">\n                .grid__image--collection_rbYpzh{\n                  object-position: center center;\n                }\n              </style>\n      \n              \n\n              \n              \n              <image-element data-aos=\"image-fade-in\" data-aos-offset=\"150\" class=\"aos-init aos-animate\">\n              \n              \n                \n<img src=\"//charmacyworld.com/cdn/shop/files/Haldi-Mehendi-Look.jpg?v=1721992538&amp;width=700\" alt=\"Elegant and flawless makeup for Date Night look - Charmacy Milano\" srcset=\"//charmacyworld.com/cdn/shop/files/Haldi-Mehendi-Look.jpg?v=1721992538&amp;width=352 352w, //charmacyworld.com/cdn/shop/files/Haldi-Mehendi-Look.jpg?v=1721992538&amp;width=700 700w\" width=\"700\" height=\"990.0\" loading=\"lazy\" class=\"image-fit grid__image--collection_rbYpzh\" sizes=\"(min-width: 769px) 25vw, 50vw\">\n                \n              \n              \n              </image-element>\n              \n            </div><div class=\"skrim__title\">\n            <div class=\"skrim__underline-me\">\n              Haldi Mehendi Look\n            </div>\n          </div>\n        \n          </a>\n        \n      </div><div class=\"grid__item medium-up--one-quarter small--one-half card--square-small skrim__item swiper-slide aos-init aos-animate\" data-aos=\"skrim__animation\" style=\"width: 360.25px;\" role=\"group\" aria-label=\"5 / 12\">\n        \n          <a href=\"/pages/cocktail-look\" class=\"skrim__link skrim__item-content\">\n        \n<div class=\"skrim__overlay grid__image\">\n              \n              \n      \n              <style data-shopify=\"\">\n                .grid__image--collection_yThrgw{\n                  object-position: center center;\n                }\n              </style>\n      \n              \n\n              \n              \n              <image-element data-aos=\"image-fade-in\" data-aos-offset=\"150\" class=\"aos-init aos-animate\">\n              \n              \n                \n<img src=\"//charmacyworld.com/cdn/shop/files/Festive-Look.jpg?v=1721992539&amp;width=700\" alt=\"Elegant and flawless makeup for Date Night look - Charmacy Milano\" srcset=\"//charmacyworld.com/cdn/shop/files/Festive-Look.jpg?v=1721992539&amp;width=352 352w, //charmacyworld.com/cdn/shop/files/Festive-Look.jpg?v=1721992539&amp;width=700 700w\" width=\"700\" height=\"990.0\" loading=\"lazy\" class=\"image-fit grid__image--collection_yThrgw\" sizes=\"(min-width: 769px) 25vw, 50vw\">\n                \n              \n              \n              </image-element>\n              \n            </div><div class=\"skrim__title\">\n            <div class=\"skrim__underline-me\">\n              Festive Look\n            </div>\n          </div>\n        \n          </a>\n        \n      </div><div class=\"grid__item medium-up--one-quarter small--one-half card--square-small skrim__item swiper-slide aos-init aos-animate\" data-aos=\"skrim__animation\" style=\"width: 360.25px;\" role=\"group\" aria-label=\"6 / 12\">\n        \n          <a href=\"/pages/cocktail-look\" class=\"skrim__link skrim__item-content\">\n        \n<div class=\"skrim__overlay grid__image\">\n              \n              \n      \n              <style data-shopify=\"\">\n                .grid__image--collection_xrRXXh{\n                  object-position: center center;\n                }\n              </style>\n      \n              \n\n              \n              \n              <image-element data-aos=\"image-fade-in\" data-aos-offset=\"150\" class=\"aos-init aos-animate\">\n              \n              \n                \n<img src=\"//charmacyworld.com/cdn/shop/files/Cocktail-Look.jpg?v=1721992538&amp;width=700\" alt=\"Elegant and flawless makeup for Date Night look - Charmacy Milano\" srcset=\"//charmacyworld.com/cdn/shop/files/Cocktail-Look.jpg?v=1721992538&amp;width=352 352w, //charmacyworld.com/cdn/shop/files/Cocktail-Look.jpg?v=1721992538&amp;width=700 700w\" width=\"700\" height=\"990.0\" loading=\"lazy\" class=\"image-fit grid__image--collection_xrRXXh\" sizes=\"(min-width: 769px) 25vw, 50vw\">\n                \n              \n              \n              </image-element>\n              \n            </div><div class=\"skrim__title\">\n            <div class=\"skrim__underline-me\">\n              Cocktail Look\n            </div>\n          </div>\n        \n          </a>\n        \n      </div><div class=\"grid__item medium-up--one-quarter small--one-half card--square-small skrim__item swiper-slide aos-init aos-animate\" data-aos=\"skrim__animation\" style=\"width: 360.25px;\" role=\"group\" aria-label=\"7 / 12\">\n        \n          <a href=\"/pages/soft-glam-look\" class=\"skrim__link skrim__item-content\">\n        \n<div class=\"skrim__overlay grid__image\">\n              \n              \n      \n              <style data-shopify=\"\">\n                .grid__image--collection_Ar3Y4e{\n                  object-position: center center;\n                }\n              </style>\n      \n              \n\n              \n              \n              <image-element data-aos=\"image-fade-in\" data-aos-offset=\"150\" class=\"aos-init aos-animate\">\n              \n              \n                \n<img src=\"//charmacyworld.com/cdn/shop/files/Soft-Glam-Look.jpg?v=1721992538&amp;width=700\" alt=\"Elegant and flawless makeup for Date Night look - Charmacy Milano\" srcset=\"//charmacyworld.com/cdn/shop/files/Soft-Glam-Look.jpg?v=1721992538&amp;width=352 352w, //charmacyworld.com/cdn/shop/files/Soft-Glam-Look.jpg?v=1721992538&amp;width=700 700w\" width=\"700\" height=\"990.0\" loading=\"lazy\" class=\"image-fit grid__image--collection_Ar3Y4e\" sizes=\"(min-width: 769px) 25vw, 50vw\">\n                \n              \n              \n              </image-element>\n              \n            </div><div class=\"skrim__title\">\n            <div class=\"skrim__underline-me\">\n              Soft Glam Look\n            </div>\n          </div>\n        \n          </a>\n        \n      </div><div class=\"grid__item medium-up--one-quarter small--one-half card--square-small skrim__item swiper-slide aos-init aos-animate\" data-aos=\"skrim__animation\" style=\"width: 360.25px;\" role=\"group\" aria-label=\"8 / 12\">\n        \n          <a href=\"/pages/valentines-look\" class=\"skrim__link skrim__item-content\">\n        \n<div class=\"skrim__overlay grid__image\">\n              \n              \n      \n              <style data-shopify=\"\">\n                .grid__image--collection_AEgVfX{\n                  object-position: center center;\n                }\n              </style>\n      \n              \n\n              \n              \n              <image-element data-aos=\"image-fade-in\" data-aos-offset=\"150\" class=\"aos-init aos-animate\">\n              \n              \n                \n<img src=\"//charmacyworld.com/cdn/shop/files/Valentine_look.jpg?v=1722532980&amp;width=700\" alt=\"Elegant and flawless makeup for Date Night look - Charmacy Milano\" srcset=\"//charmacyworld.com/cdn/shop/files/Valentine_look.jpg?v=1722532980&amp;width=352 352w, //charmacyworld.com/cdn/shop/files/Valentine_look.jpg?v=1722532980&amp;width=700 700w\" width=\"700\" height=\"990.0\" loading=\"lazy\" class=\"image-fit grid__image--collection_AEgVfX\" sizes=\"(min-width: 769px) 25vw, 50vw\">\n                \n              \n              \n              </image-element>\n              \n            </div><div class=\"skrim__title\">\n            <div class=\"skrim__underline-me\">\n              Valentine's Look\n            </div>\n          </div>\n        \n          </a>\n        \n      </div><div class=\"grid__item medium-up--one-quarter small--one-half card--square-small skrim__item swiper-slide aos-init aos-animate\" data-aos=\"skrim__animation\" style=\"width: 360.25px;\" role=\"group\" aria-label=\"9 / 12\">\n        \n          <a href=\"/pages/retro-look\" class=\"skrim__link skrim__item-content\">\n        \n<div class=\"skrim__overlay grid__image\">\n              \n              \n      \n              <style data-shopify=\"\">\n                .grid__image--collection_wCh4di{\n                  object-position: center center;\n                }\n              </style>\n      \n              \n\n              \n              \n              <image-element data-aos=\"image-fade-in\" data-aos-offset=\"150\" class=\"aos-init aos-animate\">\n              \n              \n                \n<img src=\"//charmacyworld.com/cdn/shop/files/Retro_Look.jpg?v=1722533051&amp;width=700\" alt=\"Elegant and flawless makeup for Date Night look - Charmacy Milano\" srcset=\"//charmacyworld.com/cdn/shop/files/Retro_Look.jpg?v=1722533051&amp;width=352 352w, //charmacyworld.com/cdn/shop/files/Retro_Look.jpg?v=1722533051&amp;width=700 700w\" width=\"700\" height=\"990.0\" loading=\"lazy\" class=\"image-fit grid__image--collection_wCh4di\" sizes=\"(min-width: 769px) 25vw, 50vw\">\n                \n              \n              \n              </image-element>\n              \n            </div><div class=\"skrim__title\">\n            <div class=\"skrim__underline-me\">\n              Retro look\n            </div>\n          </div>\n        \n          </a>\n        \n      </div><div class=\"grid__item medium-up--one-quarter small--one-half card--square-small skrim__item swiper-slide aos-init aos-animate\" data-aos=\"skrim__animation\" style=\"width: 360.25px;\" role=\"group\" aria-label=\"10 / 12\">\n        \n          <a href=\"/pages/no-makeup-makeup-look\" class=\"skrim__link skrim__item-content\">\n        \n<div class=\"skrim__overlay grid__image\">\n              \n              \n      \n              <style data-shopify=\"\">\n                .grid__image--collection_RNWPYd{\n                  object-position: center center;\n                }\n              </style>\n      \n              \n\n              \n              \n              <image-element data-aos=\"image-fade-in\" data-aos-offset=\"150\" class=\"aos-init aos-animate\">\n              \n              \n                \n<img src=\"//charmacyworld.com/cdn/shop/files/No_Makeup_Makeup_Look.jpg?v=1722533236&amp;width=700\" alt=\"Elegant and flawless makeup for Date Night look - Charmacy Milano\" srcset=\"//charmacyworld.com/cdn/shop/files/No_Makeup_Makeup_Look.jpg?v=1722533236&amp;width=352 352w, //charmacyworld.com/cdn/shop/files/No_Makeup_Makeup_Look.jpg?v=1722533236&amp;width=700 700w\" width=\"700\" height=\"990.0\" loading=\"lazy\" class=\"image-fit grid__image--collection_RNWPYd\" sizes=\"(min-width: 769px) 25vw, 50vw\">\n                \n              \n              \n              </image-element>\n              \n            </div><div class=\"skrim__title\">\n            <div class=\"skrim__underline-me\">\n              No Makeup Makeup Look\n            </div>\n          </div>\n        \n          </a>\n        \n      </div><div class=\"grid__item medium-up--one-quarter small--one-half card--square-small skrim__item swiper-slide aos-init aos-animate\" data-aos=\"skrim__animation\" style=\"width: 360.25px;\" role=\"group\" aria-label=\"11 / 12\">\n        \n          <a href=\"/pages/double-winged-eyeliner\" class=\"skrim__link skrim__item-content\">\n        \n<div class=\"skrim__overlay grid__image\">\n              \n              \n      \n              <style data-shopify=\"\">\n                .grid__image--collection_JGBTWy{\n                  object-position: center center;\n                }\n              </style>\n      \n              \n\n              \n              \n              <image-element data-aos=\"image-fade-in\" data-aos-offset=\"150\" class=\"aos-init aos-animate\">\n              \n              \n                \n<img src=\"//charmacyworld.com/cdn/shop/files/Double_Winged_Eyeliner.jpg?v=1722533235&amp;width=700\" alt=\"Elegant and flawless makeup for Date Night look - Charmacy Milano\" srcset=\"//charmacyworld.com/cdn/shop/files/Double_Winged_Eyeliner.jpg?v=1722533235&amp;width=352 352w, //charmacyworld.com/cdn/shop/files/Double_Winged_Eyeliner.jpg?v=1722533235&amp;width=700 700w\" width=\"700\" height=\"990.0\" loading=\"lazy\" class=\"image-fit grid__image--collection_JGBTWy\" sizes=\"(min-width: 769px) 25vw, 50vw\">\n                \n              \n              \n              </image-element>\n              \n            </div><div class=\"skrim__title\">\n            <div class=\"skrim__underline-me\">\n              Double Winged Eyeliner\n            </div>\n          </div>\n        \n          </a>\n        \n      </div><div class=\"grid__item medium-up--one-quarter small--one-half card--square-small skrim__item swiper-slide aos-init aos-animate\" data-aos=\"skrim__animation\" role=\"group\" aria-label=\"12 / 12\" style=\"width: 360.25px;\">\n        \n          <a href=\"/pages/waterproof-makeup\" class=\"skrim__link skrim__item-content\">\n        \n<div class=\"skrim__overlay grid__image\">\n              \n              \n      \n              <style data-shopify=\"\">\n                .grid__image--collection_HNdVBi{\n                  object-position: center center;\n                }\n              </style>\n      \n              \n\n              \n              \n              <image-element data-aos=\"image-fade-in\" data-aos-offset=\"150\" class=\"aos-init aos-animate\">\n              \n              \n                \n<img src=\"//charmacyworld.com/cdn/shop/files/waterproof_makeup_2.png?v=1719904127&amp;width=700\" alt=\"Elegant and flawless makeup for Date Night look - Charmacy Milano\" srcset=\"//charmacyworld.com/cdn/shop/files/waterproof_makeup_2.png?v=1719904127&amp;width=352 352w, //charmacyworld.com/cdn/shop/files/waterproof_makeup_2.png?v=1719904127&amp;width=700 700w\" width=\"700\" height=\"990.0\" loading=\"lazy\" class=\"image-fit grid__image--collection_HNdVBi\" sizes=\"(min-width: 769px) 25vw, 50vw\">\n                \n              \n              \n              </image-element>\n              \n            </div><div class=\"skrim__title\">\n            <div class=\"skrim__underline-me\">\n              Waterproof makeup\n            </div>\n          </div>\n        \n          </a>\n        \n      </div>\n    </div>\n    <div class=\"swiper-button-next swiper-button-next-first\" tabindex=\"0\" role=\"button\" aria-label=\"Next slide\" aria-controls=\"swiper-wrapper-108a1d577dd55ff1c\" aria-disabled=\"false\">\n       <svg class=\"icon\" viewBox=\"0 0 100 100\">\n         <path d=\"M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z\" class=\"arrow\" transform=\"translate(100, 100) rotate(180) \"></path>\n       </svg>\n     </div>\n    <div class=\"swiper-button-prev swiper-button-next-second swiper-button-disabled\" tabindex=\"-1\" role=\"button\" aria-label=\"Previous slide\" aria-controls=\"swiper-wrapper-108a1d577dd55ff1c\" aria-disabled=\"true\">\n     <svg class=\"icon\" viewBox=\"0 0 100 100\">\n         <path d=\"M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z\" class=\"arrow\" transform=\"translate(100, 100) rotate(180) \"></path>\n       </svg>\n   </div>\n  \n            \n    \n\n  <span class=\"swiper-notification\" aria-live=\"assertive\" aria-atomic=\"true\"></span></div>\n</div><script>\n  // function initializeSwiper() {}\n    var swiper3 = new Swiper(\".lookSlider\", {\n      slidesPerView: 4,\n      // freeMode: true,\n      loop: false,\n      allowTouchMove: true,\n      // autoplay: {\n      //   delay: 1,\n      //   disableOnInteraction: false,\n      // },\n      breakpoints: {\n        0: {\n          slidesPerView: 2,\n        },\n        769: {\n          slidesPerView: 3,\n        },\n        1200: {\n          slidesPerView: 4,\n        }\n      },\n      // speed: 9000,\n     navigation: {\n        nextEl: \".swiper-button-next\",\n        prevEl: \".swiper-button-prev\",\n      },\n    });\n  \n  // var count = 0;\n  // var checkExist = setInterval(() => {\n  //   count=count+1;\n  //   if (document.querySelector('.whatmore-events-carousel')) {\n  //     setTimeout(()=>{\n  //       initializeSwiper();\n  //     },0)\n  //     clearInterval(checkExist);\n  //   }else if(count == 30){\n  //     setTimeout(()=>{\n  //       initializeSwiper();\n  //     },0)       \n  //     clearInterval(checkExist);\n  //   }\n  // }, 100); \n  \n</script>\n\n<style data-shopify=\"\">\n  .lookSlider .swiper-button-next-second svg {\n    transform: rotate(180deg);\n  }\n  .lookSlider .swiper-button-next-first, .lookSlider .swiper-button-next-second {\n    background: #1a1a1a;\n    border-radius: 50%;\n    width: 40px;\n    height: 40px;\n  }\n  .lookSlider .swiper-button-disabled{\n     display: none;\n  }\n  .lookSlider .swiper-button-next-first svg, .lookSlider .swiper-button-next-second svg {\n    fill: #fff;\n    width: 12px;\n  }\n  .lookSlider .swiper-button-next-first{\n    right: 0;\n  }\n  .lookSlider .swiper-button-next-second {\n    left: 0;\n  }\n  .lookSlider .swiper-button-prev.swiper-button-next-second {\n    margin-left: 7px;\n  }\n\n  @media screen and (max-width:767px){\n    .lookSlider .swiper-button-next-first, .lookSlider .swiper-button-next-second {\n      width: 33px;\n      height: 33px;\n    }\n    .lookSlider .swiper-button-next-first svg, .lookSlider .swiper-button-next-second svg {\n      width: 10px;\n    }\n  }\n  \n  \n</style>\n            \n<style>\n  .section-header__title{\n    font-size: var(--typeHeaderSize);\n    }\n  .lookSlider.swiper-free-mode>.swiper-wrapper {\n    transition-timing-function: linear;\n  }\n</style>\n\n\n</div>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_qEpwg9"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "shop_the_collection_xbt3eL",
+    "shop_the_look_HiEXmq",
+    "advanced_content_JghrmT"
+  ]
+}

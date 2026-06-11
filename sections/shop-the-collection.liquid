@@ -1,0 +1,967 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
+{%- liquid
+  assign image_width = section.settings.image_width
+  if section.settings.image == blank
+    assign overlap_images = true
+    assign placeholder_images = true
+  endif
+-%}
+
+{% style %}
+  {% if section.settings.top_padding == false %}
+    #shopify-section-{{ section.id }} .index-section { margin-top: 0 !important; }
+  {% endif %}
+  {% if section.settings.bottom_padding == false %}
+    #shopify-section-{{ section.id }} .index-section { margin-bottom: 0 !important; }
+  {% endif %}
+  .shop-the-collen .feature-row, .shop-the-collen .feature-row--50 .feature-row__images {
+    margin: 0;
+  }
+  .block_title {
+    text-align: center;
+    margin-bottom: 3.4rem;
+    margin-top: 1.6rem;
+  }
+  .shop-the-collen .grid__image-ratio {
+    max-width: 90px;
+  }
+  .shop-the-collen .grid-product__content {
+    display: grid;
+    grid-template-columns: 90px 1fr auto auto;
+    box-shadow: unset;
+    border:1px solid rgba(234, 234, 234, 1);
+    border-radius: 7px;
+    column-gap: 15px;
+    padding-right: 17px;
+    padding-left: 4px;
+    margin-bottom: 10px;
+  }
+  .shop-the-collen .grid-product__colors {
+     margin: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 17px;
+    padding: 17px 0 10px;
+  }
+  .shop-the-collen .cartBottom {
+    padding-top: 17px;
+    justify-self: flex-end;
+        align-items: flex-start;
+  }
+  .shop-the-collen .grid-product__title {
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: 400;
+    color: rgba(26, 26, 26, 1);
+  }
+  .shop-the-collen .grid-product__link {
+    border-right:1px solid rgba(234, 234, 234, 1);
+  }
+  .feature-row__text--left {
+    padding-left: 50px;
+  }
+  .shop-the-collen .grid-product__link {
+    width: 100%;
+    max-width: 90px;
+  }
+  .scrollable-container {
+    max-height: 352px;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+  .scrollable-container::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+    background: transparent;
+}
+.scrollable-container::-webkit-scrollbar-thumb {
+    background: #9c2d41;
+    -webkit-border-radius: 2.5rem;
+      border-right:.4375rem solid #9c2d41;width:.4375rem
+}
+
+  .btg-cta .btn {
+    width: 100%;
+    font-weight: normal;
+  }
+  span.variantName {
+    /* margin: 0 5px; */
+    margin: 0 5px 0 0px;
+    max-width: 60px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+  }
+  .selected-color {
+    display: block;
+    /* max-width: 120px; */
+    /* max-width: fit-content; */
+    max-width: 150px;
+    width: 100%;
+    position: relative;
+  }
+  .activeLabel {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: 0;
+  }
+  .shop-the-collen .color-swatch:before {
+    border: 0;
+  }
+  .shop-the-collen .grid-product__price {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  ul.grid-product__colors-wrapper {
+    position: absolute;  
+    top: 38px;
+    margin: 0;
+    background-color: #fff;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+    border: 1px solid rgb(234, 234, 234);
+  }
+  .shop-the-collen .grid-product__colors-wrapper .color-swatch {
+    display: block;
+    width: 100%;
+    border: 0;
+    box-shadow: unset;
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+  }
+  .shop-the-collen .grid-product__colors-wrapper .color-swatch[disabled] {
+    pointer-events: none;
+  }
+  .shop-the-collen .grid-product__colors-wrapper .color-swatch[disabled] .color-swatch--small:after {
+    border-left: 1px solid;
+    border-color: var(--colorBorder);
+    bottom: 0;
+    content: "";
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: rotate(45deg);
+  }
+  .shop-the-collen .grid-product__colors-wrapper .color-swatch:hover {
+    background-color: rgba(156, 45, 65, 0.8);
+  }
+  .shop-the-collen .grid-product__colors-wrapper .color-swatch .color-swatch--small {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: 0;
+    display: block;
+    position: relative;
+  }
+  p.toggleDropdown {
+    margin: 0;
+    min-height: 36px;
+    border: 1px solid rgba(234, 234, 234, 1);
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+  }
+  .feature-row-bottom_blocks {
+    padding-top: 2rem;
+  }
+@-webkit-keyframes rotation{0%{-webkit-transform:rotate(0deg)}to{-webkit-transform:rotate(359deg)}}@keyframes rotation{0%{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(359deg)}}
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: none;
+}
+#overlay .spinner {
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #f9f9f7;
+  border-top-color: #072b31;
+  animation: rotation .6s linear infinite;
+  opacity: 1;
+  visibility: visible;
+  display: block;
+  font-size: 0;
+}
+.shop-the-look .section-header__title::before {
+  content: "";
+  display: inline-block;
+  width: 70px;
+  height: 2px;
+  border-top: 2px solid black;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+.shop-the-look .section-header__title::after {
+  content: "";
+  display: inline-block;
+  width: 70px;
+  height: 2px;
+  border-top: 2px solid black;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+  .shop-the-collen .grid-product__image-mask .image-element {
+    opacity: 1;
+  }
+  p.toggleDropdown svg {
+    transition: transform 0.15s cubic-bezier(1, .5,.8,1), -webkit-transform 0.15s cubic-bezier(1, .5,.8,1);
+    transition-timing-function: cubic-bezier(1, .5,.8,1);
+  }
+  p.toggleDropdown.activeDropdown svg{
+    transform: rotate(180deg);
+    top: -4px;
+    position: relative;
+  }
+.feature-row .grid-product__image-mask{
+  border: none;
+}
+
+  
+  @media only screen and (max-width: 1250px) {
+    .selected-color {
+      /* max-width: 100px; */
+      max-width: 130px;
+      /* max-width: fit-content; */
+    }
+    .block_title {
+      margin-top: 0;
+    }
+    .shop-the-collen .grid-product__colors {
+      padding: 17px 10px 10px;
+    }
+    .shop-the-collen .feature-row--50 .feature-row__images {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
+    }
+    .shop-the-collen .feature-row__text--left {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .shop-the-collen .grid-product__content {
+      column-gap: 0;
+    }
+    .shop-the-collen .cartBottom {
+      position: absolute;
+      bottom: 10px;
+      right: 17px;
+      padding: 0;
+    }
+    .shop-the-collen .cartBottom .cartForm button {
+      padding: 13px 10px !important;
+      border-radius: 0;
+      font-size: 12px;
+    }
+    .shop-the-collen .grid-product__title, .shop-the-collen .grid-product__price {
+      font-size: 12px;
+    }
+    p.toggleDropdown {
+      min-height: 34px;
+      padding: 7px 10px 5px;
+    }
+    .activeLabel {
+      width: 18px;
+      height: 18px;
+    }       
+  }
+  /* deepen */
+  .shop-the-collen .grid-product__colors-wrapper .color-swatch {
+      display: flex;
+      span.drop-name {
+        font-size: 12px;
+        text-indent: 1px;
+        display: inline;
+        float: left;
+        margin-left: 5px;
+    }
+  }
+  @media only screen and (min-width: 769px) and (max-width: 1499px) {
+    .shop-the-collen .feature-row__text {
+      flex: 0 1 50%;
+      padding-left: 20px;
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .shop-the-collen .feature-row {
+      flex-direction: column;
+    }
+    .shop-the-collen .feature-row__text {
+      padding-top: 30px;
+      padding-inline: 0;
+    }  
+  }
+
+
+/* ====================== MODEL ====================== */
+ .upsell-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      z-index: 1000;
+    }
+    .bt{
+        display: flex;
+        flex-direction: column;
+    }
+    .upsell-modal-content {
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+    }
+  
+    .upsell-modal-content .btn {
+      background: #9c2d41;
+      color: #fff;
+      padding: 10px 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      text-transform: uppercase;
+    }
+  
+    .upsell-modal-content .btn:hover {
+      background: #7a1f2f;
+    }
+
+    .upsell-modal-content {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    button#continue-shopping {
+        margin-bottom: 20px;
+    }
+
+
+    div#cart-items-container {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;  
+        scrollbar-width: none;
+    }
+
+#upsell-modal .upsell-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 25%;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    gap: 10px;
+    margin: 2px;
+    border-radius: 1px;
+    padding: 5px;
+    min-width: 100px;
+}
+
+#upsell-modal .cart-item p {
+  margin-bottom: 0;font-size: 10px;
+}
+  div#cart-items-container .upsell-item p {
+    display: -webkit-box;
+    max-width: 200px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 12px;
+}
+{% endstyle %}
+
+
+  
+  {%- liquid
+    assign collection = collections[section.settings.collection]
+     -%}
+<div class="index-section shop-the-collen section-{{ section.id }}-padding">
+
+  <div class="page-full feature-row-wrapper feature-row--{{ image_width }}">
+    {%- if section.settings.text != blank -%}
+      <div class="rte block_title appear-delay{% cycle '','-1','-2','-3','-4' %}">{{ section.settings.text }}</div>
+    {%- endif -%}
+    {%- capture image_layout -%}
+      <div class="feature-row__item feature-row__images {% if placeholder_images %}feature-row__item--placeholder-images{% endif %}" data-aos>
+          {% if page.handle == "end-of-winter-sale-combo" %}
+             {% render 'sale-slider-img-custom' %}
+          {% else %}
+          {%- if section.settings.image != blank -%}
+            <div class="feature-row__first-image">
+                <div class="image-wrap {% if section.settings.image_mask != 'none' %}svg-mask svg-mask--{{ section.settings.image_mask }}{% endif %}" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image.aspect_ratio }}%;">
+                  {%- liquid
+                      assign sizeVariable = 'calc(0.4 * 50vw)'
+                      assign fallback = '40vw'
+
+                    assign imageWidth = section.settings.image_width | times: 1
+                    if imageWidth >= 50
+                      assign loading = section.settings.lazyload_images
+                    else
+                      assign loading = true
+                    endif
+                  -%}
+                  {%- render 'image-element',
+                    img: section.settings.image,
+                    widths: '180, 360, 540, 750, 900, 1080',
+                    loading: loading,
+                    sizeVariable: sizeVariable,
+                    fallback: fallback,
+                    classes: 'feature-row__image',
+                  -%}
+                </div>
+            </div>
+          {%- endif -%}
+          {% endif %}
+          {%- if section.settings.image == blank-%}
+            <div class="placeholder-image-wrap">
+              <div class="image-wrap">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            </div>
+            <div class="placeholder-image-wrap">
+              <div class="image-wrap">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            </div>
+          {%- endif -%}
+      </div>
+    {%- endcapture -%}
+  
+    <div class="feature-row">
+      {%- if section.settings.layout == 'left' -%}
+        {{ image_layout }}
+      {%- endif -%}
+
+      <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }} text-{{ section.settings.align_text }}" data-aos>
+        {%- if section.settings.subtitle != blank -%}
+          <div class="subheading appear-delay{% cycle '','-1','-2','-3','-4' %}">{{ section.settings.subtitle }}</div>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h1 class="h1 appear-delay{% cycle '','-1','-2','-3','-4' %}">{{ section.settings.title | escape }}</h1>
+        {%- endif -%}
+        {% if page.handle == "end-of-winter-sale-combo" %}
+        <p>Pick Your Shades, Add All, Grab the Deal!</p>
+        {% endif %}
+        {% assign bundlePrice = 0 %}
+        <div class="grid grid--uniform scrollable-container">
+        {%- for product in collection.products -%}
+            {% assign product_price = product.first_available_variant.price %}                
+            {% assign product_price = product_price | divided_by: 100.0 | round %}             
+            {% assign bundlePrice = bundlePrice | plus: product_price %}       
+            
+            {%- render 'shop-grid-item',
+              product: product,
+              collection: collection,
+              per_row: per_row,
+              fallback: '66vw',
+            -%}
+            {% comment %}
+            {%- render 'shop-grid-item-2',
+              product: product,
+              collection: collection,
+              per_row: per_row,
+              fallback: '66vw',
+            -%}
+          {% endcomment %}
+          {%- endfor -%}
+        </div>             
+          <div class="btg-cta">
+            <button id="buy_all-{{ section.id }}" class="btn{% if section.settings.button_style == 'secondary' %} btn--tertiary{% endif %}">
+              Add All Available - {{ bundlePrice | times: 100.00 | money }}{% comment %}{{ bundlePrice | money }}{% endcomment %}
+            </button>
+          </div>      
+      </div>
+
+
+      <!-- Modal Popup -->
+      <div id="upsell-modal" class="upsell-modal" style="display: none;">
+        <div class="upsell-modal-content">
+          <p>Your products have been added to the cart!</p>
+           <div id="cart-items-container" class="designscrollbar"></div>
+          <div class="bt">
+          
+         
+          <button id="continue-shopping" class="btn">Continue Shopping</button>
+        
+          <div class="shiprocket-headless" data-type="mini-cart"></div>
+            {% if enable_dynamic_buttons %}
+             
+               {% if current_variant.available %}
+                 <div class="shiprocket-headless" data-type="product"></div>
+                 <input type="hidden" value="true" id="fastrrCollectionPage" />
+                 <input type="hidden" value={{ product.url }} name="productUrl" />
+               {% endif %}
+              
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+
+      
+      {%- if section.settings.layout == 'right' -%}
+        {{ image_layout }}
+      {%- endif -%}
+    </div>
+    {%- capture image_layout1 -%}
+      <div class="feature-row__item feature-row__images {% if placeholder_images %}feature-row__item--placeholder-images{% endif %}" data-aos>
+      {%- if section.settings.image2 != blank -%}
+        <div class="feature-row__second-image">
+            <div class="image-wrap {% if section.settings.image2_mask != 'none' %}svg-mask svg-mask--{{ section.settings.image2_mask }}{% endif %}" style="height: 0; padding-bottom: {{ 100 | divided_by: section.settings.image2.aspect_ratio }}%;">
+              {%- liquid               
+                  assign sizeVariable = 'calc(0.6 * 50vw)'
+                  assign fallback = '60vw'             
+              -%}
+              {%- render 'image-element',
+                img: section.settings.image2,
+                widths: '180, 360, 540, 750, 900, 1080',
+                sizeVariable: sizeVariable,
+                fallback: fallback,
+                classes: 'feature-row__image',
+              -%}
+            </div>
+        </div>
+      {%- endif -%}
+      </div>
+    {% endcapture %}
+    {%- if section.settings.image2 != blank -%}
+    <div class="feature-row feature-row-bottom_blocks ">
+      {%- if section.settings.layout == 'left' -%}
+        {{ image_layout1 }}
+      {%- endif -%}
+      <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }} text-{{ section.settings.align_text }}">            
+        <div class="btg-cta">
+          <button id="buy_all-secondary" class="btn{% if section.settings.button_style == 'secondary' %} btn--tertiary{% endif %}">
+            Add All Available - {{ bundlePrice | times: 100.00 | money }}
+          </button>
+        </div>      
+      </div>
+      {%- if section.settings.layout == 'right' -%}
+        {{ image_layout1 }}
+      {%- endif -%}
+    </div>
+       {%- endif -%}
+  </div>
+<div id="overlay">
+  <div class="spinner">Loading...</div>
+</div>
+</div>
+
+{%- if section.settings.divider -%}</div>{%- endif -%}
+<script>
+  $(document).ready(function() {  
+  function showOverlay() {
+    $('#overlay').show();
+  }
+
+  function hideOverlay() {
+    $('#overlay').hide();
+  }
+  $(document).on('click', '.grid-product__colors-wrapper .color-swatch', function(event) {
+    event.stopPropagation(); 
+    var product = $(this).closest('.shop-look-card');
+    var colorSwatches = product.find('.grid-product__colors-wrapper .color-swatch');
+    var activeLabel = product.find('.selected-color .toggleDropdown .activeLabel');
+    var selectedColorDiv = product.find('.selected-color');
+    var dropdown = product.find('.grid-product__colors-wrapper');
+    var variantForm = product.find('.cartForm');
+    var varLabelElement = product.find('span[data-variant-color-label]');
+    var variantNameElement = product.find('.selected-color .toggleDropdown .variantName');
+    
+    colorSwatches.removeClass('activeColor');
+    $(this).addClass('activeColor');
+
+    var color = $(this).attr('data-color');
+    var colorUrl = $(this).attr('data-color-url');
+    var colorImg = $(this).attr('data-variant-img');
+    var curVar = $(this).attr('data-value');
+    activeLabel.css('backgroundColor', color);
+    activeLabel.css('backgroundImage', 'url(' + colorUrl + ')');
+    variantNameElement.text(curVar);
+    varLabelElement.text(curVar);
+    
+    var variantId = $(this).attr('data-variant');
+    if (variantForm.length > 0) {
+      var variantInput = variantForm.find('input[name="id"]');
+      if (variantInput.length > 0) {
+        variantInput.val(variantId);
+      }
+    }
+    product.find('.selected-color .toggleDropdown').removeClass('activeDropdown');
+    dropdown.hide();
+  });
+  $(document).find('#shopify-section-{{ section.id }}').on('click', '.shop-look-card .toggleDropdown', function(event) {
+    event.preventDefault();     
+    var $currentDropdown = $(this).siblings('.grid-product__colors-wrapper');
+    $('.grid-product__colors-wrapper').not($currentDropdown).slideUp();
+    $('.toggleDropdown').not($(this)).removeClass('activeDropdown');
+    $(this).toggleClass('activeDropdown');
+    $currentDropdown.slideToggle(200);
+  });
+
+  $(document).on('click', function(event) {
+    if (!$(event.target).closest('.toggleDropdown').length) {
+      $('.toggleDropdown').removeClass('activeDropdown');
+      $('.grid-product__colors-wrapper').hide();
+    }
+  });
+  $('#buy_all-secondary').click(function() {
+    var sectionParent = $(this).closest('.shop-the-collen');       
+    sectionParent.find("#buy_all-{{ section.id }}").trigger('click');
+  });
+  $("#buy_all-{{ section.id }}").click(function() {
+    var section = $(this).closest('.feature-row');    
+    productArray(section);   
+    showOverlay();
+    moveAlong();     
+    $('.js-drawer-open-cart').trigger('click');    
+
+  });
+    var toAdd = new Array;
+    function productArray(section) {    
+      console.log(section);
+      var checkedCheckboxes = section.find('.cartForm');
+      if (checkedCheckboxes.length === 0) {
+        return;
+      }
+      section.find('.cartForm').each(function() {
+        var form = $(this);
+        var addButton = form.find('button[name="add"]');      
+        if (!addButton.is(':disabled')) {
+          var variantId = form.find('input[name="id"]').val();
+          toAdd.push({variant_id: variantId, quantity_id: 1});
+        }   
+      });       
+    }
+  function moveAlong() {
+    if (toAdd.length) {
+      var request = toAdd.shift();
+      var varId = request.variant_id;
+      var varQty = request.quantity_id;
+  
+      $.ajax({
+        type: 'POST',
+        url: '/cart/add.js',
+        data: {
+          quantity: varQty,
+          id: varId
+        },
+        dataType: 'json',
+        success: function(line_item) {
+          // Add product preview to modal container
+          $('#cart-items-container').append(`
+            <div class="upsell-item">
+              <img src="${line_item.image}" alt="${line_item.product_title}" width="80" />
+              <p>${line_item.product_title} - ${line_item.variant_title}</p>
+            </div>
+          `);
+          moveAlong(); // Continue next item
+        },
+        error: function() {
+          moveAlong(); // Continue even if error to prevent stall
+        }
+      });
+    } else {
+      updateCart();
+      hideOverlay();
+      $('#upsell-modal').fadeIn();
+      monster_refresh(); // custom refresh if needed
+    }
+  }
+  function updateCart() {
+    $.ajax({
+      type: 'GET',
+      url: '/cart.js',
+      dataType: 'json',
+      success: function(cart) {        
+        $('.cart-link__bubble--visible').text(cart.item_count);
+      },
+      error: function() {      
+      }
+    });
+  }
+});
+$('#continue-shopping').on('click', function() {
+  $('#upsell-modal').fadeOut();
+  $('#cart-items-container').empty(); // Reset for next time
+  
+});
+</script>
+{% schema %}
+{
+  "name": "Shop the collection",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "PADDING TOP",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "PADDING BOTTOM",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "t:sections.text-and-image.settings.image.label"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:sections.text-and-image.settings.text.label",
+      "default": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.text-and-image.settings.image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Bottom Image"
+    },
+    {
+      "type": "select",
+      "id": "image_mask",
+      "label": "t:common.image_mask.label",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:common.image_mask.options.none.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:common.image_mask.options.portrait.label"
+        },
+        {
+          "value": "landscape",
+          "label": "t:common.image_mask.options.landscape.label"
+        },
+        {
+          "value": "square",
+          "label": "t:common.image_mask.options.square.label"
+        },
+        {
+          "value": "rounded",
+          "label": "t:common.image_mask.options.rounded.label"
+        },
+        {
+          "value": "rounded-wave",
+          "label": "t:common.image_mask.options.rounded-wave.label"
+        },
+        {
+          "value": "rounded-top",
+          "label": "t:common.image_mask.options.rounded-top.label"
+        },
+        {
+          "value": "star",
+          "label": "t:common.image_mask.options.star.label"
+        },
+        {
+          "value": "splat-1",
+          "label": "t:common.image_mask.options.splat-1.label"
+        },
+        {
+          "value": "splat-2",
+          "label": "t:common.image_mask.options.splat-2.label"
+        },
+        {
+          "value": "splat-3",
+          "label": "t:common.image_mask.options.splat-3.label"
+        },
+        {
+          "value": "splat-4",
+          "label": "t:common.image_mask.options.splat-4.label"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "t:sections.text-and-image.settings.subtitle.label"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.text-and-image.settings.title.label",
+      "default": "Image with text"
+    },
+    {
+      "id": "collection",
+      "type": "collection",
+      "label": "t:sections.featured-collections.blocks.collection.settings.collection.label"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:sections.text-and-image.settings.button_label.label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:sections.text-and-image.settings.button_link.label"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "t:sections.text-and-image.settings.button_style.label",
+      "default": "primary",
+      "options": [
+        {
+          "value": "primary",
+          "label": "t:sections.text-and-image.settings.button_style.options.primary.label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.text-and-image.settings.button_style.options.secondary.label"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "align_text",
+      "label": "t:sections.text-and-image.settings.align_text.label",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.text-and-image.settings.align_text.options.left.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.text-and-image.settings.align_text.options.center.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.text-and-image.settings.align_text.options.right.label"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_width",
+      "label": "t:common.image_size.label",
+      "default": "50",
+      "options": [
+        {
+          "value": "33",
+          "label": "t:common.image_size.options.small.label"
+        },
+        {
+          "value": "50",
+          "label": "t:common.image_size.options.medium.label"
+        },
+        {
+          "value": "66",
+          "label": "t:common.image_size.options.large.label"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "t:sections.text-and-image.settings.layout.label",
+      "default": "right",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.text-and-image.settings.layout.options.left.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.text-and-image.settings.layout.options.right.label"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:sections.text-and-image.settings.divider.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "top_padding",
+      "label": "t:sections.text-and-image.settings.top_padding.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "bottom_padding",
+      "label": "t:sections.text-and-image.settings.bottom_padding.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "lazyload_images",
+      "label": "t:common.lazyload_images.label",
+      "info": "t:common.lazyload_images.info",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop the collection"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

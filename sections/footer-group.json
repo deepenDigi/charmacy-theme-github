@@ -1,0 +1,240 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "t:sections.footer-group.name",
+  "sections": {
+    "footer-promotions": {
+      "type": "footer-promotions",
+      "blocks": {
+        "footer-promotions0": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        },
+        "footer-promotions1": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        },
+        "footer-promotions2": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "footer-promotions0",
+        "footer-promotions1",
+        "footer-promotions2"
+      ],
+      "disabled": true,
+      "settings": {
+        "hide_homepage": false,
+        "align_text": "left"
+      }
+    },
+    "text_columns_JNzzeU": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_KnQMLp": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/India-Shorts-logo-main.png",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Example title",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.</p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        },
+        "text_block_TcWtMP": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Example title",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.</p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        },
+        "text_block_n6L3Rj": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Example title",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.</p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_KnQMLp",
+        "text_block_TcWtMP",
+        "text_block_n6L3Rj"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "divider": false
+      }
+    },
+    "footer_newsletter_wwVXcc": {
+      "type": "footer-newsletter",
+      "settings": {
+        "heading": "Follow latest updates & new launches",
+        "sub_heading": "Subscribe To Our Newsletter",
+        "bg_color": "#7c2142"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-0": {
+          "type": "logo_social",
+          "settings": {
+            "logo": "shopify://shop_images/Logo.svg",
+            "desktop_logo_height": 96,
+            "logo_text": "<p>The brand originated from a genuine love for and understanding of cosmetics. We truly take pride in being our own manufacturers, having complete quality control over the products. Our goal, starting with our first line, is to move towards organic and environmentally-friendly products. </p>",
+            "container_width": 40
+          }
+        },
+        "footer-3": {
+          "type": "menu",
+          "settings": {
+            "show_footer_title": true,
+            "menu": "useful-links",
+            "container_width": 20
+          }
+        },
+        "footer-1": {
+          "type": "menu",
+          "settings": {
+            "show_footer_title": true,
+            "menu": "categories",
+            "container_width": 20
+          }
+        },
+        "custom_BaB4gT": {
+          "type": "custom",
+          "settings": {
+            "show_footer_title": true,
+            "title": "Contact Us",
+            "text": "<p><strong>+91-9167001818</strong><br/>support@charmacy-india.com<br/>Mon-Sat from 10 am to 6 pm</p><p>Address: B-502/503, Ramdev Pir Rd, Sadguru Nagar, Neelkanth Business Park, Vidyavihar West, Mumbai, Maharashtra 400086.</p>",
+            "container_width": 20
+          }
+        }
+      },
+      "block_order": [
+        "footer-0",
+        "footer-3",
+        "footer-1",
+        "custom_BaB4gT"
+      ],
+      "settings": {
+        "show_locale_selector": false,
+        "show_currency_selector": false,
+        "show_currency_flags": false,
+        "show_payment_icons": false,
+        "colorize_payment_icons": false,
+        "show_copyright": true,
+        "copyright_text": ""
+      }
+    },
+    "text_columns_b9TFp6": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_CHfN8e": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Example title",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.</p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        },
+        "text_block_HfhY6T": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Example title",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.</p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        },
+        "text_block_gcU7cw": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Example title",
+            "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.</p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_CHfN8e",
+        "text_block_HfhY6T",
+        "text_block_gcU7cw"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "footer-promotions",
+    "text_columns_JNzzeU",
+    "footer_newsletter_wwVXcc",
+    "footer",
+    "text_columns_b9TFp6"
+  ]
+}

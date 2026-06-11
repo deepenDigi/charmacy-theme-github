@@ -1,0 +1,152 @@
+{% form 'product', product, id: form_id, class: 'product-single__form' %}
+  {%- liquid
+    assign gift_card_recipient_feature_active = false
+    if block.settings.show_gift_card_recipient and product.gift_card?
+      assign gift_card_recipient_feature_active = true
+    endif
+
+    assign enable_dynamic_buttons = false
+    if show_dynamic_checkout and gift_card_recipient_feature_active == false
+      unless template contains 'preorder'
+        assign enable_dynamic_buttons = true
+      endunless
+    endif
+  -%}
+
+  {%- if gift_card_recipient_feature_active -%}
+    {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
+  {%- endif -%}
+
+  {%- if enable_dynamic_buttons -%}
+    <div class="payment-buttons">
+  {%- endif -%}
+
+  {%- liquid
+    assign default_text = 'products.product.add_to_cart' | t
+    assign button_text = 'products.product.add_to_cart' | t
+    if template contains 'preorder'
+      assign default_text = 'products.product.preorder' | t
+      assign button_text = 'products.product.preorder' | t
+    endif
+    unless current_variant.available
+      assign button_text = 'products.product.sold_out' | t
+    endunless
+  -%}
+  <button
+    {% if product.empty? %}
+      type="button"
+    {% else %}
+      type="submit"
+    {% endif %}
+    name="add"
+    data-add-to-cart
+    class="btn btn--full add-to-cart{% if enable_dynamic_buttons and product.selling_plan_groups.size == 0 %} add-to-cart--secondaryy{% endif %}"
+    {% unless current_variant.available %}
+      disabled="disabled"
+    {% endunless %}
+  >
+    <span data-add-to-cart-text data-default-text="{{ default_text }}">
+      {{ button_text }}
+    </span>
+  </button>
+  
+  {% if enable_dynamic_buttons %}
+    {%- unless product.selected_or_first_available_variant.available -%}
+      <style>
+        .sr-headless-checkout{
+          opacity:0.5;
+          cursor: not-allowed;
+          pointer-events: none;
+        }
+      </style>
+    {%- endunless -%}
+
+    <div class="shiprocket-headless" data-type="product"></div>
+    <input type="hidden" value="true" id="fastrrCollectionPage">
+    <input type="hidden" value="{{ product.url }}" name="productUrl">
+    {{ form | payment_button }}
+  {% endif %}
+
+  {% if enable_dynamic_buttons %}
+    </div>
+  {% endif %}
+
+  <div class="shopify-payment-terms product__policies">{{ form | payment_terms }}</div>
+
+  <select name="id" data-product-select class="product-single__variants no-js">
+    {%- for variant in product.variants -%}
+      {% if variant.available %}
+        <option
+          {% if variant == product.selected_or_first_available_variant %}
+            selected="selected"
+          {% endif %}
+          value="{{ variant.id }}"
+        >
+          {{ variant.title }} - {{ variant.price | money_with_currency }}
+        </option>
+      {% else %}
+        <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+      {% endif %}
+    {%- endfor -%}
+  </select>
+  
+  <!-- {% if product.id == 8796653879553 %}
+    <input type="hidden" name="properties[P1- CMC DIAMOND RUSH LIPSTICK]" id="property-cmc-diamond" value="">
+    <input type="hidden" name="properties[P2- CMC STUNNING LONGSTAY LIQUID LIP]" id="property-cmc-stunning" value="">
+    <input type="hidden" name="properties[P- SKU]" id="property-cmc-sku" value="{{ current_variant.sku }}">
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const diamondInput = document.querySelector("#property-cmc-diamond");
+        const stunningInput = document.querySelector("#property-cmc-stunning");
+        const skuInput = document.querySelector("#property-cmc-sku");
+
+        const productBlock = document.querySelector(".product-block[data-dynamic-variants-enabled]");
+        if (!productBlock) return;
+
+        // Set initial values on load
+        const firstDiamond = productBlock.querySelector(".variant-wrapper:nth-child(1) input[type='radio']:checked");
+        const firstStunning = productBlock.querySelector(".variant-wrapper:nth-child(2) input[type='radio']:checked");
+
+        if (firstDiamond) diamondInput.value = firstDiamond.value;
+        if (firstStunning) stunningInput.value = firstStunning.value;
+
+        // Update on change - Diamond
+        productBlock.querySelectorAll(".variant-wrapper:nth-child(1) input[type='radio']").forEach(input => {
+          input.addEventListener("change", () => {
+            diamondInput.value = input.value;
+            console.log("Updated Diamond:", input.value);
+          });
+        });
+
+        // Update on change - Stunning
+        productBlock.querySelectorAll(".variant-wrapper:nth-child(2) input[type='radio']").forEach(input => {
+          input.addEventListener("change", () => {
+            stunningInput.value = input.value;
+            console.log("Updated Stunning:", input.value);
+          });
+        });
+
+        // Get SKU and update hidden property field
+        function getSku() {
+          const skuCodeElement = document.querySelector(".product-single__sku");
+          if (skuCodeElement) {
+            const skuCode = skuCodeElement.textContent.trim();
+            console.log("SKU Code:", skuCode);
+            skuInput.value = skuCode;  // Update hidden input field with SKU value
+          }
+        }
+
+        // Run getSku whenever a radio button is selected
+        const radioButtons = document.querySelectorAll('input[type="radio"]');
+        radioButtons.forEach(function(radio) {
+          radio.addEventListener('change', function() {
+            if (this.checked) {
+              getSku();  // Update SKU whenever a radio is selected
+            }
+          });
+        });
+
+      });
+    </script>
+  {% endif %} -->
+{% endform %}

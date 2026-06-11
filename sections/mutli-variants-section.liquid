@@ -1,0 +1,240 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom  }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="multi-variant-wrapper section-{{ section.id }}-padding">
+    <div class="page-width">
+        <div class="section-header">
+            <h2 class="section-header__title">Select Your Favorite Shade</h2>
+        </div>
+        <div class="ml-section-list">
+            <div class="ml-vari-col ml-vari-img">
+              <a href="{{ product.url }}" >
+              <img src="https://cdn.shopify.com/s/files/1/0558/4584/7231/files/new_tone_banner.png?v=1741864070" alt="Charmacy makeup tone banner featuring girl with beauty products.">
+              </a>
+            </div>
+            <div class="ml-vari-col ml-vari-variants">
+                <div class="ml-variants-slider swiper-container">
+                    <div class="swiper-wrapper">
+                      {% comment %}
+                        {% assign product = all_products['7746405564673'] %}
+                        
+                      {% endcomment %}
+                        {% assign product = all_products['cmc-matte-foundation'] %}
+                        {% if product and product.variants.size > 0 %}
+                            {% for variant in product.variants %}
+                                <div class="swiper-slide">
+                                    <a href="{{ product.url }}" class="variant-card">
+                                        <img src="{{ variant.featured_image | img_url: '300x300' }}" alt="{{ variant.title }}">
+                                        <p>{{ variant.title }}</p>
+                                        <!-- <p>Price: {{ variant.price | money }}</p>
+                                        <button class="add-to-cart" data-variant-id="{{ variant.id }}">Add to Cart</button> -->
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p>No variants available.</p>
+                        {% endif %}
+                    </div>
+                    <!-- <div class="swiper-pagination"></div> -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="bottom-btns">
+                      <a class="ff-btn" href="/products/cmc-matte-foundation">View Foundation</a>
+                      <!-- <a class="ff-btn tone" href="#">Find Your Skin Tone</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+  .ff-btn {
+    background: #64112f;
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+    margin-top: 30px;
+    border-radius: 5px;
+    width: fit-content;
+}
+  a.ff-btn.tone {
+    background: #cfa88a;
+}
+  .bottom-btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+  .ff-btn:hover{
+    color: #fff
+  }
+    .ml-vari-col {
+        width: 50%;
+    }
+    .multi-variant-wrapper .swiper-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+    .multi-variant-wrapper .swiper-slide {
+        text-align: center;
+        background: tranparent;
+        /* border: 1px solid #804110; */
+        padding: 15px;
+        border-radius: 10px;
+        background: #e5c4ab;
+    }
+    .variant-card img {
+        max-width: 100%;
+        border-radius: 8px;
+    }
+    .add-to-cart {
+        background: #000;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    .variant-card p {
+    margin: 10px 0 0;
+    color: #341600;
+}
+    .ml-section-list {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .ml-vari-col.ml-vari-img {
+        border-radius: 10px;
+        overflow: hidden;
+        width: 55%;
+    }
+    .ml-vari-col.ml-vari-variants {
+        width: 45%;
+    }
+    .multi-variant-wrapper {
+        /* padding: 0 0 ; */
+          /* background: linear-gradient(180deg, rgba(242, 194, 156, 1) 0%, rgba(255, 241, 230, 1) 100%); */
+    }
+    .ml-title-wrap {
+      text-align: center;
+  }
+  @media(max-width: 768px){
+    .multi-variant-wrapper .swiper-slide{
+      padding: 6px;
+    }
+    .ml-section-list{
+      flex-direction: column;
+    }
+    .ml-vari-col,
+    .ml-vari-col.ml-vari-img,
+    .ml-vari-col.ml-vari-variants{
+      width: 100%;
+    }
+    .ff-btn {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+ 
+
+  }
+</style>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        new Swiper(".ml-variants-slider", {
+          slidesPerView: 3,
+          spaceBetween: 40, // Default for desktop
+          navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+          },
+          pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+          },
+          loop: true,
+           autoplay: {
+              delay: 3000, // Change slide every 3 seconds
+              disableOnInteraction: false, // Continue autoplay after user interaction
+          },
+          breakpoints: {
+              768: {
+                  slidesPerView: 3,
+                  spaceBetween: 30, // Desktop spacing
+              },
+              480: {
+                  slidesPerView: 3,
+                  spaceBetween: 10, // Tablet spacing
+              },
+              320: {
+                  slidesPerView: 3,
+                  spaceBetween: 5, // Mobile spacing
+              }
+          }
+      });
+
+
+        // document.querySelectorAll(".add-to-cart").forEach(button => {
+        //     button.addEventListener("click", function() {
+        //         let variantId = this.getAttribute("data-variant-id");
+        //         fetch('/cart/add.js', {
+        //             method: 'POST',
+        //             headers: {
+        //                 'Content-Type': 'application/json'
+        //             },
+        //             body: JSON.stringify({ id: variantId, quantity: 1 })
+        //         }).then(response => response.json())
+        //           .then(data => alert("Added to cart!"))
+        //           .catch(error => console.error('Error:', error));
+        //     });
+        // });
+    });
+</script>
+
+{% schema %}
+  {
+    "name": "Multi variant section",
+    "settings": [
+      {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "PADDING TOP",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "PADDING BOTTOM",
+      "default": 36
+    }
+    ],
+    "presets": [
+      {
+        "name": "Multi variant section"
+      }
+    ]
+  }
+{% endschema %}

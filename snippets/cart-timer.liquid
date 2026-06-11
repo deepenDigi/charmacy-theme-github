@@ -1,0 +1,56 @@
+<div class="cart-timer appear-animation appear-delay-1">Your cart is reserved for <span class="timer"></span> </div>
+
+<style>
+  .cart-timer {
+    text-align: center;
+    padding: 10px;
+    background: #8080803b;
+}
+</style>
+
+<script>
+let timerInterval;
+
+function startCountdown() {
+    let countdownTime = 30 * 60; // 30 minutes in seconds
+    
+    function updateTimer() {
+        let minutes = Math.floor(countdownTime / 60);
+        let seconds = countdownTime % 60;
+        document.querySelector(".timer").textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        
+        if (countdownTime <= 0) {
+            clearInterval(timerInterval);
+            document.querySelector(".timer").textContent = "Time's up!";
+        } else {
+            countdownTime--;
+        }
+    }
+    
+    clearInterval(timerInterval);
+    timerInterval = setInterval(updateTimer, 1000);
+    updateTimer();
+}
+
+function checkCartAndStartTimer() {
+    fetch('/cart.js')
+        .then(response => response.json())
+        .then(cart => {
+            let cartTimerElement = document.querySelector(".cart-timer");
+            if (cart.item_count > 0) { // Check if products are in the cart
+                cartTimerElement.style.display = "block";
+                startCountdown();
+            } else {
+                clearInterval(timerInterval);
+                document.querySelector(".timer").textContent = "";
+                cartTimerElement.style.display = "none";
+            }
+        });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    checkCartAndStartTimer();
+    document.body.addEventListener("cart:updated", checkCartAndStartTimer);
+});
+
+</script>

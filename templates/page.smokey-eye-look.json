@@ -1,0 +1,54 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "shop_the_collection_xbt3eL": {
+      "type": "shop-the-collection",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "text": "",
+        "image": "shopify://shop_images/Date-Night-Look-banner.jpg",
+        "image_mask": "none",
+        "subtitle": "",
+        "title": "Date Night",
+        "collection": "smokey-eye-look",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "collection_footer_read_more_xkwVAc": {
+      "type": "collection-footer-read-more",
+      "name": "Read more/less",
+      "settings": {
+        "title": "",
+        "content": "{{ page.metafields.custom.product_footer_read_more_read_less_description | metafield_tag }}"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "shop_the_collection_xbt3eL",
+    "collection_footer_read_more_xkwVAc"
+  ]
+}

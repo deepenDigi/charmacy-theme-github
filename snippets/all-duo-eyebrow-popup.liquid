@@ -1,0 +1,305 @@
+<style>
+/* ============================
+   UPSALE POPUP STYLES
+   ============================ */
+
+.upsell-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+}
+
+.upsell-popup.show {
+  display: block;
+}
+
+.upsell-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.upsell-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 22px;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  animation: upsellFadeIn .3s ease-out;
+}
+
+@keyframes upsellFadeIn {
+  from { opacity: 0; transform: translate(-50%, -45%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.upsell-title {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 10px;
+    letter-spacing: -1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.upsell-title-special {
+  text-transform: uppercase;
+  background: #620e24;
+  clip-path: polygon(100% 0%, 95% 50%, 100% 100%, 0 100%, 5% 50%, 0 0);
+  color: #fff;
+  padding: 7px 40px;
+  font-size: 12px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.upsell-product img.popmain-img {
+  max-width: 150px;
+  border-radius: 10px;
+  width: 90%;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+}
+
+.upsell-product p {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: 390px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upsell-product p span.bbb {
+display: inline-block;
+    background: #ffdfe7;
+    padding: 2px 20px;
+    margin-top: 10px;
+    border-radius: 30px;
+    font-size: 16px;
+    letter-spacing: -0.5px;
+}
+
+.pop-price {
+        font-family: 'GOTHAM-2'; 
+  font-size: 20px !important;
+  {% comment %} color: #620e24; {% endcomment %}
+  color: green;
+  font-weight: bolder;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.upsell-add-btn {
+  margin-top: 15px;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.upsell-close {
+position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    z-index: 99;
+}
+
+/* Variant styles */
+.upsell-variants {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.upsell-variant-item {
+  background: #f5f5f5;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.upsell-variant-item input {
+  accent-color: #620e24;
+}
+.variant-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+/* Wrap layout */
+.upsell-variants {
+  display: flex;
+  gap: 0;
+  margin-top: 20px;
+}
+
+/* Variant Box */
+.upsell-variant-box {
+  background: #fafafa;
+  {% comment %} border: 2px solid transparent; {% endcomment %}
+  border-radius: 14px;
+  padding: 4px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.25s ease;
+flex: 0 0 70px;
+gap: 10px;
+}
+
+/* Image */
+.variant-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 6px;
+  margin: 0 !important;
+  border-radius: 12px;
+}
+
+/* Shade Name */
+.variant-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Hide default radio buttons */
+.variant-radio {
+  display: none;
+}
+
+/* Active / Selected state */
+.variant-radio:checked + .variant-image,
+.variant-radio:checked ~ .variant-name,
+.upsell-variant-box:has(.variant-radio:checked) {
+  border-color: #620e24;
+  background: #ffe9ef;
+}
+
+@media(max-width: 768px){
+  .upsell-product img.popmain-img{
+        max-width: 100px;
+        margin: 10px auto;
+  }
+  .upsell-product p{
+        font-size: 12px;
+  }
+  .upsell-product p span.bbb{
+        font-size: 12px;
+  }
+  .upsell-product p span.pop-price {
+    font-size: 15px !important;
+  }
+  .variant-image{
+    width: 55px;
+    height: 55px;
+    border-radius: 5px;
+  }
+  .upsell-variant-box{
+    border-radius: 7px;
+  }
+  .upsell-box{
+      padding: 10px;
+  }
+  .variant-name{
+    font-size: 10px;
+  }
+}
+
+</style>
+<!-- ============================
+     FOUNDATION UPSALE POPUP
+     ============================ -->
+<div id="foundation-upsell-popup" class="upsell-popup">
+  <div class="upsell-overlay"></div>
+
+  <div class="upsell-box">
+    <button class="upsell-close">&times;</button>
+    <h2 class="upsell-title-special">Special Offer With Extra Savings</h2>
+    <h2 class="upsell-title"><span>{{ product.title }}</span> × <span>CMC DUO EYEBROW FILLER & EYELINER SKETCH</span></h2>
+
+    {% comment %} {%- assign foundation_product = all_products['cmc-matte-foundation'] -%} {% endcomment %}
+    {% comment %} {%- assign related = foundation_product.metafields.custom.related_product_for_cart.value -%} {% endcomment %}
+    {%- assign related = all_products['cmc-duo-eyebrow-filler-eyeliner-sketch'] -%}
+
+    {% if related %}
+      <div class="upsell-product">
+        <img src="{{ related.featured_image | img_url: '400x' }}" alt="{{ related.title }}" class="popmain-img">
+
+        <p>
+         <span class="upline"> {{ related.title }} Worth <span style="
+                text-decoration: line-through;
+                text-decoration-color: #980000;
+                text-decoration-thickness: 2px;
+            ">₹{{ related.price | remove: "00" }}</span></span>
+          <span class="bbb">Just <span class="pop-price">₹249</span> with {{ product.title }}</span>
+        </p>
+
+       {% if related.variants %}
+        <div class="upsell-variants">
+          {% for v in related.variants %}
+            {% if v.available %}
+              <label class="upsell-variant-box " data-image="{{ v.featured_image | img_url: '400x' }}">
+                
+                <input type="radio"
+                      name="upsell_variant"
+                      value="{{ v.id }}"
+                      class="variant-radio"
+                      {% if forloop.first %}checked{% endif %}>
+
+                <!-- Variant Image -->
+                <img src="{{ v.featured_image | img_url: '200x' }}"
+                    alt="{{ v.title }}"
+                    class="variant-image">
+
+                <!-- Shade Name -->
+                <span class="variant-name">{{ v.title }}</span>
+
+              </label>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+
+
+        <button class="upsell-add-btn" id="upsellAddBtn">
+          Add to Cart
+        </button>
+      </div>
+    {% endif %}
+  </div>
+</div>

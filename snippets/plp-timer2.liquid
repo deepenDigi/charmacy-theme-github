@@ -1,0 +1,306 @@
+<style>
+    .countdown-container{
+        text-align: center;
+    }
+    .countdown-container h2{
+        margin: 15px 10px;
+        padding: 0px;
+    }
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    font-size:10px;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  line-height: 30px;
+   font-size:0px;
+}
+
+.countdown-item span:first-child {
+  font-size: 25px;
+  /* color: #790f0f; */
+  color: #c54e71;
+}
+.countdown-container h2{
+  color: #bf3f64;
+}
+
+.countdown-item .separator {
+  position: absolute;
+  right: -18px; /* Adjust spacing between numbers and separators */
+  top: 0px; /* Align separator with the middle of the number */
+  
+  font-size: 20px;
+    color: #9C2D41;
+}
+
+.countdown-item .label {
+  font-size: 10px;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.countdown-item:last-child .separator {
+  display: none; /* Hide the separator after the last countdown item */
+}
+
+/* ======= 21-01-25 ===========   */
+.countdown-container {
+    position: relative;
+    padding: 0px 0;
+    overflow: hidden;
+}
+
+.countdown-container:before {
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    /* background: url(https://i.pinimg.com/736x/f5/a1/98/f5a198fd7dce8a792a58d335e04921ce.jpg); */
+    background-size: cover;
+    left: -10px;
+    top: 0;
+    background-repeat: no-repeat;
+    background-position: 10px;
+}
+
+.countdown-container > h2 {
+    position: relative;
+}
+.countdown-container.dd.template-product {
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+ @media(max-width: 768px){
+   .countdown-container:before{
+     background-size: cover;
+   }
+   .countdown-container > h2{
+        font-size: 13px;
+   }
+ } 
+
+  .countdown .countdown-item:first-child {
+    /* display: none; */
+}
+
+  
+  #offer-bg-img{
+    margin-top: -120px;
+  }
+  .countdown-item:first-child {
+    display: none;
+}
+.countdown-container.dd.template-product h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+
+}
+
+
+@media(min-width: 769px){
+  {% if template contains 'product' %}
+  .countdown-container{
+      padding: 0px 0;
+  }  
+  {% endif %}
+
+   #offer-bg-img{
+    margin-top: -135px;
+  }
+}
+body.template-product\.women-shirts .countdown-container,
+body.template-product\.men .countdown-container{
+    display: block;
+visibility: hidden;
+}
+/* body.template-product\.women-shirts .offer-container .offer-slide:first-child,
+body.template-product\.men .offer-container .offer-slide:first-child{
+    display: none;
+} */
+
+
+body.template-collection #offer-bg-img {
+    display: none;
+}
+
+.cl-wrap {
+    background: #fff;
+    padding: 20px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+</style>
+<!-- <br> -->
+<!-- <a href="https://houseofgulab.com/collections/black-friday-sale">
+<img src="https://cdn.shopify.com/s/files/1/0765/3431/7348/files/291124-Hog-banner_1.jpg?v=1732859893" alt="" style="width: 100%; height: 100%;">
+</a> -->
+
+<div class="countdown-container dd template-{{ template }}">
+    <h2>Sale Ends in </h2>
+    <div class="countdown">
+      <div class="countdown-item">
+        <span id="days">00</span>
+        <span class="separator">:</span>
+        <span class="label">DAYS</span>
+      </div>
+      <div class="countdown-item">
+        <span id="hours">00</span>
+        <span class="separator">:</span>
+        <span class="label">HOURS</span>
+      </div>
+      <div class="countdown-item">
+        <span id="minutes">00</span>
+        <span class="separator">:</span>
+        <span class="label">MINUTES</span>
+      </div>
+      <div class="countdown-item">
+        <span id="seconds">00</span>
+        <span class="label">SECONDS</span>
+      </div>
+    </div>
+  </div>
+
+ 
+  
+
+<script>
+// Define an array of target dates in sequence
+const targetDates = [
+  new Date("2026-05-29T23:59:59").getTime(),
+  new Date("2026-05-30T23:59:59").getTime(),
+  new Date("2026-05-31T23:59:59").getTime(),
+  new Date("2026-06-01T23:59:59").getTime(),
+  new Date("2026-06-02T23:59:59").getTime(),
+  new Date("2026-06-03T23:59:59").getTime(),
+  new Date("2026-06-04T23:59:59").getTime(),
+  new Date("2026-06-05T23:59:59").getTime(),
+  new Date("2026-06-06T23:59:59").getTime()
+];
+
+let currentTargetIndex = 0; // Start with the first target date
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const timeRemaining = targetDates[currentTargetIndex] - now;
+
+  if (timeRemaining >= 0) {
+    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = days.toString().padStart(2, "0");
+    document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+    document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+    document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+  } else {
+    currentTargetIndex++; // Move to the next target date
+
+    if (currentTargetIndex < targetDates.length) {
+      updateCountdown(); // Start the next countdown immediately
+    } else {
+      document.querySelector(".countdown-container").innerHTML = "<h2>Countdown Ended!</h2>";
+      clearInterval(timerInterval);
+    }
+  }
+}
+
+const timerInterval = setInterval(updateCountdown, 1000);
+updateCountdown();
+
+
+
+  
+//   // Set the target date and time
+// const targetDate = new Date("2025-01-30T23:59:59").getTime();
+// // const targetDate1 = new Date("2025-01-25T23:59:59").getTime();
+// // const targetDate2 = new Date("2025-01-26T23:59:59").getTime();
+// // const targetDate3 = new Date("2025-01-27T23:59:59").getTime();
+// // const targetDate4 = new Date("2025-01-28T23:59:59").getTime();
+// // const targetDate5 = new Date("2025-01-249T23:59:59").getTime();
+
+// function updateCountdown() {
+//   const now = new Date().getTime();
+//   const timeRemaining = targetDate - now;
+
+//   if (timeRemaining >= 0) {
+//     const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+//     const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//     const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+//     const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+//     document.getElementById("days").textContent = days.toString().padStart(2, "0");
+//     document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+//     document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+//     document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+//   } else {
+//     document.querySelector(".countdown-container").innerHTML =
+//       "<h2>Countdown Ended!</h2>";
+//     clearInterval(timerInterval);
+//   }
+// }
+
+// // Update the countdown every second
+// const timerInterval = setInterval(updateCountdown, 1000);
+
+// // Initial call to avoid delay
+// updateCountdown();
+
+
+// Define the target dates in an array
+// const targetDates = [
+//   new Date("2025-01-24T23:59:59").getTime(),
+//   new Date("2025-01-25T23:59:59").getTime(),
+//   new Date("2025-01-26T23:59:59").getTime(),
+//   new Date("2025-01-27T23:59:59").getTime(),
+//   new Date("2025-01-28T23:59:59").getTime()
+// ];
+
+// let currentTargetIndex = 0;
+
+// function updateCountdown() {
+//   const now = new Date().getTime();
+//   let timeRemaining = targetDates[currentTargetIndex] - now;
+
+//   if (timeRemaining >= 0) {
+//     const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+//     const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//     const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+//     const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+//     document.getElementById("days").textContent = days.toString().padStart(2, "0");
+//     document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+//     document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+//     document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+//   } else {
+//     // Move to the next target date if available
+//     if (currentTargetIndex < targetDates.length - 1) {
+//       currentTargetIndex++;
+//       updateCountdown(); // Immediately update for the next target date
+//     } else {
+//       // No more dates left, end countdown
+//       document.querySelector(".countdown-container").innerHTML =
+//         "<h2>Countdown Ended!</h2>";
+//       clearInterval(timerInterval);
+//     }
+//   }
+// }
+
+// // Update the countdown every second
+// const timerInterval = setInterval(updateCountdown, 1000);
+
+// // Initial call to avoid delay
+// updateCountdown();
+
+  
+
+  </script>
+
+  

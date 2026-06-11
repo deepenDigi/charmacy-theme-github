@@ -1,0 +1,398 @@
+
+
+
+{% comment %} New code 01 {% endcomment %}
+
+{% comment %}
+  Cart Drawer - Recommendations by category (collection) + product type + title (Motion Theme)
+  For collections face-makeup, lip-makeup, eye-makeup-products: show other products from same collection (same category).
+  For other collections: show by same Type OR title contains cart product title.
+  Products with "bundle" in title are never shown. Max 6.
+
+  SETUP for no-refresh: Use inside a SECTION and pass section: {% render 'temp', section: section %}
+{% endcomment %}
+
+  {%- if section -%}<div class="cart-drawer-same-category-wrapper" data-cart-same-category data-section-id="{{ section.id }}">{%- endif -%}
+  {%- if cart.item_count > 0 -%}
+    {%- assign cart_ids_str = '' -%}
+    {%- for item in cart.items -%}
+      {%- assign cart_ids_str = cart_ids_str | append: '|' | append: item.product_id | append: '|' -%}
+    {%- endfor -%}
+
+    {%- assign shown_ids = '' -%}
+    {%- assign max_products = 6 -%}
+    {%- assign shown_count = 0 -%}
+    {%- assign has_products = false -%}
+
+    {%- for item in cart.items -%}
+      {%- for collection in item.product.collections -%}
+        {%- assign collection_handle = collection.handle -%}
+        {%- assign is_makeup_category = false -%}
+        {%- if collection_handle == 'face-makeup' or collection_handle == 'lip-makeup' or collection_handle == 'eye-makeup-products' -%}
+          {%- assign is_makeup_category = true -%}
+        {%- endif -%}
+        {%- for product in collection.products -%}
+          {%- assign product_id_str = '|' | append: product.id | append: '|' -%}
+          {%- assign product_title_lower = product.title | downcase -%}
+          {%- assign is_bundle = false -%}
+          {%- if product_title_lower contains 'bundle' -%}
+            {%- assign is_bundle = true -%}
+          {%- endif -%}
+          {%- assign type_match = false -%}
+          {%- if item.product.type != blank and product.type == item.product.type -%}
+            {%- assign type_match = true -%}
+          {%- endif -%}
+          {%- assign cart_title_lower = item.product.title | downcase -%}
+          {%- assign title_match = false -%}
+          {%- if product_title_lower contains cart_title_lower -%}
+            {%- assign title_match = true -%}
+          {%- endif -%}
+          {%- assign show_product = false -%}
+          {%- if is_makeup_category and is_bundle == false -%}
+            {%- assign show_product = true -%}
+          {%- elsif is_makeup_category == false and is_bundle == false and title_match or is_makeup_category == false and is_bundle == false and type_match -%}
+            {%- assign show_product = true -%}
+          {%- endif -%}
+          {%- unless cart_ids_str contains product_id_str or shown_ids contains product_id_str or product.available == false or show_product == false -%}
+            {%- assign has_products = true -%}
+            {%- break -%}
+          {%- endunless -%}
+        {%- endfor -%}
+        {%- if has_products -%}{%- break -%}{%- endif -%}
+      {%- endfor -%}
+      {%- if has_products -%}{%- break -%}{%- endif -%}
+    {%- endfor -%}
+
+    {%- if has_products -%}
+      <div class="cart-drawer-upsell" data-cart-upsell>
+        <div class="cart-drawer-upsell__header">
+          <h3 class="cart-drawer-upsell__title">Use it With:</h3>
+        </div>
+
+        <div class="cart-drawer-upsell__products">
+          {%- for item in cart.items -%}
+            {%- for collection in item.product.collections -%}
+              {%- assign collection_handle = collection.handle -%}
+              {%- assign is_makeup_category = false -%}
+              {%- if collection_handle == 'face-makeup' or collection_handle == 'lip-makeup' or collection_handle == 'eye-makeup-products' -%}
+                {%- assign is_makeup_category = true -%}
+              {%- endif -%}
+              {%- for product in collection.products -%}
+                {%- assign product_id_str = '|' | append: product.id | append: '|' -%}
+                {%- assign product_title_lower = product.title | downcase -%}
+                {%- assign is_bundle = false -%}
+                {%- if product_title_lower contains 'bundle' -%}
+                  {%- assign is_bundle = true -%}
+                {%- endif -%}
+                {%- assign type_match = false -%}
+                {%- if item.product.type != blank and product.type == item.product.type -%}
+                  {%- assign type_match = true -%}
+                {%- endif -%}
+                {%- assign cart_title_lower = item.product.title | downcase -%}
+                {%- assign title_match = false -%}
+                {%- if product_title_lower contains cart_title_lower -%}
+                  {%- assign title_match = true -%}
+                {%- endif -%}
+                {%- assign show_product = false -%}
+                {%- if is_makeup_category and is_bundle == false -%}
+                  {%- assign show_product = true -%}
+                {%- elsif is_makeup_category == false and is_bundle == false and title_match or is_makeup_category == false and is_bundle == false and type_match -%}
+                  {%- assign show_product = true -%}
+                {%- endif -%}
+                {%- unless cart_ids_str contains product_id_str or shown_ids contains product_id_str or product.available == false or show_product == false -%}
+                  {%- if shown_count < max_products -%}
+                    {%- assign current_variant = product.selected_or_first_available_variant -%}
+                    {%- assign shown_ids = shown_ids | append: product_id_str -%}
+                    {%- assign shown_count = shown_count | plus: 1 -%}
+                    {% unless product.id == 8678303334657 or product.id == 8623393243393 %}
+                    <div class="cart-drawer-upsell__product" data-product-id="{{ product.id }}">
+                      <div class="cart-drawer-upsell__product-image">
+                        {%- if product.featured_image -%}
+                          <img
+                            src="{{ product.featured_image | image_url: width: 200 }}"
+                            alt="{{ product.featured_image.alt | escape }}"
+                            loading="lazy"
+                            width="200"
+                            height="200"
+                          >
+                        {%- else -%}
+                          {{ 'product-1' | placeholder_svg_tag: 'placeholder' }}
+                        {%- endif -%}
+                      </div>
+
+                      <div class="cart-drawer-upsell__product-info">
+                        <h4 class="cart-drawer-upsell__product-title">{{ product.title }}</h4>
+                        <div class="cart-drawer-upsell__product-price">
+                          {%- if product.compare_at_price > product.price -%}
+                            <span class="price--on-sale">
+                              {{ current_variant.price | money | remove : '.00' }}
+                            </span>
+                            <span class="price--compare">
+                              {{ current_variant.compare_at_price | money | remove : '.00' }}
+                            </span>
+                          {%- else -%}
+                            <span class="price--regular">
+                              {{ current_variant.price | money | remove : '.00' }}
+                            </span>
+                          {%- endif -%}
+                        </div>
+                      </div>
+
+                      <a
+                        href="{{ product.url }}"
+                        class="cart-drawer-upsell__product-link"
+                        data-product-handle="{{ product.handle }}"
+                        data-quick-shop-trigger
+                      >
+                        <button
+                          type="button"
+                          class="cart-drawer-upsell__add-btn"
+                          data-add-to-cart-direct
+                          data-variant-id="{{ current_variant.id }}"
+                          data-product-title="{{ product.title }}"
+                          data-product-handle="{{ product.handle }}"
+                          aria-label="Add {{ product.title }} to cart"
+                        >
+                          <span>Add</span>
+                        </button>
+                      </a>
+                    </div>
+                    {% endunless %}
+                  {%- endif -%}
+                {%- endunless -%}
+              {%- endfor -%}
+            {%- endfor -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+  {%- if section -%}</div>{%- endif -%}
+
+  <style>
+    .cart-drawer-upsell {
+      {% comment %} margin-top: 2rem;
+      padding-top: 2rem; {% endcomment %}
+      border-top: 1px solid rgba(var(--color-foreground), 0.06);
+      margin-top: auto;
+    }
+
+    .cart-drawer-upsell__header {
+      margin-bottom: 10px;
+      {% comment %} margin-left: 10px; {% endcomment %}
+    }
+
+    .cart-drawer-upsell__title {
+      font-size: 16px;
+      font-weight: 400;
+      margin: 0;
+      letter-spacing: -0.01em;
+      color: rgba(var(--color-foreground), 0.8);
+    }
+
+    .cart-drawer-upsell__products {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 0.5rem;
+      margin: 0 ;
+      {% comment %} margin-left: 10px; {% endcomment %}
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .cart-drawer-upsell__products::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cart-drawer-upsell__product {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      flex: 0 0 calc((100% - 1rem) / 2.5);
+      min-width: 0;
+      scroll-snap-align: start;
+      max-width: calc((100% - 1rem) / 3);
+      border: 1px solid #ddd;
+      padding: 5px;
+      height: 200px;
+    }
+
+    .cart-drawer-upsell__product-link {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: auto;
+    }
+
+    .cart-drawer-upsell__product-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+      border-radius: 0.6rem;
+      background: rgba(var(--color-foreground), 0.02);
+    }
+
+    .cart-drawer-upsell__product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cart-drawer-upsell__product-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .cart-drawer-upsell__product-title {
+      font-size: 10px;
+      font-weight: 400;
+      margin: 0;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      color: rgba(var(--color-foreground), 0.8);
+      letter-spacing: -0.005em;
+    }
+
+    .cart-drawer-upsell__product-price {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(var(--color-foreground), 0.9);
+      letter-spacing: -0.01em;
+    }
+
+    .cart-drawer-upsell__product-price .price--on-sale {
+      color: rgb(var(--color-base-accent-1));
+    }
+
+    .cart-drawer-upsell__product-price .price--compare {
+      text-decoration: line-through;
+      opacity: 0.5;
+      font-size: 12px;
+      margin-left: 2px;
+      font-weight: 400;
+    }
+
+    .cart-drawer-upsell__add-btn {
+      width: fit-content;
+      padding: 2px;
+      font-size: 10px;
+      width: 100%;
+      text-transform: uppercase;
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+      pointer-events: auto;
+      position: relative;
+      z-index: 1;
+      border-radius: 5px;
+      border: none;
+      background: rgb(100, 17, 47);
+      color: rgb(var(--color-button-text, 255 255 255));
+      letter-spacing: -0.005em;
+    }
+
+    .cart-drawer-upsell__add-btn:hover {
+      opacity: 0.9;
+    }
+
+    .cart-drawer-upsell__add-btn:active {
+      opacity: 0.8;
+    }
+
+    .cart-drawer-upsell__add-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 749px) {
+      {% comment %} .cart-drawer-upsell {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+      } {% endcomment %}
+
+      .cart-drawer-upsell__title {
+        font-size: 16px;
+      }
+
+      .cart-drawer-upsell__product {
+        max-width: calc((100% - 1rem) / 2);
+        flex: 0 0 calc((100% - 1rem) / 2);
+        padding: 5px;
+      }
+
+      .cart-drawer-upsell__product-title {
+        font-size: 10px;
+      }
+
+      .cart-drawer-upsell__product-price {
+        font-size: 12px;
+      }
+
+      .cart-drawer-upsell__add-btn {
+        {% comment %} padding:7px; {% endcomment %}
+        font-size: 10px;
+      }
+    } 
+
+  </style>
+
+  <script>
+  (function() {
+    var wrapper = document.querySelector('[data-cart-same-category]');
+    if (!wrapper) return;
+    var sectionId = wrapper.getAttribute('data-section-id');
+    if (!sectionId) return;
+
+    function refreshSameCategory() {
+      var w = document.querySelector('[data-cart-same-category]');
+      if (!w) return;
+      var sid = w.getAttribute('data-section-id');
+      if (!sid) return;
+      fetch((window.Shopify && window.Shopify.routes && window.Shopify.routes.root ? window.Shopify.routes.root : '/') + '?sections=' + encodeURIComponent(sid))
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          var html = data.sections && data.sections[sid];
+          if (html && w.parentNode) {
+            w.outerHTML = html;
+            document.dispatchEvent(new CustomEvent('cart-drawer-same-category:refreshed'));
+          }
+        })
+        .catch(function() {});
+    }
+
+    if (!window._cartSameCategoryListenersAdded) {
+      window._cartSameCategoryListenersAdded = true;
+      document.addEventListener('cart:updated', refreshSameCategory);
+      document.addEventListener('cart:refresh', refreshSameCategory);
+      document.addEventListener('cart:change', refreshSameCategory);
+      document.addEventListener('theme:cart:updated', refreshSameCategory);
+      document.body.addEventListener('click', function(e) {
+        var cartTrigger = e.target.closest('a[href="/cart"], [href*="/cart"], [data-cart-drawer], [data-cart-icon], .cart-drawer__trigger, .header__icon--cart');
+        if (cartTrigger) setTimeout(refreshSameCategory, 400);
+      });
+    }
+    window.refreshCartDrawerSameCategory = refreshSameCategory;
+  })();
+
+
+
+
+
+
+  </script>
+
+
+{% comment %} New code 02 {% endcomment %}
+

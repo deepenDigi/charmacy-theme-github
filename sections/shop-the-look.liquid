@@ -1,0 +1,598 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+{%- liquid
+  assign isEmpty = true
+
+  if section.blocks.size > 0
+    assign isEmpty = false
+  endif
+-%}
+
+{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
+<div class="page-full section-{{ section.id }}-padding shop-the-look">
+  {%- if section.settings.title != blank -%}
+    <div class="section-header">
+      <h2 class="section-header__title">{{ section.settings.title }}</h2>
+    </div>
+  {% endif %}
+
+  <div class="grid{% if section.settings.enable_gutter %} grid--small-gutters{%else%} grid--no-gutters{% endif %} category_container {% if section.settings.enable_slider %}swiper lookSlider{% endif %}">
+  
+  {% if section.settings.enable_slider %}
+    <div class="swiper-wrapper">
+  {% endif %}
+      
+    {%- for block in section.blocks -%}
+      {%- liquid
+        
+        assign card_title = block.settings.card_title
+        assign card_image = block.settings.card_image
+        assign button_url = block.settings.button_url         
+         
+        assign fallback = blank
+        case block.settings.size
+          when 'square-small'
+            assign grid_item_width = 'medium-up--one-quarter small--one-half card--square-small'
+            assign sizeVariable = 'medium-up--one-quarter'
+            assign fallback = 'small--one-half'
+         when 'medium'
+            assign grid_item_width = 'medium-up--one-third small--one-third collection--medium'
+            assign sizeVariable = 'medium-up--one-quarter'
+            assign fallback = 'small--one-third'
+          when 'wide'
+            assign grid_item_width = 'medium-up--one-half collection--wide'
+            assign sizeVariable = 'medium-up--one-half'
+          when 'tall'
+            assign grid_item_width = 'medium-up--one-quarter small--one-half collection--tall'
+            assign sizeVariable = 'medium-up--one-quarter'
+            assign fallback = 'small--one-half'
+          when 'square-large'
+            assign grid_item_width = 'medium-up--one-half collection--square-large'
+            assign sizeVariable = 'medium-up--one-half'
+        endcase
+         
+          assign background_position = block.settings.focal_point
+
+          assign gridView = grid_item_width
+          assign sizeVariable = sizeVariable
+          assign fallback = fallback
+      
+
+         if card_title == blank
+          assign card_title = '' 
+        else
+          assign card_title = card_title
+        endif
+      
+        if card_image
+          assign card_image = card_image
+        else
+          assign card_image = collection.products.first.featured_media.preview_image
+        endif
+         
+        unless background_position
+          assign background_position = 'top center'
+        endunless
+         
+          assign img = card_image
+          assign classes = classes | escape
+          assign sizes = sizes         
+          assign alt = alt | escape
+                      
+          if loading == 'eager'
+            assign loading = 'eager'
+          elsif loading == false
+            assign loading = 'eager'
+            assign preload = true
+          else
+            assign loading = 'lazy'
+            assign preload = false
+          endif
+        
+          if sizes == blank and sizeVariable != blank
+            capture sizes
+              render 'sizes-explicit', sizeVariable: sizeVariable, fallback: fallback
+            endcapture
+          endif
+        
+          if sizes == blank
+            assign sizes = '100vw'
+          else
+            assign sizes = sizes
+          endif
+        
+          if alt == blank
+            assign alt = img.alt | default: ''
+          endif
+        
+          if animation == blank
+            assign animation = 'image-fade-in'
+          else
+            assign animation = animation
+          endif
+        
+          # Add a class to the image so we can target theme images
+          assign classes = classes | append: ' image-element'         
+      -%}
+      
+      <div class="grid__item {{ gridView }} skrim__item {% if section.settings.enable_slider %}swiper-slide{% endif %}" data-aos="skrim__animation" {{ block.shopify_attributes }}>
+        {% if button_url %}
+          <a href="{{ button_url }}" class="skrim__link skrim__item-content">
+        {% else %}
+          <div class="skrim__link skrim__item-content">
+      {% endif %}
+          
+          {%- if  card_image == blank -%}
+            {% capture placeholder %}collection-{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+            <div class="skrim__overlay grid__image">{{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}</div>
+          {%- else -%}
+            <div class="skrim__overlay grid__image">
+              {% assign indicator = block.id %}
+              {% if block == blank %}
+                {% assign indicator = collection.id %}
+              {% endif %}
+      
+              {% style %}
+                .grid__image--{{ indicator }}{
+                  object-position: {{ background_position }};
+                }
+              {% endstyle %}
+      
+              {% assign classes = 'image-fit grid__image--' | append: indicator %}
+
+              
+              
+              <image-element data-aos="{{ animation }}" data-aos-offset="150">
+              
+              {% if type == blank %}
+                {% if widths != blank %}
+                  {%- if img_width == blank -%}
+                    {%- assign img_width = widths | split: ',' | last | strip -%}
+                  {%- endif -%}
+                  {%- if img_tag_width == blank -%}
+                    {%- assign img_tag_width = img_width | strip -%}
+                  {%- endif -%}
+                  {%- if img_tag_height == blank -%}
+                    {%- assign img_tag_height = img_tag_width | divided_by: img.aspect_ratio -%}
+                  {%- endif -%}
+                  {{ img
+                    | image_url: width: img_width, format: format
+                    | image_tag: preload: preload,
+                                height: img_tag_height,
+                                width: img_tag_width,
+                                class: classes,
+                                loading: loading,
+                                alt: alt,
+                                sizes: sizes,
+                                widths: widths,
+                                itemprop: itemprop,
+                                role: role,
+                                aria-hidden: ariaHidden,
+                                style: style
+                  }}
+                {% else %}
+                  {%- if img_width == blank -%}
+                    {%- assign img_width = img.width | times: 2 | round -%}
+                  {%- endif -%}
+                  {%- if img_tag_width == blank -%}
+                    {%- assign img_tag_width = img_width -%}
+                  {%- endif -%}
+                  {%- if img_tag_height == blank -%}
+                    {%- assign img_tag_height = img_tag_width | divided_by: img.aspect_ratio -%}
+                  {%- endif -%}
+                  {{ img
+                    | image_url: width: img_width, format: format
+                    | image_tag: preload: preload,
+                                height: img_tag_height,
+                                width: img_tag_width,
+                                class: classes,
+                                loading: loading,
+                                alt: alt,
+                                sizes: sizes,
+                                itemprop: itemprop,
+                                role: role,
+                                aria-hidden: ariaHidden,
+                                style: style
+                  }}
+                {% endif %}
+              {% elsif type == 'photoswipe' %}
+                {% assign widthsArray = widths | split: ',' %}
+                {%- capture img_widths -%}
+                  {% for width in widthsArray %}
+                    {{ media | image_url: width: width }} {{ width | append: 'w' }},
+                  {% endfor %}
+                {%- endcapture -%}
+                {% assign img_width = widthsArray | last | strip %}
+                {% assign img_height = img_width | divided_by: img.aspect_ratio %}
+                <img src="{{ img | image_url: width: img_width }}"
+                  width="{{ img_width }}"
+                  height="{{ img_height }}"
+                  class="{{ classes }}"
+                  loading="{{ loading }}"
+                  alt="{{ alt }}"
+                  srcset="{{ img_widths }}"
+                  data-photoswipe-src="{{ img | image_url: width: product_zoom_size, format: format }}"
+                  data-photoswipe-width="{{ media_width }}"
+                  data-photoswipe-height="{{ media_height }}"
+                  data-index="{{ loopIndex }}"
+                  sizes="{{ sizes }}"
+                >
+              {% else %}
+                {% if host == 'theme' %}
+                  {% assign img_src = asset | asset_url %}
+                {% else %}
+                  {% assign img_src = asset | shopify_asset_url %}
+                {% endif %}
+                {%- capture img_widths -%}
+                  {% if host == 'theme' %}
+                    {{ asset | asset_img_url: '360x' }} 360w,
+                    {{ asset | asset_img_url: '540x' }} 540w,
+                    {{ asset | asset_img_url: '720x' }} 720w,
+                    {{ asset | asset_img_url: '900x' }} 900w,
+                    {{ asset | asset_img_url: '1080x' }} 1080w
+                  {% endif %}
+                {%- endcapture -%}
+                <img src="{{ img_src }}"
+                     width="{{ img_width }}"
+                     height="{{ img_height }}"
+                     class="{{ classes }}"
+                     loading="{{ loading }}"
+                     alt="{{ alt }}"
+                     {% if img_widths != blank %}srcset="{{ img_widths }}"{% endif %}
+                     {% if data-name and data-value %}data-{{ data-name }}="{{ data-value }}"{% endif %}
+                     sizes="{{ sizes }}"
+                >
+              {% endif %}
+              
+              </image-element>
+              
+            </div>
+          {%- endif -%}
+      
+          <div class="skrim__title">
+            <div class="skrim__underline-me">
+              {{ card_title }}
+            </div>
+          </div>
+        {% if button_url %}
+          </a>
+        {% else %}
+          </div>
+        {% endif %}
+      </div>      
+    {%- endfor -%}
+
+  {% if section.settings.enable_slider %}
+    </div>
+    <div class="swiper-button-next swiper-button-next-first">
+       <svg class="icon" viewBox="0 0 100 100">
+         <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path>
+       </svg>
+     </div>
+    <div class="swiper-button-prev swiper-button-next-second">
+     <svg class="icon" viewBox="0 0 100 100">
+         <path d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z" class="arrow" transform="translate(100, 100) rotate(180) "></path>
+       </svg>
+   </div>
+  {% endif %}
+            
+    {% if isEmpty %}
+      <div class="page-width">
+        <div class="grid">
+          <div class="grid__item">
+            <div class="rte">
+              {{ 'home_page.onboarding.no_content' | t }}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+</div>
+
+{%- if section.settings.divider -%}</div>{%- endif -%}
+
+<script>
+  // function initializeSwiper() {}
+    var swiper3 = new Swiper(".lookSlider", {
+      slidesPerView: 4,
+      // freeMode: true,
+      loop: false,
+      allowTouchMove: true,
+      // autoplay: {
+      //   delay: 1,
+      //   disableOnInteraction: false,
+      // },
+      breakpoints: {
+        0: {
+          slidesPerView: 2,
+        },
+        769: {
+          slidesPerView: 3,
+        },
+        1200: {
+          slidesPerView: 4,
+        }
+      },
+      // speed: 9000,
+     navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  
+  // var count = 0;
+  // var checkExist = setInterval(() => {
+  //   count=count+1;
+  //   if (document.querySelector('.whatmore-events-carousel')) {
+  //     setTimeout(()=>{
+  //       initializeSwiper();
+  //     },0)
+  //     clearInterval(checkExist);
+  //   }else if(count == 30){
+  //     setTimeout(()=>{
+  //       initializeSwiper();
+  //     },0)       
+  //     clearInterval(checkExist);
+  //   }
+  // }, 100); 
+  
+</script>
+
+{% style %}
+  .lookSlider .swiper-button-next-second svg {
+    transform: rotate(180deg);
+  }
+  .lookSlider .swiper-button-next-first, .lookSlider .swiper-button-next-second {
+    background: #1a1a1a;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  .lookSlider .swiper-button-disabled{
+     display: none;
+  }
+  .lookSlider .swiper-button-next-first svg, .lookSlider .swiper-button-next-second svg {
+    fill: #fff;
+    width: 12px;
+  }
+  .lookSlider .swiper-button-next-first{
+    right: 0;
+  }
+  .lookSlider .swiper-button-next-second {
+    left: 0;
+  }
+  .lookSlider .swiper-button-prev.swiper-button-next-second {
+    margin-left: 7px;
+  }
+  .lookSlider .grid__item .skrim__link {
+      border-radius: 10px;
+  }
+  .lookSlider img {
+    aspect-ratio: 1 / 1.3;
+  }
+
+  @media screen and (max-width:767px){
+    .lookSlider .swiper-button-next-first, .lookSlider .swiper-button-next-second {
+      width: 33px;
+      height: 33px;
+    }
+    .lookSlider .swiper-button-next-first svg, .lookSlider .swiper-button-next-second svg {
+      width: 10px;
+    }
+  }
+  
+  {% if section.settings.bg_image != blank or section.settings.bg_color != blank %}
+   #shopify-section-{{ section.id }}{
+     {% if section.settings.bg_image != blank %} background: url({{ section.settings.bg_image | image_url  }}) no-repeat; {% endif %}
+     {% unless section.settings.bg_image != blank %} background-color: {{ section.settings.bg_color }};{% endunless %}
+      background-size: cover;
+      background-position: center;
+    }
+  {% endif %}
+{% endstyle %}
+            
+<style>
+  .section-header__title{
+    font-size: var(--typeHeaderSize);
+    }
+  .lookSlider.swiper-free-mode>.swiper-wrapper {
+    transition-timing-function: linear;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Shop the look",
+  "class": "index-section shop__the__look",
+  "max_blocks": 15,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.featured-collections.settings.title.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:sections.featured-collections.settings.divider.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_gutter",
+      "label": "t:sections.featured-collections.settings.enable_gutter.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider",
+      "label": "Show as slider",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Customize colors",
+      "info": "Customization of background images and colors"
+    },
+    {
+      "id": "bg_image",
+      "type": "image_picker",
+      "label": "Background Image"
+    },
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background Color"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "PADDING TOP",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "PADDING BOTTOM",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shop the look",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "t:sections.featured-collections.blocks.collection.name",
+      "settings": [
+        {
+          "id": "card_title",
+          "type": "text",
+          "label": "Collection title"
+        },
+        {
+          "id": "card_image",
+          "type": "image_picker",
+          "label": "Collection Image"
+        },
+        {
+          "id": "button_url",
+          "type": "url",
+          "label": "Collection button url"
+        },
+        {
+          "type": "select",
+          "id": "focal_point",
+          "label": "t:sections.featured-collections.blocks.collection.settings.focal_point.label",
+          "info": "t:sections.featured-collections.blocks.collection.settings.focal_point.info",
+          "default": "center center",
+          "options": [
+            {
+              "value": "20% 0",
+              "label": "t:sections.featured-collections.blocks.collection.settings.focal_point.options.20_0.label"
+            },
+            {
+              "value": "top center",
+              "label": "t:sections.featured-collections.blocks.collection.settings.focal_point.options.top_center.label"
+            },
+            {
+              "value": "80% 0",
+              "label": "t:sections.featured-collections.blocks.collection.settings.focal_point.options.80_0.label"
+            },
+            {
+              "value": "20% 50%",
+              "label": "t:sections.featured-collections.blocks.collection.settings.focal_point.options.20_50.label"
+            },
+            {
+              "value": "center center",
+              "label": "t:sections.featured-collections.blocks.collection.settings.focal_point.options.center_center.label"
+            },
+            {
+              "value": "80% 50%",
+              "label": "t:sections.featured-collections.blocks.collection.settings.focal_point.options.80_50.label"
+            },
+            {
+              "value": "20% 100%",
+              "label": "t:sections.featured-collections.blocks.collection.settings.focal_point.options.20_100.label"
+            },
+            {
+              "value": "bottom center",
+              "label": "t:sections.featured-collections.blocks.collection.settings.focal_point.options.bottom_center.label"
+            },
+            {
+              "value": "80% 100%",
+              "label": "t:sections.featured-collections.blocks.collection.settings.focal_point.options.80_100.label"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "t:sections.featured-collections.blocks.collection.settings.size.label",
+          "default": "square-small",
+          "options": [
+            {
+              "label": "t:sections.featured-collections.blocks.collection.settings.size.options.square-small.label",
+              "value": "square-small"
+            },
+            {
+              "label": "Medium(one third)",
+              "value": "medium"
+            },
+            {
+              "label": "t:sections.featured-collections.blocks.collection.settings.size.options.wide.label",
+              "value": "wide"
+            },
+            {
+              "label": "t:sections.featured-collections.blocks.collection.settings.size.options.tall.label",
+              "value": "tall"
+            },
+            {
+              "label": "t:sections.featured-collections.blocks.collection.settings.size.options.square-large.label",
+              "value": "square-large"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

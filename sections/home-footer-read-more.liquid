@@ -1,0 +1,92 @@
+{%- if section.settings.content != blank -%}
+  <div class="page-full readMoreContainer">
+    {%- if section.settings.title != blank -%}
+      <div class="section-header">
+        <h3 class="header">{{ section.settings.title }}</h3>
+      </div>
+    {%- endif -%}
+    {% assign content = section.settings.content %}
+    <div class="meta_content_wrapper">
+      <div class="meta_content text-center">
+        {{ content }}
+      </div>
+      <div class="text-center">
+        <span class="moreless-button">Read more</span>
+      </div>
+    </div>
+  </div>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const contentDiv = document.querySelector('.meta_content');
+  
+  // Select all headings and paragraphs within the content div
+  const headings = contentDiv.querySelectorAll('h1, h2, h3, h4, h5, h6');
+  const paragraphs = contentDiv.querySelectorAll('p');
+
+  // Determine the first heading and first paragraph
+  const firstHeading = headings[0] ? headings[0].outerHTML : '';
+  const firstParagraph = paragraphs[0] ? paragraphs[0].outerHTML : '';
+
+  // If we have more than one paragraph, hide the rest of the content
+  if (paragraphs.length > 1) {
+    // Gather the rest of the content after the first paragraph
+    const restContent = Array.from(contentDiv.children)
+      .slice(2) // Skip the first heading or paragraph
+      .map(el => el.outerHTML)
+      .join('');
+
+    // Update contentDiv to show the first heading and paragraph initially
+    contentDiv.innerHTML = `
+      <div class="wrappedElementsTop">${firstHeading}${firstParagraph}</div>
+      <div class="wrappedElementsBottom" style="display:none;">${restContent}</div>
+    `;
+
+    // Add read more/less functionality
+    const moreButton = document.querySelector('.moreless-button');
+    moreButton.addEventListener('click', function() {
+      const bottomContent = document.querySelector('.wrappedElementsBottom');
+      if (bottomContent.style.display === 'none') {
+        bottomContent.style.display = 'block';
+        this.textContent = 'Read less';
+      } else {
+        bottomContent.style.display = 'none';
+        this.textContent = 'Read more';
+      }
+    });
+  } else {
+    // Hide the "Read more" button if there is only one paragraph
+    const moreButton = document.querySelector('.moreless-button');
+    if (moreButton) {
+      moreButton.style.display = 'none';
+    }
+  }
+});
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Read more/less",
+  "class": "metaContent",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Read more/less"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

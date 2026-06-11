@@ -1,0 +1,1004 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "featured_product_CDJRKz": {
+      "type": "featured-product",
+      "blocks": {
+        "variant_picker_qJVtHj": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": false
+          }
+        },
+        "buy_buttons_9tVnaK": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true,
+            "show_gift_card_recipient": false
+          }
+        }
+      },
+      "block_order": [
+        "variant_picker_qJVtHj",
+        "buy_buttons_9tVnaK"
+      ],
+      "custom_css": [
+        "#ProductSection-template--19234415902977__featured_product_CDJRKz {display: none;}"
+      ],
+      "settings": {
+        "featured_product": "cmc-360-deg-volume-mascara",
+        "divider": false,
+        "sku_enable": false,
+        "image_size": "small",
+        "product_zoom_enable": false,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "enable_video_looping": false,
+        "product_video_style": "muted"
+      }
+    },
+    "quick_link_slider_VewCzU": {
+      "type": "quick-link-slider",
+      "blocks": {
+        "logo_image_868hGn": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/009_5_may.png",
+            "title": "Kiss Drip Lip Gloss",
+            "link": "shopify://products/cmc-kiss-drip-lip-gloss"
+          }
+        },
+        "logo_image_9HL33z": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/banner_3_fcdc4c58-2d4c-4f07-849e-e8d16e0d867e.png",
+            "title": "Glow Drip",
+            "link": "shopify://products/cmc-glow-drip"
+          }
+        },
+        "logo_image_Cgh9LG": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/brush-drip.png",
+            "title": "Blush Drip",
+            "link": "shopify://products/cmc-blush-drip"
+          }
+        },
+        "logo_image_3htWbf": {
+          "type": "logo_image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/website_image_2_1x_1.jpg",
+            "title": "Buy 1 Get 1",
+            "link": "shopify://collections/b2g1-collection"
+          }
+        },
+        "logo_image_yxc3aN": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/banner_1_30a8e32e-1e77-4e5f-9010-8f1db166ee10.png",
+            "title": "Setting & Fixing Spray",
+            "link": "shopify://products/cmc-s3-setting-and-fixing-spray"
+          }
+        },
+        "logo_image_FYz3Lb": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2025-07-23_at_17.15.58.jpg",
+            "title": "Beauty Bundle",
+            "link": "shopify://collections/beauty-bundle"
+          }
+        },
+        "logo_image_VKrTNi": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/1-ci.png",
+            "title": "Matte Foundation",
+            "link": "shopify://products/cmc-matte-foundation"
+          }
+        },
+        "logo_image_j747bw": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/3-ci.png",
+            "title": "diamond rush lipstick",
+            "link": "shopify://products/cmc-diamond-rush-lipstick"
+          }
+        },
+        "logo_image_qmkUqH": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/2-ci.png",
+            "title": "Liquid Lipstick",
+            "link": "shopify://products/cmc-stunning-longstay-liquid-lip"
+          }
+        },
+        "logo_image_xjDJLf": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/cir-7.jpg",
+            "title": "CONCEALER",
+            "link": "shopify://products/cmc-concealer"
+          }
+        },
+        "logo_image_JhxVfB": {
+          "type": "logo_image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/cir-5.jpg",
+            "title": "EYE MASCARA",
+            "link": "shopify://collections/mascara-makeup"
+          }
+        },
+        "logo_image_KYYWkf": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/cir-6.jpg",
+            "title": "STAR DUST HIGHLIGHTER",
+            "link": "shopify://products/cmc-star-dust-highlighters"
+          }
+        },
+        "logo_image_c49Y3e": {
+          "type": "logo_image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/4-21.jpg",
+            "title": "All Products",
+            "link": "shopify://collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "logo_image_868hGn",
+        "logo_image_9HL33z",
+        "logo_image_Cgh9LG",
+        "logo_image_3htWbf",
+        "logo_image_yxc3aN",
+        "logo_image_FYz3Lb",
+        "logo_image_VKrTNi",
+        "logo_image_j747bw",
+        "logo_image_qmkUqH",
+        "logo_image_xjDJLf",
+        "logo_image_JhxVfB",
+        "logo_image_KYYWkf",
+        "logo_image_c49Y3e"
+      ],
+      "custom_css": [
+        ".customLogoSlider .logoWrapperLink span.logoTitle {font-size: 10px;}",
+        ".index-section:has(.customLogoSlider) {padding: 0px;}"
+      ],
+      "settings": {
+        "title": "",
+        "logo_opacity": 100,
+        "divider": false,
+        "enable_slider": true,
+        "bg_color": "#ffffff",
+        "text_color": "#1c1d1d",
+        "font_size": 14,
+        "mobile_font_size": 12
+      }
+    },
+    "slideshow_TfxxMi": {
+      "type": "slideshow",
+      "blocks": {
+        "image_krL44t": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "https://charmacyworld.com/products/kriti-special",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/004-charmacy-valentine-kriti-banner-31-jan.png",
+            "image_mobile": "shopify://shop_images/004-charmacy-valentine-kriti-banner-31-jan-mobile-view.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "image_apRwHr": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "https://charmacyworld.com/collections/allinsite",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/003-_-26-may_jpg.jpg",
+            "image_mobile": "shopify://shop_images/003-_-29-may-_mobile-view-banner_jpg.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "image_PNtVDN": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify://products/cmc-kiss-drip-lip-gloss",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/Kiss_drip_Banners_website_3d1832cf-aef7-4ee3-9e34-0375a335ffc6.jpg",
+            "image_mobile": "shopify://shop_images/Kiss_drip_Banners_MOBILE_80a0b25d-3756-4992-81d0-db5d1f8ad255.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "image_yhyzxq": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify://products/cmc-glow-drip",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/Website_banner_Glow_Drip.jpg",
+            "image_mobile": "shopify://shop_images/Mobile_banner_Glow_Drip.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "image_MLHRHr": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify://products/cmc-blush-drip",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/Blush_drip_banners-01.jpg",
+            "image_mobile": "shopify://shop_images/Blush_drip_banners_mobile.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "image_BzKfHa": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify://products/cmc-s3-setting-and-fixing-spray",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/Setting_spray_Banner_1.jpg",
+            "image_mobile": "shopify://shop_images/setting_spray_banner_Mobile_223.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "image_ypBqDD": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "https://charmacyworld.com/products/cmc-matte-foundation",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/WhatsApp_Image_2026-03-24_at_12.29.26_PM.jpg",
+            "image_mobile": "shopify://shop_images/003-_-Charmacy-Mobile-view-Banner-__jpg.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "image_6PpGTw": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "https://charmacyworld.com/collections/beauty-bundle/products/prep-set-kit",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/004-charmacy-prep-set-primer-banner-1920-by-610-px-23-march_jpg.jpg",
+            "image_mobile": "shopify://shop_images/004-charmacy-prep-set-primer-banner-1200-by-1160-px-23-march_jpg.jpg",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "image_mNkbTi": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify://collections/new-arrivals-25",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/013-9-mar-banner.png",
+            "image_mobile": "shopify://shop_images/013-9-mar-mobile-banner.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "image_VzhTqk": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify://collections/lip-makeup",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/10_june_banner_2.png",
+            "image_mobile": "shopify://shop_images/10_june_banner_mv.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "image_X8cNtb": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify://collections/new-arrivals-25",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/013-9-mar-banner.png",
+            "image_mobile": "shopify://shop_images/013-9-mar-mobile-banner.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        },
+        "image_JLF6ca": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify://collections/all",
+            "link_text": "",
+            "text_align": "vertical-bottom horizontal-left",
+            "image": "shopify://shop_images/charmacy_offer_banner_resize_2.jpg",
+            "image_mobile": "shopify://shop_images/charmacy_offer_mobile_view_1.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_krL44t",
+        "image_apRwHr",
+        "image_PNtVDN",
+        "image_yhyzxq",
+        "image_MLHRHr",
+        "image_BzKfHa",
+        "image_ypBqDD",
+        "image_6PpGTw",
+        "image_mNkbTi",
+        "image_VzhTqk",
+        "image_X8cNtb",
+        "image_JLF6ca"
+      ],
+      "settings": {
+        "section_height": "natural",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "lazyload_images": true
+      }
+    },
+    "custom_collections_cards_MYJD3X": {
+      "type": "custom-collections-cards",
+      "settings": {}
+    },
+    "collection_tab_G4zPxD": {
+      "type": "collection-tab",
+      "settings": {
+        "title": "",
+        "collection1": "new-arrivals-25",
+        "collection1_title": "New Arrivals",
+        "collection2": "best-seller-25",
+        "collection2_title": "Best Sellers",
+        "per_row": 4,
+        "view_all": true,
+        "divider": false,
+        "bg_color": "",
+        "active_heading_text_color": "",
+        "active_heading_bg_color": "",
+        "heading_text_color": "",
+        "heading_bg_color": "",
+        "notab_text_color": "",
+        "notab_heading_bg_color": "",
+        "heading_font_size": 30,
+        "heading_mobile_font_size": 26,
+        "text_color": "",
+        "font_size": 14,
+        "mobile_font_size": 12,
+        "first_button_bg": "",
+        "first_button_text": "",
+        "second_button_bg": "",
+        "second_button_text": "",
+        "padding_top": 60,
+        "padding_bottom": 20
+      }
+    },
+    "collection_tab_4JXKTi": {
+      "type": "collection-tab",
+      "disabled": true,
+      "custom_css": [
+        "p.subtitle {text-transform: unset !important; font-size: 22px !important; letter-spacing: 1px !important; font-family: GOTHAM-2 !important;}",
+        ".collection-switcher__title {display: none;}",
+        "@media (min-width: 768px) {p.subtitle {font-size: 34px !important; } .section-header.text-center {margin-bottom: 25px; }}"
+      ],
+      "settings": {
+        "title": "Beauty Bundle",
+        "collection1": "beauty-bundle",
+        "collection1_title": "",
+        "collection2": "",
+        "collection2_title": "",
+        "per_row": 4,
+        "view_all": true,
+        "divider": false,
+        "bg_color": "",
+        "active_heading_text_color": "",
+        "active_heading_bg_color": "",
+        "heading_text_color": "",
+        "heading_bg_color": "",
+        "notab_text_color": "",
+        "notab_heading_bg_color": "",
+        "heading_font_size": 30,
+        "heading_mobile_font_size": 26,
+        "text_color": "",
+        "font_size": 14,
+        "mobile_font_size": 12,
+        "first_button_bg": "",
+        "first_button_text": "",
+        "second_button_bg": "",
+        "second_button_text": "",
+        "padding_top": 60,
+        "padding_bottom": 20
+      }
+    },
+    "featured_collection_XPkb3d": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Beauty Bundle",
+        "home_featured_products": "beauty-bundle",
+        "per_row": 4,
+        "rows": 2,
+        "view_all": true,
+        "divider": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "advanced_content_8bLMpV": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_3DP6jc": {
+          "type": "liquid",
+          "settings": {
+            "code": "<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css\">\n<style>\n\n\n.brand-section {\n  background: #FFF4F3;\n  padding: 50px 20px;\n}\n\n@media (max-width: 768px) {\n  .brand-section {\n    padding: 30px 20px;\n  }\n}\n\n.brand-inner {\n  max-width: 1450px;\n  margin: 0 auto;\n}\n\n.brand-tag {\n  border: 1px solid #64112F;\n  color: #64112F;\n  padding: 6px 14px;\n  font-size: 13px;\n  width: fit-content;\n  letter-spacing: 1px;\n  border-radius: 6px;\n  margin-bottom: 0px;\n  background: transparent;\n  @media(max-width: 768px){\n    margin-inline: auto;\n  }\n}\n\n.brand-title {\n  font-size: 38px;\n  font-weight: 600;\n  margin-top: 10px !important;\n  margin-bottom: 30px !important;\n  color: #64112F;\n}\n\n@media (max-width: 768px) {\n  .brand-title {\n      font-size: 19px !important;\n      margin-inline: auto;\n      text-align: center;\n      margin-block: 17px 20px !important;\n  }\n}\n\n/* ── DESKTOP: static 3-column grid ── */\n.brand-desktop-grid {\n  display: none;\n}\n\n@media (min-width: 769px) {\n  .brand-desktop-grid {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: 30px;\n  }\n\n  /* Hide the Splide markup entirely on desktop */\n  #brand-slider {\n    display: none;\n  }\n}\n\n/* ── MOBILE: hide the static grid, show Splide ── */\n@media (max-width: 768px) {\n  .brand-desktop-grid {\n    display: none;\n  }\n\n  #brand-slider {\n    display: block;\n  }\n}\n\n/* ── Shared card styles ── */\n.brand-card {\n  background: #64112f;\n  color: #333;\n  padding: 25px 30px 35px;\n  border-radius: 16px;\n  text-align: left;\n  border: 1px solid #64112f;\n  box-shadow: 0 10px 30px rgba(193, 31, 69, 0.08);\n  @media(max-width: 768px) {\n    padding: 13px 13px 20px;\n    border-radius: 6px;\n  }\n}\n\n.brand-card h3 {\n    font-size: 17px;\n    margin-bottom: 12px;\n    background: #ffffff;\n    border-radius: 50px;\n    color: #64112f;\n    width: max-content;\n    padding: 10px 20px;\n    line-height: 1;\n  @media(max-width: 768px){\n    font-size: 15px;\n    padding: 8px 16px;\n  }\n}\n\n.brand-card p {\n  font-size: 16px;\n  line-height: 1.6;\n  color: white;\n\n  @media(max-width: 768px){\n    font-size: 12px;\n  }\n}\n\n/* ── Splide (mobile) overrides ── */\n.splide__slide {\n  display: flex;\n  justify-content: center;\n}\n\n.splide__slide .brand-card {\n  width: 100%;\n  max-width: 400px;\n  transition: opacity 0.4s ease, border-color 0.4s ease;\n}\n\n\n\n.splide__slide.is-active .brand-card h3,\n.splide__slide.is-active .brand-card p {\n  display: inline-block;\n  transition: transform 0.4s ease;\n  transform-origin: left center;\n}\n\n\n\n.splide__slide:not(.is-active) .brand-card h3,\n.splide__slide:not(.is-active) .brand-card p {\n  transform: scale(1);\n  transition: transform 0.4s ease;\n}\n\n/* Hide arrows & dots */\n.splide__pagination,\n.splide__arrow {\n  display: none;\n}\n</style>\n\n<section class=\"brand-section\">\n  <div class=\"brand-inner\">\n    <div class=\"brand-tag\">BRAND PHILOSOPHY</div>\n    <h2 class=\"brand-title\">Why \"Charmacy Milano\"?</h2>\n\n    <!-- DESKTOP: static 3-column layout -->\n    <div class=\"brand-desktop-grid\">\n      <div class=\"brand-card\">\n        <h3>Charmacy</h3>\n        <p>The fusion of <strong>Charm</strong> and <strong>Pharmacy</strong> represents our unique philosophy where <strong>beauty meets science</strong> in perfect harmony.</p>\n      </div>\n      <div class=\"brand-card\">\n        <h3>Milano</h3>\n        <p>Embodies Italian sophistication, artistry, and the timeless elegance that defines global beauty excellence.</p>\n      </div>\n      <div class=\"brand-card\">\n        <h3>Our Vision</h3>\n        <p>Performance-first, clean formulations rooted in global aesthetics, delivering results without compromise.</p>\n      </div>\n    </div>\n\n    <!-- MOBILE: Splide slider -->\n    <div class=\"splide\" id=\"brand-slider\">\n      <div class=\"splide__track\">\n        <ul class=\"splide__list\">\n          <li class=\"splide__slide\">\n            <div class=\"brand-card\">\n              <h3>Charmacy</h3>\n              <p>The fusion of <strong>Charm</strong> and <strong>Pharmacy</strong> represents our unique philosophy where <strong>beauty meets science</strong> in perfect harmony.</p>\n            </div>\n          </li>\n          <li class=\"splide__slide\">\n            <div class=\"brand-card\">\n              <h3>Milano</h3>\n              <p>Embodies Italian sophistication, artistry, and the timeless elegance that defines global beauty excellence.</p>\n            </div>\n          </li>\n          <li class=\"splide__slide\">\n            <div class=\"brand-card\">\n              <h3>Our Vision</h3>\n              <p>Performance-first, clean formulations rooted in global aesthetics, delivering results without compromise.</p>\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n\n  </div>\n</section>\n\n<script src=\"https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js\"></script>\n<script>\n  // Only mount Splide on mobile; destroy/skip on desktop\n  let splideInstance = null;\n\n  function initSplide() {\n    if (window.innerWidth <= 768) {\n      if (!splideInstance) {\n        splideInstance = new Splide('#brand-slider', {\n          type        : 'loop',\n          perPage     : 1,\n          focus       : 'center',\n          gap         : '20px',\n          autoplay    : true,\n          interval    : 5000,\n          pauseOnHover: false,\n          arrows      : false,\n          pagination  : false,\n          padding: '10%'\n        }).mount();\n      }\n    } else {\n      if (splideInstance) {\n        splideInstance.destroy();\n        splideInstance = null;\n      }\n    }\n  }\n\n  initSplide();\n\n  // Re-evaluate on resize without requiring refresh\n  window.addEventListener('resize', initSplide);\n</script>",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_3DP6jc"
+      ],
+      "disabled": true,
+      "name": "t:sections.advanced-content.presets.custom_content.name",
+      "settings": {
+        "full_width": true,
+        "space_around": false,
+        "lazyload_images": true
+      }
+    },
+    "mutli_variants_section_mBQKgC": {
+      "type": "mutli-variants-section",
+      "custom_css": [
+        "@media (max-width: 768px) {.section-header {margin-top: 15px; }}"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "rich_text_7fPdkc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6CtjbP": {
+          "type": "heading",
+          "settings": {
+            "title": "Take A Look And Shop"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6CtjbP"
+      ],
+      "custom_css": [
+        ".theme-block {margin-top: 20px;}",
+        "@media (max-width: 768px) {.theme-block {margin-top: 10px; }}"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "1741083735bed1c977": {
+      "type": "apps",
+      "blocks": {
+        "shoppable_video_instagram_reel_app_block_LtNRCF": {
+          "type": "shopify://apps/shoppable-video-instagram-reel/blocks/app-block/f19e5d4b-198e-478b-9f10-15eb1964910e",
+          "settings": {
+            "carousel_name": "Homepage 1"
+          }
+        }
+      },
+      "block_order": [
+        "shoppable_video_instagram_reel_app_block_LtNRCF"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": false
+      }
+    },
+    "hero-video": {
+      "type": "hero-video",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "title_size": 80,
+        "subheading": "",
+        "link_text": "Watch",
+        "link": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "text_align": "vertical-center horizontal-center",
+        "video_url": "",
+        "overlay_opacity": 0,
+        "section_height": "650px",
+        "mobile_height": "auto"
+      }
+    },
+    "grid_collections_ei84Un": {
+      "type": "grid-collections",
+      "custom_css": [
+        "@media (max-width: 768px) {.section-header {margin-bottom: 20px; margin-top: -5px; }}"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "collection-callout": {
+      "type": "collection-callout",
+      "disabled": true,
+      "settings": {
+        "collection": "all-products",
+        "subtitle": "Brand new",
+        "title": "Collection callout",
+        "text": "Use this section to easily call attention to one of your collections. We'll show photos of the first 5 products.",
+        "cta_text1": "Shop",
+        "cta_link1": "shopify://collections/all-products",
+        "cta_text2": "Shop All",
+        "cta_link2": "",
+        "layout": "right",
+        "divider": false
+      }
+    },
+    "logo_list_rNYWyJ": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_image_e8VzUJ": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/cruelty-Free.svg",
+            "logo_title": "Cruelty-Free",
+            "link": ""
+          }
+        },
+        "logo_image_CJALXE": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Inclusive.svg",
+            "logo_title": "Inclusive",
+            "link": ""
+          }
+        },
+        "logo_image_DjPKVF": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Intense_colour.svg",
+            "logo_title": "Intense colour",
+            "link": ""
+          }
+        },
+        "logo_image_jDKCQT": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/Vegan.svg",
+            "logo_title": "Vegan",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_image_e8VzUJ",
+        "logo_image_CJALXE",
+        "logo_image_DjPKVF",
+        "logo_image_jDKCQT"
+      ],
+      "settings": {
+        "title": "Why choose us?",
+        "logo_opacity": 100,
+        "divider": false,
+        "padding_top": 60,
+        "padding_bottom": 20
+      }
+    },
+    "featured_collection_FkwNEK": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured collection",
+        "home_featured_products": "all-products-1",
+        "per_row": 4,
+        "rows": 1,
+        "view_all": true,
+        "divider": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "hero_video_wMWzXX": {
+      "type": "hero-video",
+      "settings": {
+        "title": "",
+        "title_size": 80,
+        "subheading": "",
+        "link_text": "",
+        "link": "",
+        "text_align": "vertical-center horizontal-center",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/d1083d3f5d1a46cd83db410be793c105.mp4",
+        "overlay_opacity": 0,
+        "section_height": "550px",
+        "mobile_height": "auto"
+      }
+    },
+    "shop_the_look_LRnw7p": {
+      "type": "shop-the-look",
+      "blocks": {
+        "collection_C9Jxd9": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Date Night Look",
+            "card_image": "shopify://shop_images/Date_Night_Look_OG.jpg",
+            "button_url": "shopify://pages/date-night",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_xrRXXh": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Cocktail Look",
+            "card_image": "shopify://shop_images/Cocktail_look_OG.jpg",
+            "button_url": "shopify://pages/cocktail-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_aanx33": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Bridal Wedding Look",
+            "card_image": "shopify://shop_images/bridal-look-new.jpg",
+            "button_url": "shopify://pages/bridal-wedding-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_rbYpzh": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Sangeet Look",
+            "card_image": "shopify://shop_images/Sangeet_look_OG.jpg",
+            "button_url": "shopify://pages/sangeet-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_AbCHLt": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Haldi Mehendi Look",
+            "card_image": "shopify://shop_images/Haldi-Mehendi-Look.jpg",
+            "button_url": "shopify://pages/haldi-mehendi-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_yThrgw": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Festive Look",
+            "card_image": "shopify://shop_images/Festive-Look.jpg",
+            "button_url": "shopify://pages/festive-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_m3gpTn": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Smokey Eye Look",
+            "card_image": "shopify://shop_images/Smokey-Eyes.jpg",
+            "button_url": "shopify://pages/smokey-eye-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_Ar3Y4e": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Soft Glam Look",
+            "card_image": "shopify://shop_images/Soft-Glam-Look.jpg",
+            "button_url": "shopify://pages/soft-glam-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_AEgVfX": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Valentine's Look",
+            "card_image": "shopify://shop_images/Valentine_look.jpg",
+            "button_url": "shopify://pages/valentines-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_wCh4di": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Retro look",
+            "card_image": "shopify://shop_images/Retro_Look.jpg",
+            "button_url": "shopify://pages/retro-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_RNWPYd": {
+          "type": "collection",
+          "settings": {
+            "card_title": "No Makeup Makeup Look",
+            "card_image": "shopify://shop_images/No_Makeup_Makeup_Look.jpg",
+            "button_url": "shopify://pages/no-makeup-makeup-look",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_JGBTWy": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Double Winged Eyeliner",
+            "card_image": "shopify://shop_images/Double_Winged_Eyeliner.jpg",
+            "button_url": "shopify://pages/double-winged-eyeliner",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        },
+        "collection_HNdVBi": {
+          "type": "collection",
+          "settings": {
+            "card_title": "Waterproof makeup",
+            "card_image": "shopify://shop_images/waterproof_makeup_2.png",
+            "button_url": "shopify://pages/waterproof-makeup",
+            "focal_point": "center center",
+            "size": "square-small"
+          }
+        }
+      },
+      "block_order": [
+        "collection_C9Jxd9",
+        "collection_xrRXXh",
+        "collection_aanx33",
+        "collection_rbYpzh",
+        "collection_AbCHLt",
+        "collection_yThrgw",
+        "collection_m3gpTn",
+        "collection_Ar3Y4e",
+        "collection_AEgVfX",
+        "collection_wCh4di",
+        "collection_RNWPYd",
+        "collection_JGBTWy",
+        "collection_HNdVBi"
+      ],
+      "settings": {
+        "title": "Shop Products For Makeup Look",
+        "divider": false,
+        "enable_gutter": true,
+        "enable_slider": true,
+        "bg_color": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "faq_VNwKdf": {
+      "type": "faq",
+      "blocks": {
+        "question_MpJEpj": {
+          "type": "question",
+          "settings": {
+            "title": "How Do I Pick the Right Makeup Brand Based on My Skin Type?",
+            "text": "<p>A right makeup brand for your skin type could be the difference between achieving a beautiful look without discomfort. While hydrating products from popular cosmetic brands are effective for managing skin dryness, these brands often offer moisturizing formulas like liquid foundation and cream blush that work well for dry skin, as well as mattifying products for oily skin to help control shine. Sensitive skin types may benefit from hypoallergenic, vegan beauty products that avoid harsh chemicals. Luxury makeup companies are characterised by high quality, non-comedogenic designs for a large range of skin types. For example, Charmacy Milano has prepared wide collections of face cosmetics, targeted at distinct types of skin, and so it's easy to choose the proper product for your skin type. Always test products on a small area before full application to ensure compatibility. When choosing your makeup essentials, find products that will match your skin tone, and have long-lasting formulas.</p>"
+          }
+        },
+        "question_wMUkAU": {
+          "type": "question",
+          "settings": {
+            "title": "What Is the Best Approach to Having a Natural Makeup Look?",
+            "text": "<p>Having a <strong>natural makeup look</strong> simply means you're trying to enhance features rather than put up with heavy coverage. Begin with a sheer, lightweight foundation or <a href=\"https://charmacyworld.com/collections/face-makeup\" target=\"_blank\" title=\"https://charmacyworld.com/collections/face-makeup\"><em><strong>pro-pore conceal primer</strong></em></a> from <strong>Charmacy Milano</strong>, intended to even out your skin tone without obscuring your own natural colour. Set it with a dusting powder for a silky matte finish. A <a href=\"https://charmacyworld.com/blogs/news/simple-eye-makeup-look-ideas-that-require-minimal-effort\" target=\"_blank\" title=\"https://charmacyworld.com/blogs/news/simple-eye-makeup-look-ideas-that-require-minimal-effort\"><em><strong>simple eye look</strong></em></a> with neutral colours from an eye makeup set will help you avoid dramatic lines. Use<em> </em><a href=\"https://charmacyworld.com/products/cmc-flattering-nude-lipstick\"><span style=\"text-decoration:underline\"><em><strong>cmc flattering nude matte lipstick</strong></em></span><span style=\"text-decoration:underline\"><strong> </strong></span></a>for soft, natural colour on the lips. Even points like cheekbones, the bridge of the nose, and brows must be highlighted to give a healthy, glistening skin. Minimal focused <a href=\"https://charmacyworld.com/collections/eye-makeup-products\" target=\"_blank\" title=\"https://charmacyworld.com/collections/eye-makeup-products\"><em><strong>eye makeup</strong></em></a> brings attention to the soft, defined lashes. Here, what is needed is the makeup product applied on the face becomes undetectable, with no residues that remain visible. Even when slight effort is applied to your face, no-makeup makeup will beautifully leave you radiant and fresh.</p>"
+          }
+        },
+        "question_7W6Gc9": {
+          "type": "question",
+          "settings": {
+            "title": "What Are the Essential Face Makeup Products for a Flawless Base?",
+            "text": "<p>A flawless base is the foundation of any good makeup look. Some of the essentials include a <strong>primer</strong>, to build a perfect canvas. A<strong> liquid foundation </strong>such as the dewy finish of Charmacy Milano, or a matte for everyday coverage. <strong>Concealer </strong>is then used to cover imperfections and dark circles under the eyes, and powder at the end to set everything into place. <a href=\"https://charmacyworld.com/products/cmc-cheek-enhancer\" target=\"_blank\" title=\"https://charmacyworld.com/products/cmc-cheek-enhancer\"><em><strong>Cheek Blush</strong></em></a> or bronzer gives your face warmth and definition. Apply some highlighter to the cheekbones and nose bridge to add more brightness. A <strong>face makeup kit</strong> from any of the major beauty product brands should have all the necessary basics. You can use a setting spray for a long-lasting finish that does not flake off all day.</p>"
+          }
+        },
+        "question_QMEfpf": {
+          "type": "question",
+          "settings": {
+            "title": "What are the Best Eye Makeup Products for Sensitive Eyes?",
+            "text": "<p>The sensitive eyes need a fragrance-free, hypoallergenic cosmetic with gentle ingredients. A brand like <strong>Charmacy Milano</strong> certainly creates eye makeup sets that are vegan-friendly and adverse to the harsh chemicals. Almost anything that is ophthalmologist-tested works out well as being a great <a href=\"https://charmacyworld.com/collections/mascara-makeup\"><span style=\"text-decoration:underline\"><em><strong>eye mascara</strong></em></span><span style=\"text-decoration:underline\"><strong> </strong></span></a>and <strong>eyeliner </strong>for sensitive eyes, as it would not likely irritate those eyes. Only apply waterproof products sparingly as removal can be quite difficult and uncomfortable. <strong>Cream eyeshadow</strong> is softer compared to its powdered counterpart, which can flake. If you are sensitive to your eyes, then avoid shimmery ones as much as possible. <strong>Simple eye makeup</strong> with the matte or satin finish will always be better. In addition, it should ideally be gently removed using a fragrance-free remover.</p>"
+          }
+        },
+        "question_ye6iHn": {
+          "type": "question",
+          "settings": {
+            "title": "How Do I Create a Smokey Eye Makeup Look?",
+            "text": "<p>Makeup to create the<a href=\"https://charmacyworld.com/pages/smokey-eye-look\" title=\"Smokey Eye\"><strong> </strong><em><strong>smokey eye </strong></em></a><strong>makeup </strong>is all about blending darker tones in order to build depth and drama. Primer your eyes first so your eye makeup doesn't smudge or run off at the end of the night. Apply a neutral base from your <strong>eyeshadow kit</strong> and then layer it with a dark eyeshadow, deep brown or black, along the lash line and upward to blend into the crease. Add depth with a centre lighter on the lid. Blend, blend, blend-the whole idea behind this is that there should be an effortless graduation from one colour to the next. For those who really want definition, apply the <a href=\"https://charmacyworld.com/collections/eye-liner-products\" target=\"_blank\" title=\"https://charmacyworld.com/collections/eye-liner-products\"><em><strong>best eyeliner</strong></em></a> as close as possible to the lashes. Use a little bit of smudge and you're good to go with that signature smokey effect. Finish off with coats of smokey eye mascara for bold lashes. Charmacy Milano eye makeup set carries the actual shades and useful tools for the sultry, dramatic look described here.</p>"
+          }
+        },
+        "question_zgkHzf": {
+          "type": "question",
+          "settings": {
+            "title": "How Do I Choose the Right Foundation for My Skin Tone?",
+            "text": "<p>Selecting the appropriate foundation and obtaining a perfect and seamless makeup look starts with figuring out your undertone either warm, cool, or neutral. Probably, the most popular makeup brands, such as <strong>Charmacy Milano</strong>, offer the widest range of foundation shades to be matched by a number of undertones. Always test the <strong>face foundation</strong> on your jawline in natural light in order to ensure it blends perfectly with both your face and neck. <a href=\"https://charmacyworld.com/products/cmc-matte-foundation\" title=\"CMC MATTE/ LIQUID FACE FOUNDATION\"><em><strong>Liquid foundations</strong></em></a> are very versatile; they build up well, but the powders work better if you have oily skin. For a darker skin tone, pick one that promises rich pigmentation that does not turn ashy on you. A great face makeup kit must provide options of formulas that complement a wide range of skin tones and types so you will definitely have one that will fit you perfectly.</p>"
+          }
+        },
+        "question_QAYxGD": {
+          "type": "question",
+          "settings": {
+            "title": "What are the Best Beauty Products for a Day-to-Day Makeup Routine?",
+            "text": "<p>A day-to-day makeup routine should be simple yet effective. Begin with a lightweight foundation or BB cream to smooth out your complexion. Finally, set <a href=\"https://charmacyworld.com/collections/face-makeup\" target=\"_blank\" title=\"https://charmacyworld.com/collections/face-makeup\"><em><strong>face makeup</strong></em></a> with a dusting of powder. Charmacy Milano Cosmetics has an <strong>eyeshadow palette</strong> that is neutral enough to get away with using for a minimalist eye look. Coat your lashes with <a href=\"https://charmacyworld.com/collections/mascara-makeup\" target=\"_blank\" title=\"https://charmacyworld.com/collections/mascara-makeup\"><em><strong>eye mascara</strong></em></a> for a bit of definition, but nothing too opulent. Top everything off with a long-lasting lipstick in nude or soft pink. <a href=\"https://charmacyworld.com/collections/lip-makeup\" target=\"_blank\" title=\"https://charmacyworld.com/collections/lip-makeup\"><em><strong>Vegan lipstick</strong></em></a> is a great choice for everyday, comfortable wear. Finish with blush colour to cheek and setting spray for a long-lasting makeup look all day.</p>"
+          }
+        },
+        "question_Y4JhdL": {
+          "type": "question",
+          "settings": {
+            "title": "What Are the Must-Have Lip Makeup Products for the Bold Lip?",
+            "text": "<p>Starting off with a <a href=\"https://charmacyworld.com/products/cmc-lip-contour-lip-liner\" title=\"cmc-lip-makeup-product-lip-liner\"><em><strong>lip liner</strong></em></a>, outline your lip shape and not let it feather out too much. For example, long-lasting lipstick in bright colours from Charmacy Milano's Cosmetic collection, like red or deep plum, would be perfect. Liquid <a href=\"https://charmacyworld.com/products/cmc-stunning-longstay-liquid-lip\" target=\"_blank\" title=\"Liquid Matte lipstick\"><em><strong>matte lipstick</strong></em></a> gives an edgy look because it lasts for hours and hardly requires any touch-up. For additional depth, layer a gloss or <strong>creme lipstick</strong> on top for that fuller look of luscious lips. <a href=\"https://charmacyworld.com/collections/lip-makeup\" target=\"_blank\" title=\"https://charmacyworld.com/collections/lip-makeup\"><em><strong>Vegan lipsticks</strong></em></a> not only give you a bold look but also ensure you are left with the good feeling of what you are putting onto your skin. Truly to make your look pop, you should be doing minimal face and eye makeup and letting your lips be the showpiece.</p>"
+          }
+        },
+        "question_LreybE": {
+          "type": "question",
+          "settings": {
+            "title": "What Are Some of the Best Cosmetics for the No-Makeup Makeup Look?",
+            "text": "<p><strong>No-makeup makeup looks</strong> require sheer to lightweight beauty products that will enhance your features, a light tinted moisturiser, or<strong> face foundation</strong> to bring a natural skin tone without heavy coverage. Conceal blemishes and dark circles under your eyes, and <a href=\"https://charmacyworld.com/products/cmc-set-fix-loose-powder\" target=\"_blank\" title=\"https://charmacyworld.com/products/cmc-set-fix-loose-powder\"><em><strong>setting powder</strong></em></a> smooths everything out. If you desire that effortless, fresh look, use neutral tones for your makeup kitin the eyes and enhance the natural contour of your eyelids. Use a nude matte lipstick or tinted balm to add subtle colour to your lips. Charmacy Milano, for example, offers gentle, plant-based formula <strong>beauty products</strong> that can be used to create this look.The no-makeup makeup look is all about that polished yet truly natural look.</p>"
+          }
+        },
+        "question_7BDr6T": {
+          "type": "question",
+          "settings": {
+            "title": "How Do I Effectively Remove Waterproof Makeup?",
+            "text": "<p><strong>Waterproof makeup</strong> is pretty hard to take off, but by using the right products, your skin is always healthy and not clogged up with tons of makeup. Start by using an oil-based makeup remover that dissolves well the waterproof formulas. Steep a cotton pad in it and gently push it out onto the areas of the face that contain waterproof makeup, such as around your eyes and lips, letting it dissolve the product before you wipe it off.<a href=\"https://charmacyworld.com/\"><span style=\"text-decoration:underline\"><strong>Charmacy Milano </strong></span></a>has tons of makeup, all being waterproof. So you won't have to tug around when you remove them with oil-based cleansers or micellar water. Avoid scrubbing as it may irritate your skin, especially around the very sensitive area near the eyes. Finish it off with a gentle cleanser that would cleanse your skin thoroughly to remove any remaining residue and complete it with a moisturiser to keep it hydrated and fresh.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_MpJEpj",
+        "question_wMUkAU",
+        "question_7W6Gc9",
+        "question_QMEfpf",
+        "question_ye6iHn",
+        "question_zgkHzf",
+        "question_QAYxGD",
+        "question_Y4JhdL",
+        "question_LreybE",
+        "question_7BDr6T"
+      ],
+      "settings": {
+        "title": "FAQs",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "blog_posts_txCARb": {
+      "type": "blog-posts",
+      "settings": {
+        "title": "Blog posts",
+        "blog": "news",
+        "post_limit": 3,
+        "blog_show_tags": false,
+        "blog_show_date": true,
+        "blog_show_comments": false,
+        "blog_show_author": false,
+        "view_all": true,
+        "divider": false
+      }
+    },
+    "rich_text_LnnxJM": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PN4yLV": {
+          "type": "heading",
+          "settings": {
+            "title": "Take A Look And Shop"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PN4yLV"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "home_footer_read_more_M3dhQ6": {
+      "type": "home-footer-read-more",
+      "settings": {
+        "title": "How To Choose the Right Cosmetics & Beauty Products For Your Daily Need?",
+        "content": "<p>Selecting the appropriate cosmetics and beauty products for your everyday use may be overwhelming with the numerous choices found in the market. Whether you desire beauty products that bring out your natural radiance or makeup products that offer full coverage, there is a need to look at your skin type, lifestyle, and personal taste. Here are some guidelines to assist you in making the appropriate decision:</p><h4><strong>1. Know Your Skin Type:</strong></h4><p>It is important to know if you have oily, dry, combination, or sensitive skin. For example, if you have oily skin, use professional makeup products that are oil-free and non-comedogenic. <strong>Charmacy Milano</strong> has a variety of cosmetic products for various skin types, so you can achieve the best results.</p><h4><strong>2. Determine Your Needs:</strong></h4><p>Do you need basic makeup products for daily usage or high-end makeup products for special events? Create a list of what you require, like <strong>foundation</strong>, <strong>mascara</strong>, <strong>lipstick</strong>, or <strong>eyeshadow</strong>. Charmacy Milano offers trendy makeup and waterproof makeup products to suit both daily wear and glamorous makeup needs.</p><h4><strong>3. Check Ingredients: </strong></h4><p>If you have sensitive skin or prefer natural products, check for vegan beauty products and cruelty-free makeup. Charmacy Milano is dedicated to providing vegan cruelty-free makeup that is kind to your skin and the environment.<br/></p><h4><strong>4. Read Reviews:</strong></h4><p>Read reviews before purchasing makeup products online so that you know how the product performs. <strong>Charmacy Milano</strong> is a popular makeup brand with high-quality professional makeup products that have received good reviews from users globally.</p><h4><strong>5. Think About Your Budget:</strong></h4><p>Luxury makeup brands may provide high-quality products, but there are also budget-friendly options that work just as well. <strong>Charmacy Milano</strong> offers a variety of cosmetic products that suit different budgets without sacrificing quality.</p><p>By keeping these tips in mind, you can pick the appropriate beauty products and makeup products for your everyday use confidently. And if reliability and quality are concerned, Charmacy Milano is one of the <strong>best beauty brands</strong> available in the market.</p><h3><strong>Why Choose Charmacy Milano To Buy Cosmetic & Beauty Products?</strong></h3><p>When it comes to buying cosmetic items and beauty products, Charmacy Milano is a brand you can rely on. But why this brand and not the others? Here are some strong reasons why Charmacy Milano should be your first choice for all your makeup requirements:</p><h4><strong>1. Huge Collection of Products:</strong></h4><p>Whether you're searching for basic makeup products or high-end makeup brands, Charmacy Milano offers you everything. From fashion-forward makeup to professional makeup products, their range is wide and suits all beauty lovers.</p><h4><strong>2. Cruelty-Free and Vegan: </strong></h4><p>Charmacy Milano believes in the beauty of being kind. With their vegan cosmetics and cruelty-free makeup, you can look beautiful while feeling beautiful. If animal rights and going green are on your agenda, this brand is for you.</p><h4><strong>3. High-Quality Formulas:</strong> </h4><p>When you purchase makeup products online from Charmacy Milano, you can be sure of the best quality. Their professional makeup and waterproof makeup products are formulated to provide long-lasting wear and perfect results.</p><h4><strong>4. Fashionable and Trendy:</strong> </h4><p>Ahead of the beauty curve, Charmacy Milano provides fashionable makeup that follows the current fashion trends. From bold lip shades to <a href=\"https://charmacyworld.com/collections/eye-shadow-makeup/products/cmc-insane-shifters-eye-shadow\"><span style=\"text-decoration:underline\"><strong>glittering eyeshadows</strong></span></a>, you can find the latest trends here.</p><h4><strong>5. Convenient Online Shopping:</strong></h4><p>With the facility of shopping make-up online, Charmacy Milano provides you with the comfort of browsing and buying your desired products at the ease of your home. Their easy-to-use website ensures that you have a hassle-free shopping experience.</p><h4><strong>6. Trusted Brand:</strong></h4><p>Being one of the favorite makeup brands, <strong>Charmacy Milano</strong> has established a brand name for quality. Their cosmetic line is favored by both beauty experts and enthusiasts, which makes them a brand to trust.</p><h4><strong>7. Affordable Luxury:</strong></h4><p>Though they carry luxury makeup brands, Charmacy Milano makes their products affordable for anyone. You don't need to splurge to get quality beauty products.</p><p>Overall, Charmacy Milano blends quality, innovation, and ethical standards to provide the highest quality cosmetic products and beauty products. Whether you are a newbie with makeup or a pro, there is something for you in this company.<br/></p><h3><strong>Shop Your Beauty Favorites: From Everyday Essentials to Luxury Makeup</strong></h3><p>At <strong>Charmacy Milano</strong>, you can find all kinds of makeup and beauty products, from everyday basics to high-end brands, all in one place. Whether you're stocking up on everyday needs or pampering yourself with high-end beauty indulgences, this brand has you covered.</p><h4><strong>1. Daily Must-Haves:</strong> </h4><p>Your everyday makeup should feature items that make the most of your natural features but are not excessively heavy. Charmacy Milano's line of makeup must-haves includes light foundation, neutral shades of eyeshadow, and light lip color. These makeups are great for achieving that fresh, everyday look.</p><h4><strong>2. Luxury Makeup:</strong> </h4><p>For that special event when you want to splurge, Charmacy Milano's luxury makeup brands collection is what you are looking for. <strong>Bold lipsticks</strong>, <strong>shimmery highlighters</strong>, and waterproof long-lasting makeup products that keep you looking perfect all day long.</p><h4><strong>3. Fashion Makeup:</strong></h4><p>Be at the forefront of beauty fashion with Charmacy Milano's fashion makeup collection. From bold eyeshadows to bold lip shades, these makeup products enable you to try out the latest fashions.</p><h4><strong>4. Professional Makeup:</strong> </h4><p>For makeup artists or those who want a professional look, Charmacy Milano's professional makeup products are a must-have. Their excellent formulas provide silky smooth application and long-lasting finish.</p><h4><strong>5. Vegan and Cruelty-Free Choices: </strong></h4><p>For the ethical beauty conscious, Charmacy Milano has vegan beauty products and cruelty-free cosmetics. Not only are these kind to your skin but also to the planet.</p><h4><strong>6. Easy Online Purchase: </strong></h4><p>With online purchase options for makeup, shopping for your loved cosmetics is easily possible from wherever you are. Charmacy Milano has its collection of the finest cosmetic products on the website to keep you informed about new offerings at all times.</p><p>Whether you're looking for essential makeup products or indulging in luxury makeup brands, Charmacy Milano has something for everyone. So why wait? <strong>Shop makeup online</strong> today and elevate your beauty routine.</p><h3><strong>Explore Vegan & Cruelty-Free Makeup of Charmacy Milano: Shop Professional, Waterproof & Trendy Beauty Products Online</strong><br/></h3><p>In the modern beauty world, increasingly, individuals are choosing vegan beauty products and cruelty-free cosmetics. Charmacy Milano is leading the charge in that direction with a diverse selection of ethical cosmetic items that are never at the expense of quality or performance.</p><h4><strong>1. Vegan Beauty Products:</strong></h4><p><br/>Charmacy Milano's vegan beauty products are formulated without the use of any animal-derived ingredients, thus being an ideal option for people who adopt a vegan lifestyle. These cosmetic products are kind to your skin and don't contain harmful chemicals.</p><h4><strong>2. Cruelty-Free Makeup:</strong></h4><p>Charmacy Milano is animal-friendly, and therefore, all their cruelty-free makeup ranges are never used for testing on animals. You can reap the rewards of gorgeous looks with no guilt.</p><h4><strong>3. Professional Makeup:</strong></h4><p>Their professional makeup line is ideal for beauty professionals and enthusiasts who expect high performance. These makeup products provide great coverage, blendability, and durability.</p><h4><strong>4. Waterproof Makeup Products:</strong></h4><p>Whether you're going to a wedding or a beach party, Charmacy Milano's waterproof makeup products keep you looking good all day long. From waterproof mascara to lasting lipsticks, the products are created to be element-resistant.</p><h4><strong>5. Fashionable Makeup:</strong></h4><p>Keep up with the latest fashion trends with Charmacy Milano's fashionable makeup line. From bright eyeshadows to bright lip colors, these beauty products enable you to showcase your personal style.</p><h4><strong>6. Online Shopping:</strong></h4><p>With the ease of being able to purchase makeup online, Charmacy Milano provides an easy way to browse their <strong>vegan beauty products</strong> and cruelty-free makeup from home.</p><p>By opting for Charmacy Milano, you're not just spending money on premium beauty products but also on a brand that promotes ethical practices. So go ahead, buy makeup online, and explore the world of vegan cruelty-free makeup.</p><h3><strong>Stay Flawless All Day: Shop the Best Waterproof Makeup Products Online</strong></h3><p>When it comes to waterproof make-up products, Charmacy Milano is a brand you can bank on. If you're heading to a wedding during the summer, going for a gym session, or just doing small tasks or chores, their waterproof make-up helps you look stunning all day.</p><h4><strong>1. Waterproof Mascara:</strong></h4><p>One of the must-have make-up products in every beauty box, Charmacy Milano's <a href=\"https://charmacyworld.com/collections/mascara-makeup\" title=\"https://charmacyworld.com/collections/mascara-makeup\"><em><strong>waterproof mascara</strong></em></a> provides fuller lashes that are smudge-free and run-proof, regardless of the weather.</p><h4><strong>2. Long-Lasting Foundation:</strong></h4><p>Charmacy Milano offers long-lasting foundations that give full coverage without blocking your pores. These waterproof makeup products are ideal for all-day use.</p><h4><strong>3. Smudge-Proof Eyeliners:</strong></h4><p>Get the flawless cat eye look with Charmacy Milano's smudge-proof <a href=\"https://charmacyworld.com/collections/eye-liner-products/products/cmc-sketch-eyeliner\" target=\"_blank\" title=\"https://charmacyworld.com/collections/eye-liner-products/products/cmc-sketch-eyeliner\"><em><strong>winged eyeliners</strong></em></a>. These makeup products are made to last, even in humid weather.</p><h4><strong>4. Waterproof Lipsticks: </strong></h4><p>End constant retouches with Charmacy Milano's <strong>waterproof lipsticks</strong>. Their cosmetic items come in vibrant shades that are long-lasting.</p><h4><strong>5. Fashion Makeup: </strong></h4><p>Their fashionable makeup range comprises <strong>waterproof highlighters</strong> and eyeshadows with which you can try bold makeup looks without concern of fading.</p><h4><strong>6. Shop Online:</strong> </h4><p>With the convenience of purchasing makeup online, Charmacy Milano allows you to stock up on your preferred <strong>waterproof makeup products</strong>. Their easy-to-use website provides a convenient shopping experience.</p><p>By opting for Charmacy Milano's waterproof makeup products, you can have long-lasting beauty without compromise. So why wait? buy makeup online today and remain flawless all day.</p><h3><strong>Perfect Gifts for Every Occasion: Buy Top Cosmetic Products & Essential Kits Online</strong></h3><p>Searching for the ideal gift for a beauty lover? Charmacy Milano has a variety of makeup gift sets and must-have kits that will not disappoint. For a birthday or anniversary, these cosmetic items are thoughtful and useful gifts.</p><h4><strong>1. Makeup Gift Sets:</strong> </h4><p>Charmacy Milano makeup gift sets contain a specially selected range of beauty items like lipsticks, <a href=\"https://charmacyworld.com/collections/eye-shadow-makeup\"><span style=\"text-decoration:underline\"><strong>eyeshadows</strong></span></a>, and blushes. These gift sets are exquisitely packed and are ideal to give as a gift.</p><h4><strong>2. Essential Kits:</strong></h4><p>For those who prefer a full makeup look, Charmacy Milano has essential kits with all the fundamental makeup essentials you would require. From foundation to mascara, they have it all.</p><h4><strong>3. Luxury Makeup:</strong></h4><p>If you want to splurge, their collection of luxury makeup brands has high-end cosmetic products ideal for that special evening out.</p><h4><strong>4. Vegan and Cruelty-Free Options:</strong> </h4><p>Charmacy Milano's cruelty-free makeup and vegan beauty products are a thoughtful and ethical gift. The makeup items are appreciated by sustainability-conscious people.</p><h4><strong>5. Shop Online:</strong></h4><p>With the ease of being able to purchase makeup online, <strong>Charmacy Milano</strong> provides the ease of finding the ideal gift. Their website is filled with a range of makeup gift sets and must-have kits to select from.</p><p>Whether you're looking for a makeup beginner or a beauty expert, Charmacy Milano's cosmetic line and makeup gift sets will make you smile. So go ahead. <strong>Shop makeup online</strong> today and discover the ideal gift for any occasion.</p><h3><strong>Essential Cosmetic Products Every Woman Should Have in Her Daily Makeup Kit</strong></h3><p>A daily makeup kit every woman should have is a list of key makeup products that help to enhance her natural beauty and complete a polished appearance. Below are some essentials from Charmacy Milano:</p><h4><strong>1. Foundation:</strong></h4><p>A foundation is the foundation of any makeup. Charmacy Milano has a variety of professional makeup <a href=\"https://charmacyworld.com/products/cmc-matte-foundation\"><span style=\"text-decoration:underline\"><strong>foundations</strong></span></a> that give flawless coverage.</p><h4><strong>2. Mascara:</strong> </h4><p>No makeup kit is complete without mascara. Their waterproof mascara ensures your lashes look voluminous all day.</p><h3><strong>3. Lipstick:</strong> </h3><p>A versatile lipstick is a must-have. Charmacy Milano’s trendy makeup collection includes a variety of shades to suit every mood and occasion.</p><h3><strong>4. Eyeliner:</strong> </h3><p>For defining your eyes, a smudge-proof <a href=\"https://charmacyworld.com/collections/eye-liner-products\"><span style=\"text-decoration:underline\"><strong>eyeliner</strong></span></a> is essential. Their professional makeup eyeliners offer precision and long-lasting wear.</p><h3><strong>5. Blush:</strong> </h3><p>Get a touch of color on your cheeks with Charmacy Milano's make-up cosmetic products. Their blushes come in a variety of colors to suit all skin tones.</p><h3><strong>6. Eyeshadow:</strong></h3><p>From subtle shades or bright colors, their fashionable makeup eyeshadows enable you to design limitless looks.</p><h3><strong>7. Setting Spray:</strong></h3><p>For keeping your makeup in place, a setting spray is indispensable. Charmacy Milano's professional makeup setting sprays provide long-lasting hold.</p><p>With these must-have makeup products in your daily kit, you can easily achieve a range of looks. And using Charmacy Milano's top-quality beauty products, you can be sure of the best results each time.</p><p>In summary, Charmacy Milano is your one-stop shop for all your cosmetic and beauty products. You are looking for basic makeup products, popular makeup brands, or cruelty-free vegan makeup, and they have it all. So wait no more. Shop online makeup today and experience the Charmacy Milano world.</p><h2><strong>  FAQ’s</strong></h2><h3><strong>What Are the Best Makeup Brands for Vegan and Cruelty-Free Beauty?</strong></h3><p>Within the beauty products universe, the rate at which vegan cruelty-free makeup has increased is unparalleled. Customers are becoming more aware of the moral and environmental implications of their purchasing decisions. Among the best makeup brands that cater to these values, Charmacy Milano is a front-runner. Renowned for its high-quality and luxurious products, Charmacy Milano is a cruelty-free makeup company that also provides a variety of vegan beauty products. Its ethical approach means that you can have beautiful looks without sacrificing your values.</p><p>Other major makeup brands under the vegan and cruelty-free banner are Fenty Beauty, Too Faced, and Urban Decay. These have taken great steps towards developing products that are both environmentally friendly and highly performing. If you want waterproof makeup products or regular-day essentials, these brands have got you covered with a huge selection of products for your needs.<br/></p><h3><strong>Where Can I Buy Trendy Makeup Products Online?</strong></h3><p>If you're looking where to shop for fashionable makeup online, you need to look no further than Charmacy Milano. This high-end makeup company provides a hassle-free online shopping experience where you can browse and buy the newest cosmetic products from your own home. With a large selection of fashionable makeup products, Charmacy Milano keeps you up to date on the latest in beauty.</p><p>Besides Charmacy Milano, there are also high-end beauty companies such as Sephora, Ulta, and Cult Beauty that stock a wide range of popular makeup products. They have websites with thorough product descriptions, customer reviews, and hassle-free return policies, so shopping for makeup can be done easily online.</p><h3><strong>Are Charmacy Milano’s Makeup Products Suitable for Professional Use?</strong></h3><p>Absolutely! Charmacy Milano's cosmetics are not just luxurious but extremely functional as well, making them perfect for professionals. Their line of professional makeup contains long-lasting foundations, intensively pigmented eyeshadows, and ultra-precise eyeliners that are compatible with the high demands of professional makeup artists and beauty enthusiasts as well.</p><p>The quality focus of the brand guarantees that every product provides outstanding performance, whether you are designing an extravagant runway look or a discreet daily makeup style. At Charmacy Milano, your professional makeup requirements can be assured of being left in good hands.</p><h3><strong>What Are the Essential Makeup Products Every Woman Should Own?</strong></h3><p>Every woman's beauty kit should have a list of must-haves comprising makeup essentials that work for diverse looks and events. Charmacy Milano provides a carefully curated range of must-haves such as a flawless foundation, a multi-functional eyeshadow palette, a long-wearing lipstick, and a water-resistant mascara.</p><p>These essential makeup products ensure that you’re prepared for any situation, whether it’s a quick touch-up before a meeting or a full glam look for a night out. Investing in high-quality products from top beauty brands like Charmacy Milano guarantees that you’ll always look and feel your best.</p><h3><strong>Are There Discounts or Offers for Buying Makeup Products Online?</strong></h3><p>Yes, there are usually discounts and promotions when you buy makeup online. Charmacy Milano regularly has promotions that enable you to experience their high-end makeup products at a lower price. Look out for seasonal promotions, bundle offers, and special online discounts that make it convenient to shop for your preferred beauty products.</p><p>Other well-known brands of makeup also have similar offers, so comparing offers and prices across various platforms to achieve the most value for your money is advisable.</p><h3><strong>How to Choose the Right Makeup Products Online?</strong></h3><p>Selecting the appropriate makeup products online is overwhelming, but with some guidelines, you can make the right choices. Begin by thinking about your skin tone and type to ensure that the products you choose will suit your complexion. You can also learn a lot about the performance and quality of the products by reading customer reviews and viewing tutorial videos.</p><p>Charmacy Milano's website has extensive product descriptions and shade guides, which allow you to find the ideal solution for your needs. Whether you're searching for vegan beauty or professional makeup products, spending time to research and compare will ensure you make the most informed decision.</p><h3><strong>What Makes Charmacy Milano a Luxury Makeup Brand?</strong></h3><p><strong>Charmacy Milano</strong> is a luxury incarnate, providing high-end beauty products that blend opulence with superior quality. The company's focus on employing top-notch ingredients and cutting-edge formulations makes it stand out from other high-end makeup companies. Each product is formulated to give the highest level of luxury, from the clean design of the packaging to the outstanding performance.</p><p>Charmacy Milano's commitment to ethical ways, including vegan and cruelty-free beauty products, only adds to its attractiveness. By purchasing with Charmacy Milano, you're not merely acquiring makeup; you're investing in a company that believes in luxury, quality, and ethics.</p><h3><strong>What Are the Best Beauty Products for an Everyday Makeup Routine?</strong></h3><p>For a daily makeup application, versatility and simplicity are important. Charmacy Milano has a variety of beauty products that can be used for everyday application, such as lightweight foundations, neutral eyeshadow, and hydrating lip balm. They offer a natural, polished appearance that is perfect for any event.</p><p>Other premium beauty companies such as Glossier and Bobbi Brown also have great options for daily makeup. The trick is to select products that bring out your natural features without being too difficult to apply and long-lasting.</p><h3><strong>What is the Most Popular Makeup Product to Gift?</strong></h3><p>Gifting-wise, makeup gift sets never go out of style. Charmacy Milano has beautifully designed sets comprising a mix of their top products, and as such, it is the ideal gift for every beauty lover. These sets typically consist of a combination of must-have makeup items, like <strong>lipsticks</strong>, <strong>eyeshadows</strong>, and skincare products, offering a full beauty experience.</p><p>Other favorite makeup brands such as MAC and NARS also carry amazing gift sets that are sure to wow. Birthday, holiday, or just because, a gift set of makeup is a gracious and indulgent gift that anybody would love to receive.</p><p>In conclusion, whether you’re looking for the best makeup brand,trendy makeup, or luxury makeup brands, Charmacy Milano has something to offer. With their commitment to quality, ethics, and innovation, they continue to be a top choice for beauty enthusiasts around the world.</p>"
+      }
+    }
+  },
+  "order": [
+    "featured_product_CDJRKz",
+    "quick_link_slider_VewCzU",
+    "slideshow_TfxxMi",
+    "custom_collections_cards_MYJD3X",
+    "collection_tab_G4zPxD",
+    "collection_tab_4JXKTi",
+    "featured_collection_XPkb3d",
+    "advanced_content_8bLMpV",
+    "mutli_variants_section_mBQKgC",
+    "rich_text_7fPdkc",
+    "1741083735bed1c977",
+    "hero-video",
+    "grid_collections_ei84Un",
+    "collection-callout",
+    "logo_list_rNYWyJ",
+    "featured_collection_FkwNEK",
+    "hero_video_wMWzXX",
+    "shop_the_look_LRnw7p",
+    "faq_VNwKdf",
+    "blog_posts_txCARb",
+    "rich_text_LnnxJM",
+    "home_footer_read_more_M3dhQ6"
+  ]
+}

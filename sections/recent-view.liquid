@@ -1,0 +1,114 @@
+
+<style>
+.recent-view-wrap {
+    padding: 60px 0;
+}
+.recent-view-container {
+    padding: 0 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+.recent-view-container .grid-product__title{
+    padding-top: 10px;
+}
+.recent-view-container .custom-section-title {
+    text-align: center;
+}
+.recent-view-container .grid__item{
+    margin-bottom: 30px;
+}
+@media(max-width: 768px){
+    .recent-view-wrap {
+        padding: 30px 0;
+    }
+    .recent-view-container {
+    padding: 0 20px;
+    }
+    .recent-view-container .custom-section-title h4{
+        font-size: 22px;
+    }
+}
+</style>
+<div class="recent-view-wrap">
+    <div class="recent-view-container">
+        <div class="custom-section-title">
+        <h4 class="h3">
+            Recently Viewed
+        </h4>
+        </div>
+
+        <ul class="grid product-grid grid--4-col-desktop grid--2-col-tablet-down" id="recent-view" role="list"></ul>
+    </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // ----- CURRENT PRODUCT DATA -----
+  let openedProduct = {
+    productTitle: "{{ product.title | escape }}",
+    productImg: "{{ product.featured_image | img_url: 'original' }}",
+    productPrice: "{{ product.price | money | remove_first: '' }}",
+    productComparePrice: "{{ product.compare_at_price | money | remove_first: '' }}",
+    productUrl: "{{ product.url }}",
+    productAvailable: {{ product.available | json }}
+  };
+
+  // ----- RETRIEVE AND UPDATE LOCALSTORAGE -----
+  let recentProducts = JSON.parse(localStorage.getItem("recentProducts")) || [];
+
+  // Remove duplicate if current product already exists
+  recentProducts = recentProducts.filter(item => item.productUrl !== openedProduct.productUrl);
+
+  // Add current product at top
+  recentProducts.unshift(openedProduct);
+
+  // Limit to 8
+  if (recentProducts.length > 8) recentProducts.pop();
+
+  // ----- BUILD HTML FOR RECENTLY VIEWED PRODUCTS -----
+  let productsHTML = recentProducts.map(item => {
+    return `
+      <div class="grid__item grid-product small--one-half medium-up--one-quarter grid-product__has-quick-shop aos-init aos-animate">
+        <div class="grid-product__content">
+          <a href="${item.productUrl}" class="grid-product__link">
+            <div class="grid-product__image-mask">
+              <div class="image-wrap loaded" style="height: 0; padding-bottom: 100%;">
+                <img src="${item.productImg}" alt="${item.productTitle}" width="1080" height="1080" loading="lazy" class="grid-product__image image-style--image-element">
+              </div>
+            </div>
+          </a>
+
+          <div class="custom-card-info-wrap">
+            <a href="${item.productUrl}" class="grid-product__link">
+              <div class="grid-product__meta">
+                <div class="grid-product__title">${item.productTitle}</div>
+                <div class="grid-product__price">
+                  <span class="sale-price">${item.productPrice}</span>
+                  ${item.productComparePrice ? `<span class="grid-product__price--original">${item.productComparePrice}</span>` : ''}
+                </div>
+              </div>
+            </a>
+            <a href="${item.productUrl}" class="card-view">VIEW PRODUCT</a>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // ----- RENDER AND SAVE -----
+  document.querySelector('#recent-view').innerHTML = productsHTML;
+  localStorage.setItem("recentProducts", JSON.stringify(recentProducts));
+});
+</script>
+
+{% schema %}
+{
+  "name": "Recent View",
+  "class": "recent-view",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Recent View"
+    }
+  ]
+}
+{% endschema %}

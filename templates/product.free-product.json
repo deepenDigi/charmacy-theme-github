@@ -1,0 +1,389 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "judge_me_reviews_preview_badge_fUcT4j": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": true
+          }
+        },
+        "quantity_selector_YW9e39": {
+          "type": "quantity_selector",
+          "settings": {
+            "show_pincode": true
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "disabled": true,
+          "settings": {
+            "inventory_threshold": 10,
+            "inventory_transfers_enable": true
+          }
+        },
+        "sales_point": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "globe",
+            "text": "100 % Authentic"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "wishlister_wishlist_icon_9yznNX": {
+          "type": "shopify://apps/wishlister/blocks/wishlist_icon/5388a9a0-ff31-4ea0-9af2-97c89467ccb0",
+          "disabled": true,
+          "settings": {}
+        },
+        "wishlist_wishify_product_HqKWn4": {
+          "type": "shopify://apps/wishlist-wishify/blocks/product/e14a43b5-34c6-492d-b46f-3ad2eda08696",
+          "disabled": true,
+          "settings": {}
+        },
+        "custom_nPhtPD": {
+          "type": "custom",
+          "settings": {
+            "code": "<div class=\"plp-trust-img\">\n    <img style=\"width: 100%; height: 100;\" src=\"https://cdn.shopify.com/s/files/1/0558/4584/7231/files/charmacy-icon-11-march.png\">\n</div>"
+          }
+        },
+        "custom_RrXKqr": {
+          "type": "custom",
+          "settings": {
+            "code": "{% render 'plp-trust-icons' %}"
+          }
+        },
+        "custom_9iBEEp": {
+          "type": "custom",
+          "disabled": true,
+          "settings": {
+            "code": "{% render 'upsell-product' %}"
+          }
+        },
+        "custom_TG96H7": {
+          "type": "custom",
+          "disabled": true,
+          "settings": {
+            "code": "<div class=\"wt-product__text-block rte\" not-quick-add=\"\">\n\n    <div style=\"display: flex;flex-wrap: nowrap;justify-content: space-evenly;\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0558/4584/7231/files/Add_a_subheading_1.png?v=1740035152\"\n            style=\"max-height: 73px; max-width: 93px; flex: 1 1 0; width: 0;\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0558/4584/7231/files/Group_4949.avif?v=1739449320\"\n            style=\"max-height: 73px; max-width: 93px; flex: 1 1 0; width: 0;\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0558/4584/7231/files/Group_4948.webp?v=1739449325\"\n            style=\"max-height: 73px; max-width: 93px; flex: 1 1 0; width: 0;\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0558/4584/7231/files/Add_a_subheading.png?v=1740035153\"\n            style=\"max-height: 73px; max-width: 93px; flex: 1 1 0; width: 0;\">\n    </div>\n</div>"
+          }
+        },
+        "description_tabs_9Tjtqh": {
+          "type": "description_tabs",
+          "settings": {
+            "description_title": "DESCRIPTION",
+            "title1": "{{ product.metafields.custom.tab_1_title.value }}",
+            "content1": "{{ product.metafields.custom.product_details | metafield_tag }}",
+            "title2": "{{ product.metafields.custom.tab_2_title.value }}",
+            "content2": "{{ product.metafields.custom.features_benefits | metafield_tag }}",
+            "title3": "{{ product.metafields.custom.tab_3_title.value }}",
+            "content3": "{{ product.metafields.custom.how_to_use | metafield_tag }}",
+            "title4": "RETURN & REFUND POLICY",
+            "content4": "<p><strong>What are the terms of the Return Policy?</strong></p><p>To maintain strict hygiene standards of our products, we do not accept returns across any categories currently. Charmacy Milano may, at its discretion and without prior notice, change the products or categories to which this policy would apply<br/><br/><a href=\"https://charmacyworld.com/policies/refund-policy\" target=\"_blank\" title=\"https://charmacyworld.com/policies/refund-policy\">Read more..&gt;</a></p>"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "is_tab": true
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "title": "Shipping information",
+            "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
+            "page": ""
+          }
+        },
+        "contact": {
+          "type": "contact",
+          "disabled": true,
+          "settings": {
+            "title": "Ask a question",
+            "phone": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_preview_badge_fUcT4j",
+        "price",
+        "variant_picker",
+        "quantity_selector_YW9e39",
+        "inventory_status",
+        "sales_point",
+        "buy_buttons",
+        "wishlister_wishlist_icon_9yznNX",
+        "wishlist_wishify_product_HqKWn4",
+        "custom_nPhtPD",
+        "custom_RrXKqr",
+        "custom_9iBEEp",
+        "custom_TG96H7",
+        "description_tabs_9Tjtqh",
+        "description",
+        "tab",
+        "contact",
+        "share"
+      ],
+      "custom_css": [
+        "#ZooomyList label {max-width: 100%; width: 100%; margin-bottom: 0;}",
+        "div#ZooomyList {width: 100%; max-width: 100%;}"
+      ],
+      "settings": {
+        "sku_enable": false,
+        "image_size": "medium",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_height": "flexible",
+        "thumbnail_arrows": true,
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "1739860830b0297931": {
+      "type": "apps",
+      "blocks": {
+        "whatmore_shoppable_videos_app_block_rnHmYE": {
+          "type": "shopify://apps/whatmore-shoppable-videos/blocks/app-block/20db8a72-315a-4364-8885-64219ee48303",
+          "settings": {
+            "heading": "Take a look and shop",
+            "template-type": "template-a",
+            "title-font-size": 30,
+            "title-font-size-portrait": 26,
+            "landscape-padding": 50,
+            "top-bottom-padding": 0,
+            "scroll-video-tile-size": 80,
+            "scroll-video-tile-size-portrait": 80,
+            "min-height": 380
+          }
+        }
+      },
+      "block_order": [
+        "whatmore_shoppable_videos_app_block_rnHmYE"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "background-image-text": {
+      "type": "background-image-text",
+      "disabled": true,
+      "settings": {
+        "subtitle": "Impressive",
+        "title": "Large image with text box",
+        "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.</p>",
+        "button_label": "",
+        "button_link": "",
+        "layout": "left",
+        "height": 550,
+        "parallax": false,
+        "parallax_direction": "top",
+        "lazyload_images": true
+      }
+    },
+    "text-and-image": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Image with text",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "text-and-image2": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Image with text",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "left",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonials-0": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonials-1": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonials-2": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author name",
+            "author_info": "Los Angeles, CA"
+          }
+        }
+      },
+      "block_order": [
+        "testimonials-0",
+        "testimonials-1",
+        "testimonials-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Don't take our word for it",
+        "round_images": true,
+        "color_background": "#f9f9f9",
+        "color_text": "#1c1d1d"
+      }
+    },
+    "17398610036eba188b": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_NaCKgd": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_NaCKgd"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "product_recommendations_heading": "You May Also Like",
+        "related_count": 6,
+        "products_per_row": 4
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_GG9hTY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_qtUPaR": {
+          "type": "heading",
+          "settings": {
+            "title": "Popular Searches"
+          }
+        },
+        "text_gnDzAp": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p><a href=\"https://charmacyworld.com/products/cmc-matte-foundation\"><span style=\"text-decoration:underline\">CMC Matte Foundation </span></a>|  <a href=\"https://charmacyworld.com/products/cmc-cheek-enhancer\"><span style=\"text-decoration:underline\">CMC Cheek Enhancer</span></a> | <a href=\"https://charmacyworld.com/products/cmc-pro-pore-conceal-primer\"><span style=\"text-decoration:underline\">CMC Pro Pore Conceal Primer </span></a>| <a href=\"https://charmacyworld.com/products/cmc-baked-illuminator\"><span style=\"text-decoration:underline\">CMC Baked Immunilator</span></a> | <a href=\"https://charmacyworld.com/products/cmc-set-fix-loose-powder\"><span style=\"text-decoration:underline\">CMC Set & Fix Loose Powder</span></a> | <a href=\"https://charmacyworld.com/products/cmc-hd-cover-compact-powder\"><span style=\"text-decoration:underline\">CMC HD Compact Powder</span></a> | <a href=\"https://charmacyworld.com/products/cmc-star-dust-highlighters\"><span style=\"text-decoration:underline\">CMC Stardust Highlighter </span></a>| <a href=\"https://charmacyworld.com/products/cmc-flattering-nude-lipstick\"><span style=\"text-decoration:underline\">CMC Nude Lipstick </span></a>| <a href=\"https://charmacyworld.com/products/cmc-stunning-longstay-liquid-lip\"><span style=\"text-decoration:underline\">CMC Long Last Liquid Lip</span></a> | <a href=\"https://charmacyworld.com/products/cmc-soft-satin-matte-lipstick\"><span style=\"text-decoration:underline\">CMC Satin Matte Lipstick</span></a> | <a href=\"https://charmacyworld.com/products/cmc-luxe-creme-lipstick\"><span style=\"text-decoration:underline\">CMC Luxe Creme Lipstick</span></a> | <a href=\"https://charmacyworld.com/products/cmc-lip-contour-lip-liner\"><span style=\"text-decoration:underline\">CMC Lip Liner</span></a> | <a href=\"https://charmacyworld.com/products/cmc-insane-shifters-eye-shadow\"><span style=\"text-decoration:underline\">CMC Shifter Eye Shadow</span></a> | <a href=\"https://charmacyworld.com/products/cmc-star-bomb-eye-shadow\"><span style=\"text-decoration:underline\">CMC Star Bomb Eye Shadow</span></a> | <a href=\"https://charmacyworld.com/products/cmc-true-and-false-mascara\"><span style=\"text-decoration:underline\">CMC True False Mascara</span></a> | <a href=\"https://charmacyworld.com/products/cmc-ultra-thin-stroke-pen\"><span style=\"text-decoration:underline\">CMC Stroke Thin Pen</span></a> | <a href=\"https://charmacyworld.com/products/cmc-360-deg-volume-mascara\"><span style=\"text-decoration:underline\">CMC Volume Mascara</span></a> | <a href=\"https://charmacyworld.com/products/cmc-sketch-eyeliner\"><span style=\"text-decoration:underline\">CMC Sketch Eye Liner</span></a> | <a href=\"https://charmacyworld.com/products/cmc-duo-eyebrow-filler-eyeliner-sketch\"><span style=\"text-decoration:underline\">CMC Eyebrow Filler & Eyeliner Sketch</span></a> | <a href=\"https://charmacyworld.com/products/duo-eyebrow-filler-ultra-definer\"><span style=\"text-decoration:underline\">CMC Eyebrow Filler</span></a> | <a href=\"https://charmacyworld.com/products/cmc-ultra-defining-eyebrow-pencil\"><span style=\"text-decoration:underline\">CMC Eyebrow Pencil</span></a> | <a href=\"https://charmacyworld.com/products/cmc-gradient-shadows-palette\"><span style=\"text-decoration:underline\">CMC Gradient Eye Shadow Palette</span></a> | <a href=\"https://charmacyworld.com/products/cmc-eye-shadow-12-colors-palette\"><span style=\"text-decoration:underline\">CMC Eye Shadow 12 Colors Palette</span></a> | <a href=\"https://charmacyworld.com/products/cmc-intense-eyebrow-filler\"><span style=\"text-decoration:underline\">CMC Eyebrow Filler </span></a>| <a href=\"https://charmacyworld.com/products/cmc-power-lash-mascara\"><span style=\"text-decoration:underline\">CMC Power Lash Mascara</span></a> |<a href=\"https://charmacyworld.com/products/cmc-stellar-eyeliner\"><span style=\"text-decoration:underline\"> CMC Stellar Eyeliner</span></a> |<a href=\"https://charmacyworld.com/products/cmc-star-dust-highlighters\"><span style=\"text-decoration:underline\"> </span></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_qtUPaR",
+        "text_gnDzAp"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "collection_footer_read_more_dTrRrL": {
+      "type": "collection-footer-read-more",
+      "settings": {
+        "title": "",
+        "content": "{{ product.metafields.custom.product_footer_read_more_read_less_description | metafield_tag }}"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1739860830b0297931",
+    "sub",
+    "background-image-text",
+    "text-and-image",
+    "text-and-image2",
+    "testimonials",
+    "17398610036eba188b",
+    "product-recommendations",
+    "collection-return",
+    "rich_text_GG9hTY",
+    "collection_footer_read_more_dTrRrL"
+  ]
+}

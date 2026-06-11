@@ -1,0 +1,139 @@
+
+/* body{
+    position: relative !important;
+} */
+canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999999; 
+    pointer-events: none; 
+}
+
+
+    .santa-cap{
+        position: absolute;
+        left: 12px;
+        top: -10px;
+        width: 70px;
+        height: auto;
+        transform: scaleX(-1);
+        z-index: 3;
+        animation: santacap 2s ease infinite;
+    }
+
+.header__heading-logo-wrapper {
+    position: relative;
+}
+    
+.header__heading-logo-wrapper .santa-cap {
+    bottom: 0;
+    left: -50px;
+    top: auto;
+}
+
+form.product-single__form {
+    position: relative;
+}
+.site-nav__link--icon.js-drawer-open-cart {
+    position: relative;
+}
+
+.header__icon--cart .santa-cap {
+    width: 30px;
+    height: auto;
+    top: -2px;
+    right: -4px;
+    left: auto;
+    animation: santacapcart 2s ease infinite;
+}
+img.santa-tree {
+    position: absolute;
+    width: 50px;
+    right: 0;
+    bottom: 0;
+}
+
+div#CollectionSection-template--19234416230657__featured_collection_zLw4Q8 {
+    background: url(https://cdn.shopify.com/s/files/1/0734/0366/2650/files/backgroundd_16_Dec-01.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    .card__heading a {
+        color: #fff;
+    }
+    span.price-item.price-item--regular.nn {
+        color: #fff;
+    }
+    .slider-buttons {
+        display: none;
+    }
+    h2.title {
+        color: #fff;
+    }
+    .grid-product__content{
+        background: #fff;
+    }
+    .section-header__title{
+        color: #fff;
+    }
+    a.grid-product__see-all {
+            color: #fff;
+        }
+}
+form#AddToCartForm-template--19234416230657__main-8954246824193 {
+    position: relative;
+}
+img.xmas-tags-card {
+    position: absolute;
+    height: 23px;
+    z-index: 9;
+    bottom: 0;
+    
+}
+@media(max-width: 767px){
+    .santa-cap{
+        width: 30px;
+        left: 13px;
+        top: -4px;
+    }
+    img.xmas-tags-card {
+        height: auto;
+        width: 70%;
+        bottom: 0;
+        top: auto;
+    }
+
+}
+    @keyframes santacap {
+        0%{
+            transform: rotate(5deg) scaleX(1)
+        }
+        50%{
+            transform: rotate(-5deg) scaleX(1)
+        }
+        100%{
+            transform: rotate(5deg) scaleX(1)
+        }
+    }
+    @keyframes santacapcart {
+        0%{
+            transform: rotate(5deg) scaleX(1)
+        }
+        50%{
+            transform: rotate(-5deg) scaleX(1)
+        }
+        100%{
+            transform: rotate(5deg) scaleX(1)
+        }
+    }
+
+
+
+    /* ========================================================= */
+
+
+    div#shopify-section-template--19234416230657__product-recommendations {
+    margin-top: 40px;
+}

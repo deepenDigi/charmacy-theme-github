@@ -1,0 +1,385 @@
+<style>
+   
+
+
+    .swatch {
+        display: inline-block;
+        padding: 6px 12px;
+        margin: 4px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        border-radius: 10px;
+        background: #f8f8f8;
+    }
+
+    .swatch.active {
+        border-color: #000;
+        font-weight: bold;
+    }
+
+    /* .bundle-total {
+  margin-top: 20px;
+  font-size: 18px;
+  display: flex;
+  gap: 18px;
+  margin-bottom: 20px;
+} */
+    .bundle-item {
+        background: #fff3e6;
+        padding: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        gap: 1rem;
+        border: 1px solid #be3254;
+        border-radius: 8px;
+        flex-wrap: wrap;
+    }
+
+    .bundle-total div:nth-child(1),
+    .bundle-total div:nth-child(2) {
+        display: inline-block;
+        font-size: 1.1rem;
+    }
+
+    .vf-img {
+        width: 100%;
+        height: 100%;
+        /* border-right: 1px solid #a4244f42; */
+        /* padding-right: 3px; */
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+    }
+      .variant-img-wrapper {
+        flex: 0 0 20%;
+        background: #fff;
+        text-align: center;
+        border-radius: 10px;
+    }
+    span.iteminfo {
+      margin-top: 15px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .bundle-item .variant-details h4>span {
+        color: #a3234f !important;
+        display: block !important;
+        margin-top: 6px;
+    }
+
+    h1.h2.product-single__title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        letter-spacing: 0 !important;
+    }
+
+    .bundle-total div:nth-child(1) {
+        font-size: 1.8rem;
+        letter-spacing: 0;
+        font-weight: 600;
+        color: #9a1c49;
+        padding-right: 4px;
+    }
+
+    div#bundle-products {
+        border: 2px solid #be3254;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    div#bundle-products H3 {
+        font-size: 1rem;
+        margin: 0;
+        padding: 15px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 600;
+        background: radial-gradient(circle, #ce3e58 55%, #9e1b4b);
+        text-align: center;
+        margin-bottom: 20px;
+        border-radius: 6px;
+    }
+
+    .bundle-total {
+        margin-bottom: 20px;
+    }
+
+    .bundle-total div:nth-child(2) {
+        margin-left: 4px;
+        text-decoration: line-through;
+        color: #64112fad;
+    }
+
+    .dic-flag {
+        display: inline-block;
+        font-size: 1.1rem;
+        margin-left: 4px;
+        color: #64112f;
+        font-weight: 600;
+        font-family: 'Poppins';
+    }
+
+    button#add-bundle-to-cart {
+        width: 100%;
+        height: 45px;
+        line-height: 45px;
+        background: #64112f;
+        color: #fff;
+    }
+
+    .bundle-item .variant-details h4,
+    .bundle-item .variant-details h4>span {
+        display: inline-block;
+        font-size: .9rem !important;
+        flex-wrap: wrap;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+    }
+
+    .variant-feature-image {
+        /* width: 15%; */
+
+    }
+
+    button.swatch.active {
+        box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+    }
+
+    .variant-details {
+        /* width: 75%; */
+    }
+
+
+    span.selected-shade-name {
+        color: #000;
+        display: block;
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    .bundle-total div:nth-child(1) {
+        font-size: 1.6rem;
+    }
+
+    @media(max-width: 768px) {
+        .vf-img {
+            border: none;
+            /* width: 70px !important;
+            height: 70px !important; */
+        }
+
+        .bundle-total div:nth-child(1) {
+            font-size: 1.4rem;
+        }
+
+        /* .variant-feature-image {
+            width: 25%;
+        }
+ */
+        .bundle-item {
+            /* flex-direction: column; */
+            gap: 5px;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        /* .variant-details {
+            width: 70%;
+        } */
+      .variant-img-wrapper{
+            flex: 0 0 30%;
+      }
+
+        .swatch {
+            width: 30px !important;
+            height: 30px !important;
+        }
+
+        div#bundle-products {
+            border: none;
+            padding: 0;
+        }
+
+        h1.h2.product-single__title {
+            font-size: 15px !important;
+        }
+
+        h3.pack-2 {
+            font-size: 11px;
+        }
+
+        div#bundle-products H3 {
+            padding: 7px;
+            font-size: 12px;
+            margin-bottom: 9px;
+        }
+
+        .bundle-item .variant-details h4,
+        .bundle-item .variant-details h4>span {
+            font-size: .8rem !important;
+        }
+    }
+
+    h3.pack-2 {
+        font-size: 15px;
+        text-transform: uppercase;
+        color: gray;
+        margin-bottom: 10px;
+    }
+
+    h1.h2.product-single__title {
+        font-size: 20px;
+        /* color: #ce3e58; */
+    }
+  .hidden {
+  display: none !important;
+}
+
+</style>
+
+
+{% assign bundle_products = product.metafields.custom.bundle_products.value %}
+
+<div id="bundle-products">
+
+
+    <div id="bundle-wrapper">
+        {% for bundle_product in bundle_products %}
+        <!-- {% assign product_obj = all_products[bundle_product] %} -->
+        <div class="bundle-item" data-product-handle="{{ bundle_product.handle }}"
+            data-product-id="{{ bundle_product.id }}">
+            <div class="variant-feature-image">
+                <div class="vf-img"></div>
+            </div>
+            <!-- <div class="variant-details">
+                <h4 class="only-desk">{{ bundle_product.title }}</h4>
+            </div>
+            <div class="variant-options" id="variant-options-{{ forloop.index }}"></div> -->
+
+            <!-- <div class="price">Price: <span class="bundle-price" data-price="{{ bundle_product.price | money_without_currency }}">{{ bundle_product.price | money }}</span></div> -->
+        </div>
+
+        {% assign first_variant = bundle_product.variants.first %}
+        {% assign total_price = total_price | plus: first_variant.price %}
+        {% endfor %}
+    </div>
+
+
+
+    <button id="add-bundle-to-cart" class="button">ADD TO CART</button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const bundleItems = document.querySelectorAll(".bundle-item");
+  const cartButton = document.getElementById("add-bundle-to-cart");
+  let selectedVariants = [];
+
+  async function fetchAllVariants(productHandle, index) {
+    try {
+      const response = await fetch(`/products/${productHandle}.js`);
+      const data = await response.json();
+      const bundleItem = document.querySelector(`.bundle-item[data-product-handle="${productHandle}"]`);
+
+      data.variants.forEach((variant, variantIndex) => {
+       const vfImg = bundleItem.querySelector('.vf-img');
+      vfImg.innerHTML = ""; // Clear existing content
+      
+      data.variants.forEach((variant) => {
+        if (variant.featured_image) {
+          const wrapper = document.createElement("div");
+          wrapper.classList.add("variant-img-wrapper");
+      
+          const img = document.createElement("img");
+          img.src = `${variant.featured_image.src}&width=400`;
+          img.alt = variant.title;
+          img.title = variant.title;        
+          img.style.objectFit = "cover";
+          img.style.display = "block";
+      
+          
+
+          const span = document.createElement("span");
+          span.setAttribute('class', 'iteminfo');
+          span.innerHTML = img.title;
+
+          wrapper.appendChild(img);
+          wrapper.appendChild(span);
+          vfImg.appendChild(wrapper);
+        }
+      });
+
+
+        selectedVariants.push({
+          id: variant.id,
+          price: variant.price / 100,
+          handle: productHandle,
+          title: variant.title,
+          sku: variant.sku || 'N/A'
+        });
+      });
+    } catch (err) {
+      console.error("Failed to fetch variants for", productHandle, err);
+    }
+  }
+
+  async function init() {
+    for (let i = 0; i < bundleItems.length; i++) {
+      const handle = bundleItems[i].getAttribute("data-product-handle");
+      await fetchAllVariants(handle, i);
+    }
+  }
+
+  init();
+
+  cartButton.addEventListener("click", async () => {
+    if (selectedVariants.length === 0) {
+      alert("No variants found to add.");
+      return;
+    }
+
+    const productHandle = window.location.pathname.split("/products/")[1]?.split("/")[0] || `custom-${Date.now()}`;
+    const properties = {
+      "Bundle ID": `BUNDLE-${productHandle}`,
+      "Product Count": selectedVariants.length
+    };
+
+    selectedVariants.forEach((variant, i) => {
+      const price = variant.price.toFixed(0);
+      const value = `${variant.sku}/${price}/1`;
+      properties[`_bundle_product${i + 1}`] = value;
+    });
+
+    const bundleProduct = await fetch(`/products/${productHandle}.js`).then(r => r.json());
+    const bundleProductVariantId = bundleProduct.variants[0]?.id;
+
+    if (!bundleProductVariantId) {
+      alert("Bundle product variant not found.");
+      return;
+    }
+
+    const response = await fetch('/cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        id: bundleProductVariantId,
+        quantity: 1,
+        properties: properties
+      })
+    });
+
+    if (response.ok) {
+      document.dispatchEvent(new CustomEvent('cart:build'));
+      setTimeout(() => {
+        document.querySelector('.js-drawer-open-cart').click();
+      }, 500);
+    } else {
+      alert("Failed to add bundle to cart");
+    }
+  });
+});
+</script>

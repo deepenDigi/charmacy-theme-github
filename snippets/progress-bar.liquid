@@ -1,0 +1,92 @@
+<div class="progress-main">
+
+  <div class="progress-note">
+    <p>Free Gifts Available at Checkout</p>
+  </div>
+
+  {% comment %} <div class="progress_offer_wrap" style="display:none;">
+    <p></p>
+  </div> {% endcomment %}
+
+  <div class="progress-container-bg-color" style="display:none;">
+    <div class="progress-container-wrap">
+      <div class="progress-container">
+
+        <div class="progress" id="progress" style="width:0%;"></div>
+
+        <!-- STEP 1 – ₹1000 -->
+        <div class="circle">
+          <img src="https://charmacyworld.com/cdn/shop/products/custom_resized_c9c00261-3728-44dd-8fb2-230df6721821.jpg?v=1738992726&width=180" style="width:100px;">
+          <span><p>Spend ₹1000</p></span>
+        </div>
+
+        <!-- STEP 2 – ₹2000 -->
+        <div class="circle">
+          <img src="https://charmacyworld.com/cdn/shop/products/8906148970286_1.jpg?v=1738990972&width=180" style="width:100px;">
+          <span><p>Spend ₹2000</p></span>
+        </div>
+
+        <!-- STEP 3 – ₹3000 -->
+        <div class="circle">
+          <img src="https://charmacyworld.com/cdn/shop/products/8906148970521.jpg?v=1738992793&width=180" style="width:100px;">
+          <span><p>Spend ₹3000</p></span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+{% comment %} 
+  <!-- <div class="progress-note"><p>Multiple offers available, but only one applies based on your cart total.</p></div> -->
+  <div class="progress-main">
+  <div class="progress-note"><p>Free Gift Available at Checkout</p></div>
+  <div class="progress_offer_wrap" >
+    <p>
+      Spend ₹1299 or more – Get a Reusable Face Sponge (Free)
+    </p>
+  </div>
+  <div class="progress-container-bg-color">
+    <div class="progress-container-wrap">
+      <div class="progress-container">
+        <div
+          class="progress"
+          id="progress"
+          style="width: 33%;"
+        ></div>
+
+        <div class="circle active">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/gift_1.gif?v=1732354527"
+            style="width: 26px; height: auto;"
+            loading="lazy"
+          >
+          <span><p>Spend ₹1299 – Get a Reusable Face Sponge </p></span>
+        </div>
+        {% comment %}
+        <div class="circle ">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/gift_1.gif?v=1732354527"
+            style="width: 26px; height: auto;"
+            loading="lazy"
+          >
+          <span><p>Spend ₹1599 – Get a Keychain Mirror </p></span>
+        </div>
+        {% endcomment %}
+        <div class="circle ">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0361/8553/8692/files/gift_1.gif?v=1732354527"
+            style="box-shadow: 0px 0px 12px #FF40B1; width: 26px; height: auto;"
+            loading="lazy"
+          >
+          <span><p>Spend ₹2199 – Get a Pouch </p></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+{% unless product.tags contains 'hide-progress-bar' %}
+{% endunless %} {% endcomment %}

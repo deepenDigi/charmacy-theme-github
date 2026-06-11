@@ -1,0 +1,570 @@
+<style>
+/* THEMES */
+
+/********** Theme: dark **********/
+/* Font styles */
+.flipdown.flipdown__theme-dark {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+/* Rotor group headings */
+.flipdown.flipdown__theme-dark .rotor-group-heading:before {
+  color: #000000;
+}
+/* Delimeters */
+.flipdown.flipdown__theme-dark .rotor-group:nth-child(n+2):nth-child(-n+3):before,
+.flipdown.flipdown__theme-dark .rotor-group:nth-child(n+2):nth-child(-n+3):after {
+  background-color: #151515;
+}
+/* Rotor tops */
+.flipdown.flipdown__theme-dark .rotor,
+.flipdown.flipdown__theme-dark .rotor-top,
+.flipdown.flipdown__theme-dark .rotor-leaf-front {
+  color: #FFFFFF;
+  background-color: #151515;
+}
+/* Rotor bottoms */
+.flipdown.flipdown__theme-dark .rotor-bottom,
+.flipdown.flipdown__theme-dark .rotor-leaf-rear {
+  color: #EFEFEF;
+  background-color: #202020;
+}
+/* Hinge */
+.flipdown.flipdown__theme-dark .rotor:after {
+  border-top: solid 1px #151515;
+}
+
+/********** Theme: light **********/
+/* Font styles */
+.flipdown.flipdown__theme-light {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+/* Rotor group headings */
+.flipdown.flipdown__theme-light .rotor-group-heading:before {
+  color: #EEEEEE;
+}
+/* Delimeters */
+.flipdown.flipdown__theme-light .rotor-group:nth-child(n+2):nth-child(-n+3):before,
+.flipdown.flipdown__theme-light .rotor-group:nth-child(n+2):nth-child(-n+3):after {
+  background-color: #DDDDDD;
+}
+/* Rotor tops */
+.flipdown.flipdown__theme-light .rotor,
+.flipdown.flipdown__theme-light .rotor-top,
+.flipdown.flipdown__theme-light .rotor-leaf-front {
+  color: #b14841222;
+  background-color: #DDDDDD;
+}
+/* Rotor bottoms */
+.flipdown.flipdown__theme-light .rotor-bottom,
+.flipdown.flipdown__theme-light .rotor-leaf-rear {
+  color: #b14841333;
+  background-color: #EEEEEE;
+}
+/* Hinge */
+.flipdown.flipdown__theme-light .rotor:after {
+  border-top: solid 1px #b14841222;
+}
+
+/* END OF THEMES */
+
+.flipdown {
+  overflow: visible;
+  width: 510px;
+  height: 110px;
+}
+
+.flipdown .rotor-group {
+  position: relative;
+  float: left;
+  padding-right: 30px;
+}
+
+.flipdown .rotor-group:last-child {
+  padding-right: 0;
+}
+
+.flipdown .rotor-group-heading:before {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.flipdown .rotor-group:nth-child(1) .rotor-group-heading:before {
+  content: attr(data-before);
+}
+
+.flipdown .rotor-group:nth-child(2) .rotor-group-heading:before {
+  content: attr(data-before);
+}
+
+.flipdown .rotor-group:nth-child(3) .rotor-group-heading:before {
+  content: attr(data-before);
+}
+
+.flipdown .rotor-group:nth-child(4) .rotor-group-heading:before {
+  content: attr(data-before);
+}
+
+.flipdown .rotor-group:nth-child(n+2):nth-child(-n+3):before {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  left: 115px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.flipdown .rotor-group:nth-child(n+2):nth-child(-n+3):after {
+  content: '';
+  position: absolute;
+  bottom: 50px;
+  left: 115px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.flipdown .rotor {
+  position: relative;
+  float: left;
+  width: 50px;
+  height: 80px;
+  margin: 0px 5px 0px 0px;
+  border-radius: 4px;
+  font-size: 4rem;
+  text-align: center;
+  perspective: 200px;
+}
+
+.flipdown .rotor:last-child {
+  margin-right: 0;
+}
+
+.flipdown .rotor-top,
+.flipdown .rotor-bottom {
+  overflow: hidden;
+  position: absolute;
+  width: 50px;
+  height: 40px;
+}
+
+.flipdown .rotor-leaf {
+  z-index: 1;
+  position: absolute;
+  width: 50px;
+  height: 80px;
+  transform-style: preserve-3d;
+  transition: transform 0s;
+}
+
+.flipdown .rotor-leaf.flipped {
+  transform: rotateX(-180deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.flipdown .rotor-leaf-front,
+.flipdown .rotor-leaf-rear {
+  overflow: hidden;
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  margin: 0;
+  transform: rotateX(0deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flipdown .rotor-leaf-front {
+  line-height: 80px;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.flipdown .rotor-leaf-rear {
+  line-height: 0px;
+  border-radius: 0px 0px 4px 4px;
+  transform: rotateX(-180deg);
+}
+
+.flipdown .rotor-top {
+  line-height: 80px;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.flipdown .rotor-bottom {
+  bottom: 0;
+  line-height: 0px;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.flipdown .rotor:after {
+  content: '';
+  z-index: 2;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 50px;
+  height: 40px;
+  border-radius: 0px 0px 4px 4px;
+}
+
+@media (max-width: 1950px) {
+
+  .flipdown {
+    /* width: 312px; */
+    width: 232px;
+    /* width: 250px; */
+    height: 50px;
+  }
+
+  .flipdown .rotor {
+    font-size: 3rem;
+    margin-right: 3px;
+  }
+
+  .flipdown .rotor,
+  .flipdown .rotor-leaf,
+  .flipdown .rotor-leaf-front,
+  .flipdown .rotor-leaf-rear,
+  .flipdown .rotor-top,
+  .flipdown .rotor-bottom,
+  .flipdown .rotor:after {
+    width: 30px;
+  }
+
+  .flipdown .rotor-group {
+    padding-right: 20px;
+  }
+
+  .flipdown .rotor-group:last-child {
+    padding-right: 0px;
+  }
+
+  .flipdown .rotor-group-heading:before {
+    font-size: 0.8rem;
+    height: 20px;
+    line-height: 20px;
+  }
+
+  .flipdown .rotor-group:nth-child(n+2):nth-child(-n+3):before,
+  .flipdown .rotor-group:nth-child(n+2):nth-child(-n+3):after {
+    left: 69px;
+  }
+
+  .flipdown .rotor-group:nth-child(n+2):nth-child(-n+3):before {
+    bottom: 13px;
+    height: 8px;
+    width: 8px;
+  }
+
+  .flipdown .rotor-group:nth-child(n+2):nth-child(-n+3):after {
+    bottom: 29px;
+    height: 8px;
+    width: 8px;
+  }
+
+  .flipdown .rotor-leaf-front,
+  .flipdown .rotor-top {
+    line-height: 50px;
+  }
+
+  .flipdown .rotor-leaf,
+  .flipdown .rotor {
+    height: 50px;
+  }
+
+  .flipdown .rotor-leaf-front,
+  .flipdown .rotor-leaf-rear,
+  .flipdown .rotor-top,
+  .flipdown .rotor-bottom,
+  .flipdown .rotor:after {
+    height: 25px;
+  }
+}
+
+.count-down {
+    max-width: 550px;
+    margin: auto;
+}
+.count-down .flipdown {
+    margin: auto;
+    /* margin-top: 30px; */
+}
+.flipdown h2{
+    font-size:15px;
+}
+
+.flipdown.flipdown__theme-dark .rotor:after {
+    border-top: solid 1px grey;
+}
+
+.flipdown.flipdown__theme-dark .rotor, .flipdown.flipdown__theme-dark .rotor-top, .flipdown.flipdown__theme-dark .rotor-leaf-front {
+    color: #FFFFFF;
+    background-color: #64112f !important;
+}
+
+.flipdown.flipdown__theme-dark .rotor-bottom, .flipdown.flipdown__theme-dark .rotor-leaf-rear {
+    color: #EFEFEF;
+    background-color: #64112f !important;
+}
+.flipdown.flipdown__theme-dark .rotor-group:nth-child(n+2):nth-child(-n+3):before, .flipdown.flipdown__theme-dark .rotor-group:nth-child(n+2):nth-child(-n+3):after{
+    background-color: #64112f !important;
+}
+
+
+  
+
+@media (max-width: 550px) {
+    .timer-wrapper{
+      max-height: fit-content;
+    }
+    .count-down {
+        width: 100%;
+    }
+    .flipdown.flipdown__theme-dark .rotor, .flipdown.flipdown__theme-dark .rotor-top, .flipdown.flipdown__theme-dark .rotor-leaf-front {
+        color: #FFFFFF;
+        background-color: #64112f;  !important;
+    }
+}
+
+/* ====  republicday ====== */
+.timer-wrapper {
+    position: relative;
+    padding: 0px 0 0;
+    overflow: hidden;
+}
+body:is(.tempate-product,.tempate-product\.mangalsutra) .wrapper-timer {
+    max-width: 460px;
+}
+body:is(.tempate-product,.tempate-product\.mangalsutra) .wrapper-timer h4{
+    border-radius: 7px;
+}
+body:is(.tempate-product,.tempate-product\.mangalsutra) .timer-wrapper{
+    padding: 0px 0;
+    margin-bottom: 20px;
+    /* border-radius: 20px; */
+}
+body:is(.template-collection,.tempate-collection\.mangalsutra) .wrapper-timer {
+    margin-top: -20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+  .page-width.page-content {
+    padding-top: 10px;
+}
+  @media(max-width: 768px){
+    
+    body:is(.template-collection,.tempate-collection\.mangalsutra) .timer-wrapper{
+        padding: 0 !important;
+    }
+    body:is(.template-collection,.tempate-collection\.mangalsutra) .wrapper-timer h3{
+          margin-bottom: 5px;
+    }
+    body:is(.template-collection,.tempate-collection\.mangalsutra) .wrapper-timer{
+          margin-top: -12px;
+    }
+    body:is(.template-collection,.tempate-collection\.mangalsutra) .timer-wrapper{
+        
+    }
+  }
+  {% comment %}
+    
+  
+body:is(.template-collection,.tempate-collection\.mangalsutra) .timer-wrapper{
+    background-image: url(https://cdn.shopify.com/s/files/1/0830/2719/8240/files/Modern_Cute_Valentines_Day_Ticket_Coupon_1.png);
+    /* background-size: cover; */
+    background-size: 40%;
+    background-position: center;
+    padding: 30px 0;
+
+    .flipdown.flipdown__theme-dark .rotor-bottom, .flipdown.flipdown__theme-dark .rotor-leaf-rear{
+        color: #b14841;
+        background-color: #FFF !important;
+    }
+  .flipdown.flipdown__theme-dark .rotor, .flipdown.flipdown__theme-dark .rotor-top, .flipdown.flipdown__theme-dark .rotor-leaf-front{
+        color: #b14841;
+        background-color: #FFFFFF !important;
+  }
+  .flipdown.flipdown__theme-dark .rotor:after{
+      border-top: solid 1px transparent;
+  }
+}
+{% endcomment %}
+body:is(.tempate-product,.tempate-product\.mangalsutra) .timer-wrapper{
+      background-image: url(https://cdn.shopify.com/s/files/1/0765/3431/7348/files/Untitled_1900_x_520_px.jpg?v=1737463863);
+      background-size: 270%;
+      background-position: center;
+      padding-bottom: 49px;
+      border-radius: 10px;
+
+  .flipdown.flipdown__theme-dark .rotor-bottom, .flipdown.flipdown__theme-dark .rotor-leaf-rear{
+        color: #b14841;
+        background-color: #fff !important;
+    }
+  .flipdown.flipdown__theme-dark .rotor, .flipdown.flipdown__theme-dark .rotor-top, .flipdown.flipdown__theme-dark .rotor-leaf-front{
+        color: #b14841;
+        background-color: #FFFFFF !important;
+  }
+  .flipdown.flipdown__theme-dark .rotor:after{
+      border-top: solid 1px transparent;
+  }
+}
+body:is(.tempate-product,.tempate-product\.mangalsutra) .timer-wrapper > h4{
+       background-image: none;
+      padding: 20px 0 0;
+}
+@media(max-width: 768px){
+  body:is(.template-collection,.tempate-collection\.mangalsutra) .timer-wrapper{
+      background-size: 90%;
+      padding: 20px 0;
+  }
+  body:is(.tempate-product,.tempate-product\.mangalsutra) .timer-wrapper{
+        padding: 0px 0 20px;
+  }
+}  
+body:is(body.template-collection,.tempate-collection\.mangalsutra) .timer-wrapper > h4{
+    padding: 0px 10px 0px !important;
+    background-image: none;
+    font-size: 33px;
+}
+body:is(.tempate-product,.tempate-product\.mangalsutra) .timer-wrapper:before{
+    background-size: 270%;
+}
+body:is(.tempate-product,.tempate-product\.mangalsutra) .timer-wrapper .count-down{
+    margin-bottom: 20px;
+}
+/* .timer-wrapper:before{
+    content: '';
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    background: url(https://cdn.shopify.com/s/files/1/0765/3431/7348/files/Untitled_1900_x_520_px.jpg?v=1737463863);
+    background-size: cover;
+    left: -10px;
+    top: 0;
+    background-repeat: no-repeat;
+    background-position: 10px;
+} */
+@media(max-width: 768px){
+  .timer-wrapper:before{
+    background-size: 300%;
+  }
+  .timer-wrapper{
+    padding: 0px 0;
+  }
+  .count-down{
+    scale: 0.9;
+  }
+  body:is(.tempate-product,.tempate-product\.mangalsutra) .timer-wrapper > h4{
+      margin-bottom: 10px;
+      background-size: cover;
+  }
+  body:is(.tempate-product,.tempate-product\.mangalsutra) .timer-wrapper{
+        padding: 20px 0 10px;
+  }
+  body:is(body.template-collection,.tempate-collection\.mangalsutra) .timer-wrapper > h4{
+      font-size: 23px;
+  }
+  
+}  
+
+ #flipdown .rotor-group:first-child {
+    display: none;
+}
+#flipdown .rotor-group:nth-child(n + 5) {
+    display: none !important;
+}
+ .wrapper-timer{
+    border: 1px solid #ceb599;
+    padding: 10px 10px 25px;
+    background: #fff3e6;
+   border-radius: 10px;
+ }
+  .wrapper-timer h3 {
+    margin-bottom: 10px;
+    font-size: 26px;
+    color: #64112f;
+    @media(max-width: 768px){
+      font-size: 18px;
+    }
+}
+
+.timer-offer {
+    background: #64112f;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: -10px;
+
+    @media(min-width: 768px){
+        padding: 10px 100px 20px;
+    }
+}
+
+.timer-offer h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.timer-offer p {
+    font-size: 12px;
+    margin-bottom: 0;
+    background: #fff;
+    color: #64112f;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+
+</style> 
+<div class="wrapper-timer">
+ <h3 style="text-align:center;">Flash Sale Valid For</h3> 
+  <div class="timer-wrapper" >
+      <div class="count-down">
+          <div class="flipdown" id="flipdown"></div>
+      </div>   
+  </div>
+</div>
+<div class="timer-offer">
+  <h3>Shop any 2 single products and receive a complimentary Stellar Eyeliner worth ₹899/- on us!</h3>
+  <p> Limited to the first 500 orders</p>
+</div>
+ <!-- Scripts -->
+<script src="https://pbutcher.uk/flipdown/js/flipdown/flipdown.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  function setCountdown() {
+    let now = new Date().getTime();
+
+    // Array of target dates
+    let targetDates = [
+      new Date("Jun 10, 2026 23:59:59").getTime(),
+    ];
+
+    let nextTarget = targetDates.find((date) => date > now) || targetDates[targetDates.length - 1];
+
+    // Ensure flipdown element exists
+    let flipdownElement = document.getElementById("flipdown");
+    if (!flipdownElement) {
+      console.error("FlipDown container not found!");
+      return;
+    }
+
+    // Initialize FlipDown
+    new FlipDown(Math.floor(nextTarget / 1000))
+      .start()
+      .ifEnded(() => {
+        console.log("Countdown ended!");
+      });
+  }
+
+  setCountdown();
+});
+
+
+</script>

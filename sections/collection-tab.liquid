@@ -1,0 +1,459 @@
+{%- liquid
+  assign per_row = section.settings.per_row
+  assign product_limit = per_row | times: 3
+  assign collection1 = collections[section.settings.collection1]
+  assign collection2 = collections[section.settings.collection2]
+
+  assign emptyState = false
+  if collection1.empty? and collection2.empty?
+    assign emptyState = true
+  endif
+-%}
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
+<div
+  id="CollectionSection-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="collection-switcher"
+  data-per-row="{{ per_row }}" class="section-{{ section.id }}-padding collectionTabs {% if section.settings.collection1 == blank or section.settings.collection2 == blank %}no_tabView{% endif %}">
+  {% if section.settings.title != blank or section.settings.collection1 or section.settings.collection2 %}
+    <div class="page-full">
+      <div class="section-header text-center">
+        {%- if section.settings.title != blank -%}
+        <div class="larger-text">
+          <p class="subtitle">{{ section.settings.title }}</p>
+        </div>
+      {% endif %}
+        
+        {%- unless collection1.empty? -%}
+          <h3 class="collection-switcher__title">
+            <a href="{{ collection1.url }}"
+              class="collection-switcher__trigger is-active js-no-transition"
+              aria-controls="collection1-{{ section.id }}">
+              {% if section.settings.collection1_title != blank %}
+                {{ section.settings.collection1_title }} 
+              {% else %}
+                {{ collection1.title }}
+              {% endif %}
+            </a>
+          </h3>
+        {%- endunless -%}
+        {%- unless collection2.empty? -%}
+          <h3 class="collection-switcher__title">
+            <a href="{{ collection2.url }}"
+              class="collection-switcher__trigger js-no-transition"
+              aria-controls="collection2-{{ section.id }}">
+                {% if section.settings.collection2_title != blank %}
+                  {{ section.settings.collection2_title }} 
+                {% else %}
+                  {{ collection2.title }}
+              {% endif %}
+            </a>
+          </h3>
+        {%- endunless -%}
+
+        {%- if emptyState -%}
+          {%- for i in (1..2) -%}
+            <h3 class="collection-switcher__title">
+              <a href="#"
+                class="collection-switcher__trigger js-no-transition{% if i == 1 %} is-active {% endif %}"
+                aria-controls="collection{{ i }}-{{ section.id }}">
+                {{ 'home_page.onboarding.collection_title' | t }} {{ i }}
+              </a>
+            </h3>
+          {%- endfor -%}
+        {%- endif -%}
+      </div>
+    </div>
+  {% endif %}
+
+  {%- liquid
+    capture gridView
+      render 'products_per_row', products_per_row: per_row, style: 'fractions'
+    endcapture
+  -%}
+
+  <div class="page-full">
+    {%- unless collection1.empty? -%}
+      <div id="collection1-{{ section.id }}" class="collection-switcher__collection" data-index="0">
+        <div
+          id="CollectionSwitcher1-{{ section.id }}"
+          class="grid collection-switcher__collection-grid"
+          data-per-row="{{ per_row }}">
+          {%- for product in collection1.products limit: product_limit -%}
+            {%- render 'product-grid-item',
+              product: product,
+              collection: collection,
+              per_row: per_row,
+              disable_quick_view_output: true,
+            -%}
+          {%- endfor -%}
+        </div>
+
+        {%- if section.settings.view_all -%}
+          <p class="text-center">
+            <a href="{{ collection1.url }}" class="btn">{{ 'collections.general.all_of_collection' | t }}</a>
+          </p>
+        {%- endif -%}
+      </div>
+    {%- endunless -%}
+
+    {%- unless collection2.empty? -%}
+      <div id="collection2-{{ section.id }}" class="collection-switcher__collection hide" data-index="1">
+        <div
+          id="CollectionSwitcher2-{{ section.id }}"
+          class="grid collection-switcher__collection-grid"
+          data-per-row="{{ per_row }}">
+          {%- for product in collection2.products limit: product_limit -%}
+            {%- render 'product-grid-item',
+              product: product,
+              collection: collection,
+              per_row: per_row,
+              disable_quick_view_output: true,
+            -%}
+          {%- endfor -%}
+        </div>
+
+        {%- if section.settings.view_all -%}
+          <p class="text-center">
+            <a href="{{ collection2.url }}" class="btn">{{ 'collections.general.all_of_collection' | t }}</a>
+          </p>
+        {%- endif -%}
+      </div>
+    {%- endunless -%}
+
+    {%- if emptyState -%}
+      {%- for i in (1..2) -%}
+        <div id="collection{{i}}-{{ section.id }}" class="collection-switcher__collection{% if i == 2 %} hide{% endif %}">
+          <div
+            id="CollectionSwitcher{{ i }}-{{ section.id }}"
+            class="grid"
+            data-per-row="{{ per_row }}">
+            {%- for i in (1..per_row) -%}
+              <div class="grid__item grid-product {{ gridView }}" data-aos="row-of-{{ per_row }}">
+                <div class="grid-product__content">
+                  <a href="#" class="grid-product__link">
+                    <div class="grid-product__image-mask">
+                      {%- capture current -%}{% cycle 1, 2, 3, 4, 5, 6 %}{%- endcapture -%}
+                      <div class="image-wrap">{{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}</div>
+                    </div>
+                    <div class="grid-product__meta">
+                      <div class="grid-product__title">{{ 'home_page.onboarding.product_title' | t }}</div>
+                      <div class="grid-product__price">$29</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+
+          {%- if section.settings.view_all -%}
+            <p class="text-center">
+              <a href="#" class="btn">{{ 'collections.general.all_of_collection' | t }}</a>
+            </p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    {%- endif -%}
+  </div>
+</div>
+
+{% comment %}
+  This section loads product-grid-item inside a slider, which breaks the
+  `position: fixed` layout since it's inside an element with `transform: translateX`.
+
+  Output the quick shop modal outside of the section, and pass
+  `disable_quick_view_output: true` to `product-grid-item` above.
+{% endcomment %}
+{%- if settings.quick_shop_enable -%}
+  {%- unless collection1.empty? -%}
+    {%- for product in collection1.products limit: product_limit -%}
+      {%- render 'quick-shop-modal', product: product -%}
+    {%- endfor -%}
+  {%- endunless -%}
+  {%- unless collection2.empty? -%}
+    {%- for product in collection2.products limit: product_limit -%}
+      {%- render 'quick-shop-modal', product: product -%}
+    {%- endfor -%}
+  {%- endunless -%}
+{%- endif -%}
+
+{%- if section.settings.divider -%}</div>{%- endif -%}
+
+{% style %}
+  {% if section.settings.bg_image != blank or section.settings.bg_color != blank %}
+   #shopify-section-{{ section.id }}.collection--tab{
+     {% if section.settings.bg_image != blank %} background: url({{ section.settings.bg_image | image_url  }}) no-repeat; {% endif %}
+     {% unless section.settings.bg_image != blank %} background-color: {{ section.settings.bg_color }};{% endunless %}
+      background-size: cover;
+      background-position: center;
+    }
+   {% endif %}
+  
+  {% if section.settings.heading_font_size %}
+    #shopify-section-{{ section.id }} .collectionTabs a.collection-switcher__trigger {
+      {% if section.settings.heading_font_size != blank %}font-size: {{ section.settings.heading_font_size }}px;{% endif %}
+    }
+  {% endif %}
+  {% if section.settings.mobile_font_size != blank %}
+    @media only screen and (max-width:768px) {
+       #shopify-section-{{ section.id }} .collectionTabs a.collection-switcher__trigger {
+          {% if section.settings.mobile_font_size != blank %}font-size: {{ section.settings.mobile_font_size }}px;{% endif %}
+        }
+     }
+  {% endif %}
+
+  {% if section.settings.active_heading_text_color or section.settings.active_heading_bg_color %}
+    #shopify-section-{{ section.id }} .collectionTabs a.collection-switcher__trigger.is-active {
+      {% if section.settings.active_heading_text_color != blank %}color: {{ section.settings.active_heading_text_color }} !important;{% endif %}
+      {% if section.settings.active_heading_bg_color != blank %}background: {{ section.settings.active_heading_bg_color }} !important;{% endif %}
+    }
+  {% endif %}
+    
+  {% if section.settings.heading_text_color or section.settings.heading_bg_color %}
+    #shopify-section-{{ section.id }} .collectionTabs a.collection-switcher__trigger:not(.is-active) {
+      {% if section.settings.heading_text_color != blank %}color: {{ section.settings.heading_text_color }} !important;{% endif %}
+      {% if section.settings.heading_bg_color != blank %}background: {{ section.settings.heading_bg_color }} !important;{% endif %}
+    }
+  {% endif %}
+
+    {% if section.settings.notab_text_color or section.settings.notab_heading_bg_color %}
+    #shopify-section-{{ section.id }} .collectionTabs.no_tabView a.collection-switcher__trigger {
+      {% if section.settings.notab_text_color != blank %}color: {{ section.settings.notab_text_color }} !important;{% endif %}
+      {% if section.settings.notab_heading_bg_color != blank %}background: {{ section.settings.notab_heading_bg_color }} !important;{% endif %}
+    }
+  {% endif %}
+
+    
+    
+{% comment %}
+  {% if section.settings.font_size or section.settings.text_color %}
+    #shopify-section-{{ section.id }} .section-header__subtitle {
+      {% if section.settings.font_size != blank %}font-size: {{ section.settings.font_size }}px;{% endif %}
+      {% if section.settings.text_color != blank %}color: {{ section.settings.text_color }};{% endif %}
+    }     
+  {% endif %}
+  
+  {% if section.settings.mobile_font_size != blank %}
+    @media only screen and (max-width:768px) {
+       #shopify-section-{{ section.id }} .collectionTabs a.collection-switcher__trigger {
+          {% if section.settings.mobile_font_size != blank %}font-size: {{ section.settings.mobile_font_size }}px;{% endif %}
+        }
+     }
+  {% endif %}
+  {% if section.settings.heading_mobile_font_size != blank %}
+    @media only screen and (max-width:768px) {
+       #shopify-section-{{ section.id }} .header__title {
+          {% if section.settings.heading_mobile_font_size != blank %}font-size: {{ section.settings.heading_mobile_font_size }}px;{% endif %}
+        }
+     }
+  {% endif %}
+
+  {% if section.settings.heading_mobile_font_size != blank %}
+    #shopify-section-{{ section.id }} a.showAll{ color: {{ section.settings.first_button_text }};  }
+  {% endif %}
+    
+  {% if section.settings.first_button_bg != blank %}    
+    #shopify-section-{{ section.id }} a.showAll:before{background-color: {{ section.settings.first_button_bg }};}
+  {% endif %}
+    
+  {% if section.settings.first_button_bg != blank %}
+    #shopify-section-{{ section.id }} a.bottomShowAll{color: {{ section.settings.first_button_bg }} !important; }
+  {% endif %}
+    
+  {% if section.settings.first_button_bg != blank %}
+    #shopify-section-{{ section.id }} a.bottomShowAll:before{ background-color: {{ section.settings.first_button_bg }};}
+  {% endif %}
+    
+  {% endcomment %}  
+    
+
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Collection tab",
+  "class": "index-section collection--tab",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.featured-collection-switcher.settings.title.label",
+      "default": "Most popular"
+    },
+    {
+      "id": "collection1",
+      "type": "collection",
+      "label": "t:sections.featured-collection-switcher.settings.collection1.label"
+    },
+    {
+      "id": "collection1_title",
+      "type": "text",
+      "label": "Collection 1 title"
+    },
+    {
+      "id": "collection2",
+      "type": "collection",
+      "label": "t:sections.featured-collection-switcher.settings.collection2.label"
+    },
+    {
+      "id": "collection2_title",
+      "type": "text",
+      "label": "Collection 2 title"
+    },
+    {
+      "type": "range",
+      "id": "per_row",
+      "label": "t:sections.featured-collection-switcher.settings.per_row.label",
+      "default": 4,
+      "min": 1,
+      "max": 5,
+      "step": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "view_all",
+      "label": "t:sections.featured-collection-switcher.settings.view_all.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "divider",
+      "label": "t:sections.featured-collection-switcher.settings.divider.label",
+      "default": false
+    },
+    {
+      "id": "bg_image",
+      "type": "image_picker",
+      "label": "Background Image"
+    },
+    {
+      "id": "bg_color",
+      "type": "color",
+      "label": "Background Color"
+    },
+    {
+      "id": "active_heading_text_color",
+      "type": "color",
+      "label": "Active heading text Color"
+    },
+    {
+      "id": "active_heading_bg_color",
+      "type": "color",
+      "label": "Active heading BG Color"
+    },
+    {
+      "id": "heading_text_color",
+      "type": "color",
+      "label": "Deactive heading Color"
+    },
+    {
+      "id": "heading_bg_color",
+      "type": "color",
+      "label": "Deactive heading BG Color"
+    },
+    {
+      "id": "notab_text_color",
+      "type": "color",
+      "label": "No tab view heading Color"
+    },
+    {
+      "id": "notab_heading_bg_color",
+      "type": "color",
+      "label": "No tab view heading BG Color"
+    },
+    {
+      "id": "heading_font_size",
+      "type": "number",
+      "label": "Heading font size",
+      "default": 30
+    },
+    {
+      "id": "heading_mobile_font_size",
+      "type": "number",
+      "label": "Mobile heading font size",
+      "default": 26
+    },
+    {
+      "id": "text_color",
+      "type": "color",
+      "label": "Text Color"
+    },
+    {
+      "id": "font_size",
+      "type": "number",
+      "label": "Font size",
+      "default": 14
+    },
+    {
+      "id": "mobile_font_size",
+      "type": "number",
+      "label": "Mobile font size",
+      "default": 12
+    },
+    {
+      "id": "first_button_bg",
+      "type": "color",
+      "label": "Cart button background",
+    },
+    {
+      "id": "first_button_text",
+      "type": "color",
+      "label": "Cart button text color",
+    },
+    {
+      "id": "second_button_bg",
+      "type": "color",
+      "label": "View all button background",
+    },
+    {
+      "id": "second_button_text",
+      "type": "color",
+      "label": "View all button text color",
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "PADDING TOP",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "PADDING BOTTOM",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Tab"
+    }
+  ],
+  "blocks": [],
+  "disabled_on": {
+    "groups": ["footer", "header", "custom.popups"]
+  }
+}
+{% endschema %}

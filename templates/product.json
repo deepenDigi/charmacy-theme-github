@@ -1,0 +1,646 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "advanced_content_bnPYzT": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_Q3HFxA": {
+          "type": "liquid",
+          "settings": {
+            "code": "{% render 'plp-marquee' %}",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_Q3HFxA"
+      ],
+      "disabled": true,
+      "name": "t:sections.advanced-content.presets.custom_content.name",
+      "settings": {
+        "full_width": true,
+        "space_around": true,
+        "lazyload_images": true
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "judge_me_reviews_preview_badge_fUcT4j": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "custom_LqUK3z": {
+          "type": "custom",
+          "settings": {
+            "code": "<style>\n.price-5off {\n    padding: 7px 5px;\n    background-color: green;\n    color: #FFF;\n    width: max-content;\n    border-radius: 4px;\nFONT-WEIGHT:400;\n    letter-spacing: 1px;\n    line-height: 1;\nfont-family: 'Saira Stencil One', sans-serif;\n}\n\n  </style>\n{%- liquid\n  assign v = product.selected_or_first_available_variant\n  assign discounted_price = v.price | times: 95 | divided_by: 100\n  assign you_save = v.price | minus: discounted_price\n-%}\n\n<div class=\"price-5off\">\n  <div class=\"price-5off__row\">\n    <span class=\"price-5off__label\">Get it on prepaid at</span>\n    <span class=\"price-5off__value\">{{ discounted_price | money | replace: '.00', '' }}\n</span>\n  </div>\n\n  \n</div>"
+          }
+        },
+        "custom_EzEANM": {
+          "type": "custom",
+          "settings": {
+            "code": "{% render 'plp-mob-applink' %}"
+          }
+        },
+        "custom_7pVnNt": {
+          "type": "custom",
+          "disabled": true,
+          "settings": {
+            "code": "{% if product.title == \"CMC Duo Drama Eyeliners - Essentials\" or product.title == \"CMC Duo Drama Eyeliners - Multichrome & Metallics\" %}\n  <h2 class=\"important-heading\">Get a FREE Intense Eyebrow Filler! 🎁</h2>\n{% endif %}\n<style>\n.important-heading {\n  color: white;\nbackground-color:#64112F;\n  font-size: 0.9rem;\n  text-align:center;\npadding:5px;\nborder-radius:5px;\n  margin-bottom: 10px;\n}\n\n</style>"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": true
+          }
+        },
+        "quantity_selector_YW9e39": {
+          "type": "quantity_selector",
+          "settings": {
+            "show_pincode": true
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "disabled": true,
+          "settings": {
+            "inventory_threshold": 10,
+            "inventory_transfers_enable": true
+          }
+        },
+        "sales_point": {
+          "type": "sales_point",
+          "settings": {
+            "icon": "globe",
+            "text": "100 % Authentic"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "trust_badge_zaQkLb": {
+          "type": "trust_badge",
+          "disabled": true,
+          "settings": {
+            "trust_image": "shopify://shop_images/Black_Friday_3.png"
+          }
+        },
+        "custom_x6hEyX": {
+          "type": "custom",
+          "disabled": true,
+          "settings": {
+            "code": "<div class=\"pl-slider-wrapper\" style=\"position: relative; overflow: hidden; max-width: 100%;\">\n\n  <div class=\"pl-slider\" style=\"display: flex; transition: transform 0.5s ease;\">\n    <div class=\"pl-slide\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0558/4584/7231/files/charmacy_website_single_image_karva_chauth22_sep.jpg?v=1758528657\" alt=\"\">\n    </div>\n    <div class=\"pl-slide\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0558/4584/7231/files/004_chamacy_banner_4_April.jpg?v=1754896874\" alt=\"\">\n    </div>\n  </div>\n\n  <!-- Arrows -->\n  <button class=\"pl-prev\" style=\"position: absolute; top: 50%; left: 10px; transform: translateY(-50%); z-index: 1;\">&#10094;</button>\n  <button class=\"pl-next\" style=\"position: absolute; top: 50%; right: 10px; transform: translateY(-50%); z-index: 1;\">&#10095;</button>\n\n</div>\n\n<style>\n  .pl-slide {\n    min-width: 100%;\n    box-sizing: border-box;\n  }\n  .pl-slide img {\n    width: 100%;\n    display: block;\n  }\n  .pl-prev, .pl-next {\n    background-color: rgba(0,0,0,0.5);\n    border: none;\n    color: white;\n    padding: 10px;\n    cursor: pointer;\n    border-radius: 50%;\n    width: 35px;\n    height: 35px;\n    line-height: 1;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n</style>\n\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n  const slider = document.querySelector('.pl-slider');\n  const slides = document.querySelectorAll('.pl-slide');\n  const prevBtn = document.querySelector('.pl-prev');\n  const nextBtn = document.querySelector('.pl-next');\n\n  let currentIndex = 0;\n  const totalSlides = slides.length;\n\n  function updateSlidePosition() {\n    slider.style.transform = `translateX(-${currentIndex * 100}%)`;\n  }\n\n  nextBtn.addEventListener('click', () => {\n    currentIndex = (currentIndex + 1) % totalSlides;\n    updateSlidePosition();\n  });\n\n  prevBtn.addEventListener('click', () => {\n    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;\n    updateSlidePosition();\n  });\n});\n</script>"
+          }
+        },
+        "custom_YtiABn": {
+          "type": "custom",
+          "settings": {
+            "code": "{% render'plp-timer' %}"
+          }
+        },
+        "custom_FxbaLJ": {
+          "type": "custom",
+          "settings": {
+            "code": "<style>\n    .plp-offer-wrap {\n        border: 2px dashed;\n        color: #64112f;\n        padding: 10px;\n        background: #fff3e6;\n        text-align: center;\n    }\n    .plp-offer-wrap h3{\n        font-size: 16px;\n        margin-bottom: 10px;\n    }\n    .plp-offer-wrap p {\n        font-size: 30px;\n        letter-spacing: 0;\n        text-transform: uppercase;\n        margin-bottom: 6px;\n        font-weight: 700;\n        letter-spacing: -1px;\n    }\n    .plp-offer-wrap p:last-child {\n        margin-bottom: 0;\n        font-size: 14px;\n        letter-spacing: 0;\n        font-weight: 500;\n    }\n    \n    .copy-code {\n        cursor: pointer;\n        color: #fff;\n        font-weight: bold;\n        background: #64112f;\n        display: inline-block;\n        padding: 6px 17px;\n        border-radius: 30px;\n        font-size: 14px;\n        letter-spacing: 3px;\n    }\n    .copy-code.add{\n        background: #000;\n    }\n    @media(min-width: 768px){\n        /* .plp-offer-wrap p {\n            font-size: 18px;\n            letter-spacing: 0;\n        } */\n        .plp-offer-wrap p:first-child br{\n            display: none;\n        }\n    }\n</style>\n{% if product.handle == 'cmc-diamond-rush-lipstick' %}\n<div class=\"plp-offer-wrap\">\n    <p>Get EXTRA 5% OFF <br> – Use code: \n        <span class=\"copy-code\" data-code=\"DRL5\">DRL5</span>\n    </p>\n    <p>Get an additional 5% OFF on prepaid orders</p>\n</div>\n{% else %}\n<div class=\"plp-offer-wrap\">\n    <p>Free Shipping on Prepaid Orders & Extra 5% OFF</p>\n</div>\n{% endif %}\n<!-- {% if product.tags contains 'B2G1 Collection' %}\n<div class=\"plp-offer-wrap\">\n    <h3>BUY MORE, GLOW MORE</h3>\n    <p>Buy 1 Get 1 Free</p>\n    <p>Add 2 products in the cart and 1 will be free</p>\n</div>\n{% endif %} -->\n<!-- <script>\n    function copy() {\n        const code = document.querySelector('.copy-code').getAttribute('data-code');\n        navigator.clipboard.writeText(code).then(function() {\n            document.querySelector('.copy-code').classList.add('add');\n            console.log(`Code \"${code}\" copied`);\n        }, function(err) {\n            console.error('Failed to copy text: ', err);\n        });\n    }\n\n    // Attach event listener\n    document.addEventListener('DOMContentLoaded', function() {\n        document.querySelector('.copy-code').addEventListener('click', copy);\n    });</script> -->"
+          }
+        },
+        "custom_r3W7n9": {
+          "type": "custom",
+          "name": "app offer",
+          "disabled": true,
+          "settings": {
+            "code": "<style>\n    .plp-offer-wrap {\n        border: 2px dashed;\n        color: #64112f;\n        padding: 10px;\n        background: #fff3e6;\n        text-align: center;\n    }\n    .plp-offer-wrap p {\n        font-size: 14px;\n        letter-spacing: 0;\n    }\n    .plp-offer-wrap p:last-child {\n        margin-bottom: 0;\n    }\n    \n    .copy-code {\n        cursor: pointer;\n        color: #fff;\n        font-weight: bold;\n        background: #64112f;\n        display: inline-block;\n        padding: 6px 17px;\n        border-radius: 30px;\n        font-size: 14px;\n        letter-spacing: 3px;\n    }\n    .copy-code.add{\n        background: #000;\n    }\n    @media(min-width: 768px){\n        .plp-offer-wrap p {\n            font-size: 18px;\n            letter-spacing: 0;\n        }\n        .plp-offer-wrap p:first-child br{\n            display: none;\n        }\n    }\n</style>\n<!-- {% if product.handle == 'cmc-diamond-rush-lipstick' %}\n<div class=\"plp-offer-wrap\">\n    <p>Get EXTRA 5% OFF <br> – Use code: \n        <span class=\"copy-code\" data-code=\"DRL5\">DRL5</span>\n    </p>\n    <p>Get an additional 5% OFF on prepaid orders</p>\n</div>\n{% else %}\n<div class=\"plp-offer-wrap\">\n    <p>Free Shipping on Prepaid Orders</p>\n</div>\n{% endif %} -->\n<div class=\"plp-offer-wrap\">\n    <p>Charmacy Milano App is now LIVE.</p>\n    <p>Enjoy an exclusive 10% off on your first app purchase.</p>\n</div>\n\n<script>\n    function copy() {\n        const code = document.querySelector('.copy-code').getAttribute('data-code');\n        navigator.clipboard.writeText(code).then(function() {\n            document.querySelector('.copy-code').classList.add('add');\n            console.log(`Code \"${code}\" copied`);\n        }, function(err) {\n            console.error('Failed to copy text: ', err);\n        });\n    }\n\n    // Attach event listener\n    document.addEventListener('DOMContentLoaded', function() {\n        document.querySelector('.copy-code').addEventListener('click', copy);\n    });</script>"
+          }
+        },
+        "custom_LGhjG3": {
+          "type": "custom",
+          "disabled": true,
+          "settings": {
+            "code": "<div class=\"sale-cup-wrap\">\n  \n   \n        <img class=\"sale-cup\" src=\"https://cdn.shopify.com/s/files/1/0558/4584/7231/files/13_march_banner_3.jpg?v=1742536105\">\n    \n</div>\n\n\n\n\n<style>\n    .plp-offer-wrap {\n        border: 2px dashed;\n        color: #64112f;\n        padding: 10px;\n        background: #fff3e6;\n        text-align: center;\n    }\n    .plp-offer-wrap p {\n        font-size: 14px;\n        letter-spacing: 0;\n    }\n    .plp-offer-wrap p:last-child {\n        margin-bottom: 0;\n    }\n    \n    .copy-code {\n        cursor: pointer;\n        color: #fff;\n        font-weight: bold;\n        background: #64112f;\n        display: inline-block;\n        padding: 6px 17px;\n        border-radius: 30px;\n        font-size: 14px;\n        letter-spacing: 3px;\n    }\n    .copy-code.add{\n        background: #000;\n    }\n    @media(min-width: 768px){\n        .plp-offer-wrap p {\n            font-size: 18px;\n            letter-spacing: 0;\n        }\n        .plp-offer-wrap p:first-child br{\n            display: none;\n        }\n    }\n</style>\n{% if product.handle == 'cmc-diamond-rush-lipstick' %}\n<div class=\"plp-offer-wrap\">\n    <p>Get EXTRA 5% OFF <br> – Use code: \n        <span class=\"copy-code\" data-code=\"DRL5\">DRL5</span>\n    </p>\n    <p>Get an additional 5% OFF on prepaid orders</p>\n</div>\n{% else %}\n<div class=\"plp-offer-wrap\">\n    <p>Get EXTRA 5% OFF on your first purchase <br> – Use code: \n        <span class=\"copy-code\" data-code=\"FIRST\">FIRST</span>\n    </p>\n    <p>Get an additional 5% OFF on prepaid orders</p>\n</div>\n{% endif %}\n<script>\n    function copy() {\n        const code = document.querySelector('.copy-code').getAttribute('data-code');\n        navigator.clipboard.writeText(code).then(function() {\n            document.querySelector('.copy-code').classList.add('add');\n            console.log(`Code \"${code}\" copied`);\n        }, function(err) {\n            console.error('Failed to copy text: ', err);\n        });\n    }\n\n    // Attach event listener\n    document.addEventListener('DOMContentLoaded', function() {\n        document.querySelector('.copy-code').addEventListener('click', copy);\n    });</script>"
+          }
+        },
+        "custom_iLKcNK": {
+          "type": "custom",
+          "disabled": true,
+          "settings": {
+            "code": "<style>\n.tnc-box h3 {\n    font-size: 20px;\n    margin-bottom: 10px;\n}\n.tnc-box {\n        padding: 10px;\n        border: 1px solid;\n}\n\n.tnc-box p {\n    margin-bottom: 7px;\n}\n.tnc-box a {\n    background: #64112f;\n    color: #fff;\n    padding: 7px 10px;\n    display: block;\n    border-radius: 7px;\n    text-transform: uppercase;\n    font-size: 12px;\n    margin: 20px auto 0;\n    width: fit-content;\n}\n</style>\n<div class=\"tnc-box\">\n<h3>Important Info for Shoppers!</h3>\n<p>Your cart total unlocks the highest-value reward.</p>\n<p>✅ Video unboxing is required for any damage claims.</p>\n<p>✅ Ikonic products come with a 1-year warranty.</p>\n<p>✅ Free gifts cannot be exchanged. The gift is based on your cart total.</p>\n<p> Ikonic Support: 7400464738 | ✉ support@ikonicworld.com</p>\n<a href=\"/pages/cmc-beauty-bonanza-tnc\">Read more</a>\n</div>"
+          }
+        },
+        "custom_nPhtPD": {
+          "type": "custom",
+          "settings": {
+            "code": "<div class=\"plp-trust-img\">\n    <img style=\"width: 100%; height: 100;\" src=\"https://cdn.shopify.com/s/files/1/0558/4584/7231/files/charmacy-icon-11-march.png\">\n</div>"
+          }
+        },
+        "custom_RrXKqr": {
+          "type": "custom",
+          "settings": {
+            "code": "{% render 'plp-trust-icons' %}"
+          }
+        },
+        "custom_9iBEEp": {
+          "type": "custom",
+          "settings": {
+            "code": "{% render 'upsell-product' %}"
+          }
+        },
+        "custom_TG96H7": {
+          "type": "custom",
+          "disabled": true,
+          "settings": {
+            "code": "<div class=\"wt-product__text-block rte\" not-quick-add=\"\">\n\n    <div style=\"display: flex;flex-wrap: nowrap;justify-content: space-evenly;\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0558/4584/7231/files/Add_a_subheading_1.png?v=1740035152\"\n            style=\"max-height: 73px; max-width: 93px; flex: 1 1 0; width: 0;\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0558/4584/7231/files/Group_4949.avif?v=1739449320\"\n            style=\"max-height: 73px; max-width: 93px; flex: 1 1 0; width: 0;\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0558/4584/7231/files/Group_4948.webp?v=1739449325\"\n            style=\"max-height: 73px; max-width: 93px; flex: 1 1 0; width: 0;\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0558/4584/7231/files/Add_a_subheading.png?v=1740035153\"\n            style=\"max-height: 73px; max-width: 93px; flex: 1 1 0; width: 0;\">\n    </div>\n</div>"
+          }
+        },
+        "description_tabs_9Tjtqh": {
+          "type": "description_tabs",
+          "settings": {
+            "description_title": "DESCRIPTION",
+            "title1": "{{ product.metafields.custom.tab_1_title.value }}",
+            "content1": "{{ product.metafields.custom.product_details | metafield_tag }}",
+            "title2": "{{ product.metafields.custom.tab_2_title.value }}",
+            "content2": "{{ product.metafields.custom.features_benefits | metafield_tag }}",
+            "title3": "{{ product.metafields.custom.tab_3_title.value }}",
+            "content3": "{{ product.metafields.custom.how_to_use | metafield_tag }}",
+            "title4": "RETURN & REFUND POLICY",
+            "content4": "<p><strong>What are the terms of the Return Policy?</strong></p><p>To maintain strict hygiene standards of our products, we do not accept returns across any categories currently. Charmacy Milano may, at its discretion and without prior notice, change the products or categories to which this policy would apply<br/><br/><a href=\"https://charmacyworld.com/policies/refund-policy\" target=\"_blank\" title=\"https://charmacyworld.com/policies/refund-policy\">Read more..&gt;</a></p>"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "is_tab": true
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "title": "Shipping information",
+            "content": "<p>Use collapsible tabs for more detailed information that will help customers make a purchasing decision.</p><p>Ex: Shipping and return policies, size guides, and other common questions.</p>",
+            "page": ""
+          }
+        },
+        "contact": {
+          "type": "contact",
+          "disabled": true,
+          "settings": {
+            "title": "Ask a question",
+            "phone": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_preview_badge_fUcT4j",
+        "price",
+        "custom_LqUK3z",
+        "custom_EzEANM",
+        "custom_7pVnNt",
+        "variant_picker",
+        "quantity_selector_YW9e39",
+        "inventory_status",
+        "sales_point",
+        "buy_buttons",
+        "trust_badge_zaQkLb",
+        "custom_x6hEyX",
+        "custom_YtiABn",
+        "custom_FxbaLJ",
+        "custom_r3W7n9",
+        "custom_LGhjG3",
+        "custom_iLKcNK",
+        "custom_nPhtPD",
+        "custom_RrXKqr",
+        "custom_9iBEEp",
+        "custom_TG96H7",
+        "description_tabs_9Tjtqh",
+        "description",
+        "tab",
+        "contact",
+        "share"
+      ],
+      "custom_css": [
+        "#ZooomyList label {max-width: 100%; width: 100%; margin-bottom: 0;}",
+        "div#ZooomyList {width: 100%; max-width: 100%;}"
+      ],
+      "settings": {
+        "sku_enable": false,
+        "image_size": "medium",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_height": "flexible",
+        "thumbnail_arrows": true,
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "177158512743a4a054": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_efe312a_8tJnQC": {
+          "type": "ai_gen_block_efe312a",
+          "disabled": true,
+          "settings": {
+            "button_text": "Add to cart",
+            "variant_selector_title": "Select a shade",
+            "button_color": "#64112f",
+            "button_hover_color": "#4a0d23",
+            "button_text_color": "#ffffff",
+            "button_text_size": 14,
+            "button_border_radius": 4,
+            "show_product_info": false,
+            "show_product_info_mobile": false,
+            "title_size": 14,
+            "price_size": 14,
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "border_color": "#f0f1f3",
+            "dropdown_bg_color": "#ffffff",
+            "padding": 16
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_10420fe_6wmJi4": {
+          "type": "ai_gen_block_10420fe",
+          "disabled": true,
+          "settings": {
+            "button_text": "Add to cart",
+            "sold_out_text": "Sold out",
+            "dropdown_title": "Select options",
+            "error_message": "Unable to add to cart. Please try again.",
+            "show_product_info": false,
+            "show_image": true,
+            "show_title": true,
+            "show_price": true,
+            "scroll_threshold": 300,
+            "max_width": 1200,
+            "padding": 16,
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "border_color": "#e0e0e0",
+            "image_border_radius": 4,
+            "title_size": 16,
+            "price_size": 14,
+            "quantity_button_size": 50,
+            "quantity_input_width": 50,
+            "quantity_border_radius": 4,
+            "quantity_bg_color": "#f5f5f5",
+            "quantity_hover_color": "#e0e0e0",
+            "button_color": "#64112f",
+            "button_hover_color": "#7c2142",
+            "button_text_color": "#ffffff",
+            "button_padding": 12,
+            "button_border_radius": 4,
+            "button_text_size": 14,
+            "dropdown_bg_color": "#ffffff",
+            "dropdown_border_radius": 8,
+            "input_border_radius": 4
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_cfbe2fe_48gTKp": {
+          "type": "ai_gen_block_cfbe2fe",
+          "settings": {
+            "trigger_offset": 300,
+            "show_product_info": false,
+            "show_quantity": false,
+            "button_text": "Add to cart",
+            "button_text_size": 14,
+            "button_border_radius": 4,
+            "button_color": "#64112f",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#4a0d23",
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "border_color": "#f0f1f3",
+            "padding_vertical": 16,
+            "padding_horizontal": 20,
+            "title_size": 14,
+            "price_size": 13
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_efe312a_8tJnQC",
+        "ai_gen_block_10420fe_6wmJi4",
+        "ai_gen_block_cfbe2fe_48gTKp"
+      ],
+      "settings": {}
+    },
+    "1746616128e3b090f4": {
+      "type": "apps",
+      "blocks": {
+        "shoppable_video_instagram_reel_video_pops_block_6knKRm": {
+          "type": "shopify://apps/shoppable-video-instagram-reel/blocks/video-pops-block/f19e5d4b-198e-478b-9f10-15eb1964910e",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "shoppable_video_instagram_reel_video_pops_block_6knKRm"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "1739860830b0297931": {
+      "type": "apps",
+      "blocks": {
+        "shoppable_video_instagram_reel_app_block_Gx7cey": {
+          "type": "shopify://apps/shoppable-video-instagram-reel/blocks/app-block/f19e5d4b-198e-478b-9f10-15eb1964910e",
+          "settings": {
+            "carousel_name": "Homepage 1"
+          }
+        }
+      },
+      "block_order": [
+        "shoppable_video_instagram_reel_app_block_Gx7cey"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "background-image-text": {
+      "type": "background-image-text",
+      "disabled": true,
+      "settings": {
+        "subtitle": "Impressive",
+        "title": "Large image with text box",
+        "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.</p>",
+        "button_label": "",
+        "button_link": "",
+        "layout": "left",
+        "height": 550,
+        "parallax": false,
+        "parallax_direction": "top",
+        "lazyload_images": true
+      }
+    },
+    "text-and-image": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Image with text",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "right",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "text-and-image2": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Image with text",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "left",
+        "image_width": "50",
+        "layout": "left",
+        "divider": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonials-0": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonials-1": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonials-2": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author name",
+            "author_info": "Los Angeles, CA"
+          }
+        }
+      },
+      "block_order": [
+        "testimonials-0",
+        "testimonials-1",
+        "testimonials-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Don't take our word for it",
+        "round_images": true,
+        "color_background": "#f9f9f9",
+        "color_text": "#1c1d1d"
+      }
+    },
+    "featured_collection_zLw4Q8": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "t:sections.featured-collection.presets.featured_collection.name",
+      "settings": {
+        "title": "New Year Gifting Made Easy",
+        "home_featured_products": "best-seller-25",
+        "per_row": 4,
+        "rows": 1,
+        "view_all": true,
+        "divider": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "17398610036eba188b": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_NaCKgd": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_NaCKgd"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "product_recommendations_heading": "You May Also Like",
+        "related_count": 6,
+        "products_per_row": 4
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "disabled": true,
+      "settings": {}
+    },
+    "recent_view_FiVbbp": {
+      "type": "recent-view",
+      "name": "Recent View",
+      "settings": {}
+    },
+    "rich_text_GG9hTY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_qtUPaR": {
+          "type": "heading",
+          "settings": {
+            "title": "Popular Searches"
+          }
+        },
+        "text_gnDzAp": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p><a href=\"https://charmacyworld.com/products/cmc-matte-foundation\"><span style=\"text-decoration:underline\">CMC Matte Foundation </span></a>|  <a href=\"https://charmacyworld.com/products/cmc-cheek-enhancer\"><span style=\"text-decoration:underline\">CMC Cheek Enhancer</span></a> | <a href=\"https://charmacyworld.com/products/cmc-pro-pore-conceal-primer\"><span style=\"text-decoration:underline\">CMC Pro Pore Conceal Primer </span></a>| <a href=\"https://charmacyworld.com/products/cmc-baked-illuminator\"><span style=\"text-decoration:underline\">CMC Baked Immunilator</span></a> | <a href=\"https://charmacyworld.com/products/cmc-set-fix-loose-powder\"><span style=\"text-decoration:underline\">CMC Set & Fix Loose Powder</span></a> | <a href=\"https://charmacyworld.com/products/cmc-hd-cover-compact-powder\"><span style=\"text-decoration:underline\">CMC HD Compact Powder</span></a> | <a href=\"https://charmacyworld.com/products/cmc-star-dust-highlighters\"><span style=\"text-decoration:underline\">CMC Stardust Highlighter </span></a>| <a href=\"https://charmacyworld.com/products/cmc-flattering-nude-lipstick\"><span style=\"text-decoration:underline\">CMC Nude Lipstick </span></a>| <a href=\"https://charmacyworld.com/products/cmc-stunning-longstay-liquid-lip\"><span style=\"text-decoration:underline\">CMC Long Last Liquid Lip</span></a> | <a href=\"https://charmacyworld.com/products/cmc-soft-satin-matte-lipstick\"><span style=\"text-decoration:underline\">CMC Satin Matte Lipstick</span></a> | <a href=\"https://charmacyworld.com/products/cmc-luxe-creme-lipstick\"><span style=\"text-decoration:underline\">CMC Luxe Creme Lipstick</span></a> | <a href=\"https://charmacyworld.com/products/cmc-lip-contour-lip-liner\"><span style=\"text-decoration:underline\">CMC Lip Liner</span></a> | <a href=\"https://charmacyworld.com/products/cmc-insane-shifters-eye-shadow\"><span style=\"text-decoration:underline\">CMC Shifter Eye Shadow</span></a> | <a href=\"https://charmacyworld.com/products/cmc-star-bomb-eye-shadow\"><span style=\"text-decoration:underline\">CMC Star Bomb Eye Shadow</span></a> | <a href=\"https://charmacyworld.com/products/cmc-true-and-false-mascara\"><span style=\"text-decoration:underline\">CMC True False Mascara</span></a> | <a href=\"https://charmacyworld.com/products/cmc-ultra-thin-stroke-pen\"><span style=\"text-decoration:underline\">CMC Stroke Thin Pen</span></a> | <a href=\"https://charmacyworld.com/products/cmc-360-deg-volume-mascara\"><span style=\"text-decoration:underline\">CMC Volume Mascara</span></a> | <a href=\"https://charmacyworld.com/products/cmc-sketch-eyeliner\"><span style=\"text-decoration:underline\">CMC Sketch Eye Liner</span></a> | <a href=\"https://charmacyworld.com/products/cmc-duo-eyebrow-filler-eyeliner-sketch\"><span style=\"text-decoration:underline\">CMC Eyebrow Filler & Eyeliner Sketch</span></a> | <a href=\"https://charmacyworld.com/products/duo-eyebrow-filler-ultra-definer\"><span style=\"text-decoration:underline\">CMC Eyebrow Filler</span></a> | <a href=\"https://charmacyworld.com/products/cmc-ultra-defining-eyebrow-pencil\"><span style=\"text-decoration:underline\">CMC Eyebrow Pencil</span></a> | <a href=\"https://charmacyworld.com/products/cmc-gradient-shadows-palette\"><span style=\"text-decoration:underline\">CMC Gradient Eye Shadow Palette</span></a> | <a href=\"https://charmacyworld.com/products/cmc-eye-shadow-12-colors-palette\"><span style=\"text-decoration:underline\">CMC Eye Shadow 12 Colors Palette</span></a> | <a href=\"https://charmacyworld.com/products/cmc-intense-eyebrow-filler\"><span style=\"text-decoration:underline\">CMC Eyebrow Filler </span></a>| <a href=\"https://charmacyworld.com/products/cmc-power-lash-mascara\"><span style=\"text-decoration:underline\">CMC Power Lash Mascara</span></a> |<a href=\"https://charmacyworld.com/products/cmc-stellar-eyeliner\"><span style=\"text-decoration:underline\"> CMC Stellar Eyeliner</span></a> |<a href=\"https://charmacyworld.com/products/cmc-star-dust-highlighters\"><span style=\"text-decoration:underline\"> </span></a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_qtUPaR",
+        "text_gnDzAp"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "faq_WrVWmW": {
+      "type": "faq",
+      "blocks": {
+        "question_CQ8kWx": {
+          "type": "question",
+          "disabled": true,
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>"
+          }
+        },
+        "question_YtYziF": {
+          "type": "question",
+          "disabled": true,
+          "settings": {
+            "title": "Frequently asked question",
+            "text": "<p>Use this text to answer questions in as much detail as possible for your customers.</p>"
+          }
+        },
+        "custom_faq_z4T6qL": {
+          "type": "custom-faq",
+          "settings": {
+            "text": "{{ product.metafields.custom.faq | metafield_tag }}"
+          }
+        }
+      },
+      "block_order": [
+        "question_CQ8kWx",
+        "question_YtYziF",
+        "custom_faq_z4T6qL"
+      ],
+      "settings": {
+        "title": "FAQs",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collection_footer_read_more_dTrRrL": {
+      "type": "collection-footer-read-more",
+      "settings": {
+        "title": "",
+        "content": "{{ product.metafields.custom.product_footer_read_more_read_less_description | metafield_tag }}"
+      }
+    }
+  },
+  "order": [
+    "advanced_content_bnPYzT",
+    "main",
+    "177158512743a4a054",
+    "1746616128e3b090f4",
+    "1739860830b0297931",
+    "sub",
+    "background-image-text",
+    "text-and-image",
+    "text-and-image2",
+    "testimonials",
+    "featured_collection_zLw4Q8",
+    "17398610036eba188b",
+    "product-recommendations",
+    "collection-return",
+    "recent_view_FiVbbp",
+    "rich_text_GG9hTY",
+    "faq_WrVWmW",
+    "collection_footer_read_more_dTrRrL"
+  ]
+}

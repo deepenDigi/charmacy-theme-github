@@ -1,0 +1,159 @@
+<style>
+.addon-product {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+.ff-title {
+    text-align: center;
+    font-size: 20px;
+    padding: 0 20px 20px;
+}
+.addon-product img {
+    width: 100%;
+    height: auto;
+  max-width: 90px;
+    border: 1px solid #99999942;
+    display: block;
+    border-radius: 5px;
+}
+
+.addon-product h3 {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.addon-product p {
+    font-size: 16px;
+    color: #333;
+}
+
+.addon-product .btn {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+      margin-left: auto;
+    margin-right: 0;
+}
+.upsell-product-wrapper {
+    background: #83606d1f;
+    padding: 20px;
+}
+
+.center-ele {
+    text-align: left;
+    margin-left: 20px;
+}
+.addon-product+.addon-product {
+    margin-top: 10px;
+}
+@media (max-width: 768px) {
+    .upsell-product-wrapper {
+        padding: 20px 10px;
+    }
+    .addon-product {
+        padding: 8px;
+    }
+    .ff-title {
+        font-size: 16px;
+    }
+  .center-ele{
+      margin-left: 10px;
+  }
+  .addon-product p{
+      margin-bottom: 0;
+  }
+  .addon-product .btn{
+        font-size: 10px;
+    padding: 10px 5px;
+  }
+  .addon-product h3{
+    font-size: 11px;
+  }
+  .addon-product p{
+        font-size: 13px;
+  }
+}
+</style>
+
+<div class="upsell-product-wrapper">
+    <div class="ff-title">Frequently Bought Together</div>
+    {% if product.metafields.custom.addon_product.value %}
+        {% assign addon_product = product.metafields.custom.addon_product.value %}
+        <div class="addon-product">
+            <a href="{{ addon_product.url }}">
+                <img src="{{ addon_product.featured_image | img_url: '300x' }}" alt="{{ addon_product.title }}">
+            </a>
+            <div class="center-ele">
+                <h3>
+                    <a href="{{ addon_product.url }}">{{ addon_product.title }}</a>
+                </h3>
+                <p>Price: {{ addon_product.price | money }}</p>
+            </div>
+            {% comment %}
+              <!-- <button type="button" class="btn add-to-cart-btn" data-id="{{ addon_product.variants.first.id }}">
+                Add to Cart
+            </button> -->
+            {% endcomment %}
+            
+            <a href="{{ addon_product.url }}" class="btn add-to-cart-btn" >
+                Select Options
+            </a>
+        </div>
+    {% endif %}
+    {% if product.metafields.custom.addon_product_1.value %}
+        {% assign addon_product_1 = product.metafields.custom.addon_product_1.value %}
+        <div class="addon-product">
+            <a href="{{ addon_product_1.url }}">
+                <img src="{{ addon_product_1.featured_image | img_url: '300x' }}" alt="{{ addon_product_1.title }}">
+            </a>
+            <div class="center-ele">
+                <h3>
+                    <a href="{{ addon_product_1.url }}">{{ addon_product_1.title }}</a>
+                </h3>
+                <p>Price: {{ addon_product_1.price | money }}</p>
+            </div>
+            {% comment %}
+              <!-- <button type="button" class="btn add-to-cart-btn" data-id="{{ addon_product.variants.first.id }}">
+                Add to Cart
+            </button> -->
+            {% endcomment %}
+            
+            <a href="{{ addon_product_1.url }}" class="btn add-to-cart-btn" >
+                Select Options
+            </a>
+        </div>
+    {% endif %}
+</div>
+
+<script>
+// document.addEventListener("DOMContentLoaded", function () {
+//     const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+
+//     addToCartButtons.forEach(button => {
+//         button.addEventListener("click", function () {
+//             let productId = this.getAttribute("data-id");
+
+//             fetch('/cart/add.js', {
+//                 method: 'POST',
+//                 headers: { 'Content-Type': 'application/json' },
+//                 body: JSON.stringify({ id: productId, quantity: 1 })
+//             })
+//             .then(response => response.json())
+//             .then(data => {
+//                 console.log("Product added:", data);
+//                  window.location.reload();
+//             })
+//             .catch(error => console.error("Error adding to cart:", error));
+//         });
+//     });
+
+   
+// });
+</script>

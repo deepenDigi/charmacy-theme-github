@@ -1,0 +1,123 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "faq-0": {
+          "type": "rich-text",
+          "settings": {
+            "title": "Help & FAQs",
+            "text": "",
+            "align_text": "center"
+          }
+        },
+        "faq-1": {
+          "type": "question",
+          "settings": {
+            "title": "I am having trouble accessing the site",
+            "text": "<p>You may want to refresh your browser. If you are still experiencing any difficulty accessing the website, please check to make sure your internet connection is working properly. If it is not, please contact your internet provider. If you are able to connect but are still having problems, you may need to clean out your temporary Internet files, cookies or cache.</p>"
+          }
+        },
+        "faq-2": {
+          "type": "question",
+          "settings": {
+            "title": "Where can I purchase CHARMACY products?",
+            "text": "<p>You can purchase CHARMACY product on. <a href=\"https://charmacyworld.com/\" target=\"_blank\" title=\"https://charmacyworld.com/\">CHARMACY</a> products are also available on Nykaa, Tira, Amazon, Flipkart, Myntra, Purplle</p>"
+          }
+        },
+        "faq-4": {
+          "type": "question",
+          "settings": {
+            "title": "How do I use CHARMACY products?",
+            "text": "<p>Once you have shortlisted a product, please click on it & you will find a small write-up with instructions on \"how to use the product\". If it is still not helpful please drop us an email at<a href=\"mailto:support@charmacy-india.com\">support@charmacy-india.com</a>or call us at<a href=\"tel:9167001818\">+91-9167001818</a></p>"
+          }
+        },
+        "question_zXQkkL": {
+          "type": "question",
+          "settings": {
+            "title": "What type of ingredients are used in CHARMACY products?",
+            "text": "<p>We use the safest ingredients to manufacture our products. All products are dermatologically tested. To know the entire ingredient list of individual products please click on the respective product on our site.</p>"
+          }
+        },
+        "question_gzJrRw": {
+          "type": "question",
+          "settings": {
+            "title": "Does CHARMACY test on animals?",
+            "text": "<p>All our Products are 100% cruelty-free and not tested on animals.</p>"
+          }
+        },
+        "question_qzG9dG": {
+          "type": "question",
+          "settings": {
+            "title": "How do I see the tracking details for order?",
+            "text": "<p>Click on this link Enter your <a href=\"https://charmacyworld.com/apps/ils/tracking/\" target=\"_blank\" title=\"https://charmacyworld.com/apps/ils/tracking/\">order no</a> & Email / Phone no. and click on “Track”</p>"
+          }
+        },
+        "question_XbtqNJ": {
+          "type": "question",
+          "settings": {
+            "title": "Any ongoing offers?",
+            "text": "<p>All ongoing offers are displayed on the <a href=\"https://charmacyworld.com/\" title=\"https://charmacyworld.com/\">home page</a></p>"
+          }
+        },
+        "question_RggVfp": {
+          "type": "question",
+          "settings": {
+            "title": "Where to check order history?",
+            "text": "<p>Login with your details. Go to Order history</p>"
+          }
+        },
+        "question_PQbqbe": {
+          "type": "question",
+          "settings": {
+            "title": "Is COD available?",
+            "text": "<p>Yes. Cash on Delivery option is available. We offer additional 5% discount on prepaid orders.</p>"
+          }
+        },
+        "question_r9ndyT": {
+          "type": "question",
+          "settings": {
+            "title": "Exchange Return policy is available?",
+            "text": "<p>Please refer to the Returns / Exchange policy in this link -<a href=\"https://charmacyworld.com/pages/returns-exchanges\">https://charmacyworld.com/pages/returns-exchanges</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq-0",
+        "faq-1",
+        "faq-2",
+        "faq-4",
+        "question_zXQkkL",
+        "question_gzJrRw",
+        "question_qzG9dG",
+        "question_XbtqNJ",
+        "question_RggVfp",
+        "question_PQbqbe",
+        "question_r9ndyT"
+      ],
+      "settings": {
+        "title": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq"
+  ]
+}

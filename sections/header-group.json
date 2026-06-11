@@ -1,0 +1,162 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "t:sections.header-group.name",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_text_J7mFgx": {
+          "type": "announcement_text",
+          "settings": {
+            "announcement_text": "Get 5% Off On Prepaid Orders",
+            "announcement_link": ""
+          }
+        },
+        "announcement_text_xXqFbp": {
+          "type": "announcement_text",
+          "disabled": true,
+          "settings": {
+            "announcement_text": "get 5% off on prepaid orders",
+            "announcement_link": ""
+          }
+        },
+        "announcement_text_hA3fMk": {
+          "type": "announcement_text",
+          "disabled": true,
+          "settings": {
+            "announcement_text": "Festive Sale Is live Now",
+            "announcement_link": ""
+          }
+        },
+        "announcement_text_hnL9VC": {
+          "type": "announcement_text",
+          "disabled": true,
+          "settings": {
+            "announcement_text": "Upto 30% Off + 5% Prepaid Off",
+            "announcement_link": ""
+          }
+        },
+        "announcement_text_3imBzt": {
+          "type": "announcement_text",
+          "disabled": true,
+          "settings": {
+            "announcement_text": "Use Code : MYFIRST5",
+            "announcement_link": ""
+          }
+        },
+        "announcement_text_fUtb4U": {
+          "type": "announcement_text",
+          "settings": {
+            "announcement_text": "Charmacy Milano App is now LIVE.",
+            "announcement_link": ""
+          }
+        },
+        "announcement_text_yGK4pD": {
+          "type": "announcement_text",
+          "disabled": true,
+          "settings": {
+            "announcement_text": "Enjoy 10% off on your first app purchase.",
+            "announcement_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_text_J7mFgx",
+        "announcement_text_xXqFbp",
+        "announcement_text_hA3fMk",
+        "announcement_text_hnL9VC",
+        "announcement_text_3imBzt",
+        "announcement_text_fUtb4U",
+        "announcement_text_yGK4pD"
+      ],
+      "settings": {
+        "announcement_text": "Free shipping and returns",
+        "announcement_link": "",
+        "announcement_closable": false,
+        "show_track_order": false,
+        "track_order_text": "Track my order",
+        "track_order_link": "",
+        "show_studio": false,
+        "studio_text": "Charmacy Studio",
+        "studio_link": "",
+        "direction": "top-bottom",
+        "speed": 100
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "megamenu_PWXXUh": {
+          "type": "megamenu",
+          "settings": {
+            "menu_item": "Lip",
+            "promo_image_1": "shopify://shop_images/8906148970224.jpg",
+            "promo_heading_1": "",
+            "promo_text_1": "",
+            "promo_url_1": "",
+            "promo_image_2": "shopify://shop_images/8906148970224_1.jpg",
+            "promo_heading_2": "",
+            "promo_text_2": "",
+            "promo_url_2": ""
+          }
+        },
+        "megamenu_HrfxxF": {
+          "type": "megamenu",
+          "settings": {
+            "menu_item": "Face",
+            "promo_image_1": "shopify://shop_images/card_4.png",
+            "promo_heading_1": "",
+            "promo_text_1": "",
+            "promo_url_1": "",
+            "promo_heading_2": "",
+            "promo_text_2": "",
+            "promo_url_2": ""
+          }
+        },
+        "megamenu_ietwYF": {
+          "type": "megamenu",
+          "settings": {
+            "menu_item": "Eye",
+            "promo_image_1": "shopify://shop_images/EYES.jpg",
+            "promo_heading_1": "",
+            "promo_text_1": "",
+            "promo_url_1": "",
+            "promo_heading_2": "",
+            "promo_text_2": "",
+            "promo_url_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "megamenu_PWXXUh",
+        "megamenu_HrfxxF",
+        "megamenu_ietwYF"
+      ],
+      "settings": {
+        "logo": "shopify://shop_images/Logo_2x1_527e9d0a-3544-4ac1-9b2b-1cfb921df467.png",
+        "logo-inverted": "shopify://shop_images/Logo_2x1_527e9d0a-3544-4ac1-9b2b-1cfb921df467.webp",
+        "desktop_logo_width": 110,
+        "mobile_logo_width": 100,
+        "main_menu_link_list": "main-menu-new",
+        "hover_menu": true,
+        "main_menu_alignment": "left-center",
+        "header_sticky": true,
+        "sticky_index": false,
+        "sticky_collection": false
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

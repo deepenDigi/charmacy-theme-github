@@ -1,0 +1,128 @@
+
+{% comment %} VS : 08OCT {% endcomment %}
+<style>
+      #mini-cart-progress-section {
+      color: #676767;
+      padding: 5px 0px;
+      background-color:#fffff;
+      border-bottom: 1px solid #E7EAED;
+  }
+  .freeProMsg{background-color:green; color:#fff !important; font-size:.8rem !important; padding:2px 4px !important;}
+  .progress-bar-sub-heading {
+      font-family: "Open Sans", sans-serif !important;
+      text-align: center;
+      color: #000000;
+      font-size: 12px;
+      line-height: 12px;
+      margin-top: 8px;
+  }
+  .progress-container {
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 5px;
+  }
+  .milestones {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+  }
+  .progress-bar {
+      width: 95%;
+      right: 0;
+      left: 0;
+      top: 12px;
+      position: absolute;
+      height: 4px;
+      background-color: #d4d4d4;
+      z-index: -1;
+  }
+  .progresss {
+      border-radius: 4px;
+      display: block !important;
+      position: absolute;
+      height: 100%;
+      background-color: #64112f;
+      transition: width 0.3s ease;
+  }
+  .milestone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+  }
+  .milestone-dot[data-discount-type="null"] {
+      background-color: #64112f;
+  }
+  .milestone-dot {
+      height: 10px;
+      border-radius: 50%;
+      top: -67px;
+      transition: background-color 0.3s ease;
+      display: block !important;
+  }
+  .active_image {
+      max-height: 24px;
+      max-width: 24px;
+      display: block;
+  }
+  .milestone-text {
+      overflow-wrap: break-word;
+      white-space: wrap;
+      color: #000000;
+      font-size: 9px;
+      line-height: 1.3;
+      margin-top: 16px;
+      text-align: center;
+      width: 52px;
+      font-weight: 600;
+  }
+</style>
+
+<div id="mini-cart-progress-section" style="display: block; position: relative; z-index: 1;">
+  <div class="mini-card-sr-loader" style="display: none !important;"></div>
+  <div class="progress-bar-heading"></div>
+  <div class="progress-bar-sub-heading">Congrats you got Free Blow Brush</div>
+  <div class="progress-container">
+    <div class="milestones" id="vs_milestones">
+      <div class="progress-bar"><div class="progresss" id="progresss" style="width: 98.75%;"></div></div>
+      <div class="milestone" style="left: 0%;"><div class="milestone-dot" data-discount-type="null"></div></div>
+      <div class="milestone" style="left: 29.9667%;">
+        <div class="milestone-dot" data-discount-type="FREEBIE">
+          <img
+            src="https://pickrr.s3.amazonaws.com:443/2025-08-01T06:58:38.040674_free_gift_colored.png"
+            class="active_image"
+          >
+        </div>
+        <div class="milestone-text"><span> Free Beauty Blender</span></div>
+      </div>
+      <div class="milestone" style="left: 36.6333%;">
+        <div class="milestone-dot" data-discount-type="FREEBIE">
+          <img
+            src="https://pickrr.s3.amazonaws.com:443/2025-08-01T06:58:38.040674_free_gift_colored.png"
+            class="active_image"
+          >
+        </div>
+        <div class="milestone-text"><span>Free Face Massager</span></div>
+      </div>
+      <div class="milestone" style="left: 66.6333%;">
+        <div class="milestone-dot" data-discount-type="FREEBIE">
+          <img
+            src="https://pickrr.s3.amazonaws.com:443/2025-08-01T06:58:38.040674_free_gift_colored.png"
+            class="active_image"
+          >
+        </div>
+        <div class="milestone-text"><span>Free Hair Straightener</span></div>
+      </div>
+      <div class="milestone" style="left: 100%;">
+        <div class="milestone-dot" data-discount-type="FREEBIE">
+          <img
+            src="https://pickrr.s3.amazonaws.com:443/2025-08-01T06:58:38.040674_free_gift_colored.png"
+            class="active_image"
+          >
+        </div>
+        <div class="milestone-text"><span>Free Blow Brush</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% comment %} VS : 08OCT{% endcomment %}

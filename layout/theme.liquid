@@ -1,0 +1,784 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction }}">
+<head>
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5N2VRF5');</script>
+<!-- End Google Tag Manager -->
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="google-site-verification" content="i4GcvRjnKqohyzu4s17qcfS_-tRDILblvy6_qJNiy-A" />
+  <meta name="google-site-verification" content="vRUFm-OHbwxuUHtKVPwwJdn-dOmH2wh1HUiZ5OWTH7k" />
+  <meta name="google-site-verification" content="uNmZyz22-bRHQSMvMAheeX9o1NxZasGbc_MK4n431LE" />
+  <meta name="theme-color" content="{{ settings.color_button }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+  <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
+  <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+  <link rel="dns-prefetch" href="https://maps.googleapis.com">
+  <link rel="dns-prefetch" href="https://maps.gstatic.com">
+
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
+  {%- endif -%}
+{% render 'sr-checkout' %}
+  <!-- Global Time Zone Script Shiprocket Checkout Start -->
+    <script>
+  function getUserTimezone() {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone;
+  }
+  function renderButton(showShiprocketCheckout) {
+    let modifiedCSS = "";
+    if (showShiprocketCheckout) {
+      modifiedCSS = `
+        button[name="checkout"]{display:none !important;}
+        .shopify-payment-button__button.shopify-payment-button__button--unbranded{display:none !important;}
+      `;
+    } else {
+      modifiedCSS = `
+        .shiprocket-headless{display:none !important;}
+      `;
+    }
+    const styleElement = document.createElement("style");
+    styleElement.textContent = modifiedCSS;
+    document.head.appendChild(styleElement);
+  }
+  function checkAndSetButtonVisibility() {
+    const indiaTimezones = ["Asia/Kolkata", "Asia/Calcutta"];
+    const userTimezone = getUserTimezone();
+    const isIndia = indiaTimezones.includes(userTimezone);
+    renderButton(isIndia);
+  }
+  checkAndSetButtonVisibility();
+</script>
+<!-- Global Time Zone Script Shiprocket Checkout End  -->
+  {%- render 'seo-title' -%}
+
+  {%- if page_description -%}
+  <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+
+  {%- render 'social-meta-tags' -%}
+
+  {%- render 'font-face' -%}
+  {% comment %}
+  {{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}
+  {% endcomment %}
+  {{ 'swiper-slider.css' | asset_url | stylesheet_tag }}
+  
+  {{ 'theme2.css' | asset_url | stylesheet_tag: preload: true }}
+
+   {{ 'custom.css' | asset_url | stylesheet_tag }}
+  
+  {%- render 'css-variables' -%}
+
+  <script src="{{ 'redirection.js' | asset_url }}" ></script>
+  <script>
+  // Force redirect if current URL contains 'cmc-matte-foundation-copy'
+   
+  </script>
+
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+    window.theme = window.theme || {};
+    theme.routes = {
+      home: "{{ routes.root_url }}",
+      cart: "{{ routes.cart_url | append: '.js' }}",
+      cartPage: "{{ routes.cart_url }}",
+      cartAdd: "{{ routes.cart_add_url | append: '.js' }}",
+      cartChange: "{{ routes.cart_change_url | append: '.js' }}",
+      search: "{{ routes.search_url }}",
+      predictiveSearch: "{{ routes.predictive_search_url }}"
+    };
+    theme.strings = {
+      soldOut: {{ 'products.product.sold_out' | t | json }},
+      unavailable: {{ 'products.product.unavailable' | t | json }},
+      inStockLabel: {{ 'products.product.in_stock_label' | t | json }},
+      oneStockLabel: {{ 'products.product.stock_label.one' | t: count: '[count]' | json }},
+      otherStockLabel: {{ 'products.product.stock_label.other' | t: count: '[count]' | json }},
+      willNotShipUntil: {{ 'products.product.will_not_ship_until' | t: date: '[date]' | json }},
+      willBeInStockAfter: {{ 'products.product.will_be_in_stock_after' | t: date: '[date]' | json }},
+      waitingForStock: {{ 'products.product.waiting_for_stock' | t | json }},
+      cartSavings: {{ 'cart.general.savings_html' | t: savings: '[savings]' | json }},
+      cartEmpty: {{ 'cart.general.empty' | t | json }},
+      cartTermsConfirmation: {{ 'cart.general.terms_confirm' | t | json }},
+      searchCollections: {{ 'general.search.collections' | t | json }},
+      searchPages: {{ 'general.search.pages' | t | json }},
+      searchArticles: {{ 'general.search.articles' | t | json }},
+      maxQuantity: {{ 'cart.general.max_quantity' | t: quantity: '[quantity]', title: '[title]' | json }}
+    };
+    theme.settings = {
+      cartType: {{ settings.cart_type | json }},
+      isCustomerTemplate: {% if request.page_type contains 'customers/' %}true{% else %}false{% endif %},
+      moneyFormat: {{ shop.money_format | json }},
+      predictiveSearch: {{ settings.predictive_search_enabled }},
+      predictiveSearchType: {{ settings.search_type | json }},
+      quickView: {{ settings.quick_shop_enable }},
+      themeName: 'Motion',
+      themeVersion: "10.6.1"
+    };
+  </script>
+
+  {{ content_for_header }}
+
+  <script src="{{ 'vendor-scripts-v14.js' | asset_url | split: '?' | first }}" defer="defer"></script>
+
+  {%- if shop.enabled_currencies.size > 1 -%}
+    <link rel="stylesheet" href="{{ 'country-flags.css' | asset_url | split: '?' | first }}">
+  {%- endif -%}
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+  <script src="{{ 'wizzy-custom-2.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'swiper-slider.js' | asset_url }}"></script>
+  
+  {%- if request.page_type contains 'customers/' -%}
+    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+  {%- endif -%}
+
+  {% if request.design_mode %}
+    <script>theme.settings.email = {{ shop.email | json }}</script>
+    <script src="https://api.archetypethemes.co/design-mode.js" defer="defer"></script>
+  {% endif %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" defer="defer"></script>
+  
+ <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!--
+   Google tag (gtag.js) 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6G1902V2KF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6G1902V2KF');
+</script> -->
+    <!-- Google tag (gtag.js) -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-5VQR7K9HKV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5VQR7K9HKV');
+</script> -->
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "c97q945wct");
+</script>
+
+ <script src="https://code.jquery.com/jquery-3.7.1.min.js"  async="async"></script>
+
+  
+
+  
+{% include 'hulk_po_vd' %}
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5N2VRF5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<script>
+  window.loggedInCustomer = {{ customer ? customer | json : 'null' }};
+</script>
+
+<script>
+  window.customerData = {
+      email: "{{ customer.email }}",
+      first_name: "{{ customer.first_name }}",
+      last_name: "{{ customer.last_name }}",
+      phone: "{{ customer.phone }}",
+      id: "{{ customer.id }}"
+  };
+  console.log("🔎 Injected customerData from Liquid:", window.customerData);
+
+  window.shopData = {
+      name: "{{ shop.name }}",
+      domain: "{{ shop.domain }}",
+      email: "{{ shop.email }}"
+  };
+
+  {% if cart %}
+  window.cartData = {{ cart | json }};
+  {% endif %}
+
+  {% if product %}
+  window.productData = {
+      id: {{ product.id }},
+      title: "{{ product.title | escape }}",
+      price: {{ product.price | divided_by: 100.0 }},
+      variant_count: {{ product.variants.size }}
+  };
+  {% endif %}
+</script>
+
+<script>
+  (function () {
+    function setAnonId() {
+      const COOKIE_NAME = '_myanonid';
+      function generateAnonId() {
+        return 'anon_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+      }
+      function getCookie(name) {
+        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        return match ? decodeURIComponent(match[2]) : null;
+      }
+      function setCookie(name, value, days) {
+        const expires = new Date(Date.now() + days * 864e5).toUTCString();
+        document.cookie = `${name}=${encodeURIComponent(value)}; path=/; expires=${expires}; SameSite=Lax`;
+      }
+
+      let anonId = getCookie(COOKIE_NAME);
+      if (!anonId) {
+        anonId = generateAnonId();
+        setCookie(COOKIE_NAME, anonId, 365);
+      }
+
+      window.anonUserId = anonId;
+      return anonId;
+    }
+
+    const anonId = setAnonId();
+
+    function fetchCustomerDetails() {
+      fetch('/account', { credentials: 'include' })
+        .then((res) => res.text())
+        .then((html) => {
+          const emailMatch = html.match(/"email"\s*:\s*"([^"]+)"/);
+          const idMatch = html.match(/"id"\s*:\s*"([^"]+)"/);
+          const phoneMatch =
+            html.match(/"phone"\s*:\s*"([^"]+)"/) ||
+            html.match(/name="phone"\s+value="([^"]+)"/i) || // <input name="phone" value="">
+            html.match(/>Phone(?:\s*Number)?:<\/[^>]*>\s*<[^>]*>([^<]+)</i); // raw table cell
+
+          const firstNameMatch = html.match(/"first_name"\s*:\s*"([^"]+)"/);
+          const lastNameMatch = html.match(/"last_name"\s*:\s*"([^"]+)"/);
+
+          const customerData = {
+            anon_id: anonId,
+            email: emailMatch ? emailMatch[1] : '',
+            id: idMatch ? idMatch[1] : '',
+            phone: phoneMatch ? phoneMatch[1].trim() : '',
+            first_name: firstNameMatch ? firstNameMatch[1] : '',
+            last_name: lastNameMatch ? lastNameMatch[1] : '',
+          };
+
+          localStorage.setItem('_my_user_data', JSON.stringify(customerData));
+          // console.log("✅ Updated customer data dynamically:", customerData);
+        })
+        .catch((err) => console.warn('❌ Could not fetch /account HTML:', err));
+    }
+
+    // Run once at load
+    fetchCustomerDetails();
+
+    // Optionally poll every 10s to detect new login without reload
+    setInterval(fetchCustomerDetails, 10000);
+  })();
+</script>
+{% if customer %}
+  <script>
+    window.loggedInCustomer = {
+      id: "{{ customer.id }}",
+      email: "{{ customer.email }}",
+      first_name: "{{ customer.first_name }}",
+      last_name: "{{ customer.last_name }}",
+      phone: "{{ customer.phone }}"
+    };
+  </script>
+{% else %}
+  <script>
+    window.loggedInCustomer = null;
+  </script>
+{% endif %}
+
+
+<script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Charmacy Milano",
+  "image": " https://charmacyworld.com/cdn/shop/files/Logo_2x1_527e9d0a-3544-4ac1-9b2b-1cfb921df467.png?v=1742360950&width=110 ",
+  "url": "https://charmacyworld.com/",
+  "telephone": "+91 91670 01818",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "B-502/503, Neelkanth Business Park, Ramdev Pir Rd, Neelkanth Kingdom, Vidyavihar West, Vidyavihar",
+    "addressLocality": "Mumbai",
+    "addressRegion": "Maharashtra",
+    "postalCode": "400086",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "19.0799",
+    "longitude": "72.8965"
+  },
+  "sameAs": [
+    "https://www.instagram.com/charmacymilano/",
+    "https://www.facebook.com/share/1EuEoq9NEK/",
+    "https://www.youtube.com/@charmacymilano",
+    "https://www.linkedin.com/company/charmacy-milano/"
+  ],
+  "priceRange": "₹₹",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "Closed",
+      "closes": "Closed"
+    }
+  ]
+}
+  </script>
+
+ {{ 'christmas-changes.css' | asset_url | stylesheet_tag }}
+</head>
+{% comment %} <!-- Sticky Top Marquee (place below your header in theme.liquid) -->
+<div class="promo-marquee" role="region" aria-label="Promotional offer">
+  <a class="promo-marquee__link" href="https://charmacyworld.com/collections/b1g1" aria-label="Shop Buy 1 Get 1">
+    <div class="promo-marquee__track">
+      <div class="promo-marquee__row">
+        <span class="promo-marquee__item">Buy 1 Get 1</span>
+        <span class="promo-marquee__sep">||</span>
+        <span class="promo-marquee__item">Add 2 products and pay for 1 only . 🎉</span>
+        <span class="promo-marquee__sep">||</span>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="promo-marquee__row" aria-hidden="true">
+        <span class="promo-marquee__item">Buy 1 Get 1</span>
+        <span class="promo-marquee__sep">||</span>
+        <span class="promo-marquee__item">Add 2 products and pay for 1 only . 🎉</span>
+        <span class="promo-marquee__sep">||</span>
+      </div>
+      <div class="promo-marquee__row" aria-hidden="true">
+        <span class="promo-marquee__item">Buy 1 Get 1</span>
+        <span class="promo-marquee__sep">||</span>
+        <span class="promo-marquee__item">Add 2 products and pay for 1 only . 🎉</span>
+        <span class="promo-marquee__sep">||</span>
+      </div>
+      <div class="promo-marquee__row" aria-hidden="true">
+        <span class="promo-marquee__item">Buy 1 Get 1</span>
+        <span class="promo-marquee__sep">||</span>
+        <span class="promo-marquee__item">Add 2 products and pay for 1 only . 🎉</span>
+        <span class="promo-marquee__sep">||</span>
+      </div>
+    </div>
+  </a>
+</div>
+
+<style>
+  .promo-marquee{
+    {% comment %} position: sticky; top: 0; z-index: 50; {% endcomment %}
+    width: 100%;
+    background: #64112f;
+    border-bottom: 1px solid #f2dada;
+    color: #fff5f5;
+    font: 600 14px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    overflow: hidden; white-space: nowrap;
+  }
+  .promo-marquee__link{
+    display:block; width:100%; height:100%;
+    color: inherit; text-decoration: none; cursor: pointer;
+  }
+
+  .promo-marquee__track{
+    display: flex; gap: 0; will-change: transform;
+  }
+  .promo-marquee__row{
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 16px;
+    animation: promo-scroll 6s linear infinite;
+  }
+  .promo-marquee__row + .promo-marquee__row{ margin-left: 40px; }
+
+  .promo-marquee__item{ letter-spacing: .2px }
+  .promo-marquee__sep{ opacity: .6; padding: 0 6px }
+
+  /* Pause on hover (desktop) */
+  .promo-marquee:hover .promo-marquee__row{ animation-play-state: paused; }
+
+  /* Reduced motion */
+  {% comment %} @media (prefers-reduced-motion: reduce){ .promo-marquee__row{ animation:none } } {% endcomment %}
+
+  @keyframes promo-scroll{
+    from { transform: translateX(0) }
+    to   { transform: translateX(-100%) }
+  }
+
+  /* Mobile tweak */
+  @media (max-width: 480px){
+    .promo-marquee{ font-size: 15px }
+    .promo-marquee__row{ padding: 12px 12px }
+  }
+</style> {% endcomment %}
+
+{% comment %} {% render 'b1g1-timer' %}  {% endcomment %}
+
+<body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}" data-transitions="{{ settings.animate_page_transitions }}" data-type_header_capitalize="{{ settings.type_header_capitalize }}" data-type_base_accent_transform="{{ settings.type_base_accent_transform }}" data-type_header_accent_transform="{{ settings.type_header_accent_transform }}" data-animate_sections="{{ settings.animate_sections }}" data-animate_underlines="{{ settings.animate_underlines }}" data-animate_buttons="{{ settings.animate_buttons }}" data-animate_images="{{ settings.animate_images }}" data-animate_page_transition_style="{{ settings.animate_page_transition_style }}" data-type_header_text_alignment="{{ settings.type_headers_align_text }}" data-animate_images_style="{{ settings.animate_images_style | default: "zoom-fade" }}">
+   {% comment %} {% render 'blackfriday-timer' %} {% endcomment %}
+    {% comment %} <canvas id="snowCanvas"></canvas> {% endcomment %}
+  {% render 'pincode-html' %}  
+  
+  {% if settings.animate_page_transitions %}
+    <script type="text/javascript">window.setTimeout(function() { document.body.className += " loaded"; }, 25);</script>
+  {% endif %}
+
+  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+  <div id="PageContainer" class="page-container">
+    <div class="transition-body">
+
+      {%- sections 'header-group' -%}
+      {%- sections 'popup-group' -%}
+
+      <main class="main-content" id="MainContent">
+        {{ content_for_layout }}
+      </main>
+
+  
+      {%- sections 'footer-group' -%}
+      
+    </div>
+  </div>
+  
+  {%- liquid
+    render 'video-modal'
+    render 'photoswipe-template'
+    render 'tool-tip'
+  -%}
+  {% comment %} Image markup used when building product grid item via JS {% endcomment %}
+  <template id="predictiveImageMarkup">
+    <image-element>
+      <img width height src loading="lazy" sizes="(min-width: 769px) 100px, 60px">
+    </image-element>
+  </template>
+  <script>
+setTimeout(() => {
+  console.log('sdfsdfsdfsdfsdfsdfsdfsdf')
+    document.querySelectorAll(".collection-usp-container").forEach(container => {
+        let uspsWrapper = container.querySelector(".usps-wrapper");
+
+        if (!uspsWrapper) return;
+
+        let usps = uspsWrapper.children;
+        let index = 0;
+        let uspHeight = usps[0].offsetHeight; // Get actual height dynamically
+
+        if (usps.length > 0) {
+            setInterval(() => {
+                index++;
+                uspsWrapper.style.transition = "transform 0.5s ease-in-out";
+                uspsWrapper.style.transform = `translateY(-${index * uspHeight}px)`;
+
+                if (index === usps.length - 1) {
+                    setTimeout(() => {
+                        uspsWrapper.style.transition = "none";
+                        uspsWrapper.style.transform = "translateY(0)";
+                        index = 0;
+                    }, 1000);
+                }
+            }, 2000);
+        }
+    });
+},2000);
+
+  </script>
+
+<script>
+console.log("progress bar v3 loaded");
+
+// Fetch Cart
+function getCartData() {
+  fetch('/cart.js')
+    .then(res => res.json())
+    .then(data => {
+      let total = data.total_price / 100;
+      updateProgressBar(total);
+    })
+    .catch(err => console.error("Cart Fetch Error:", err));
+}
+
+// Update Bar
+function updateProgressBar(cartTotal) {
+
+  const step1 = 1000;
+  const step2 = 2000;
+  const step3 = 3000;
+
+  let progressWidth = "0%";
+  let offerText = "";
+
+  // Show progress bar instead of note
+  $('.progress-note').hide();
+  $('.progress-container-bg-color, .progress_offer_wrap').show();
+
+  // Remove all active states
+  $('.circle').removeClass('active');
+
+  // STEP LOGIC
+  if (cartTotal < step1) {
+    progressWidth = "0%";
+    offerText = `Add ₹${step1 - cartTotal} more to unlock Gift 1`;
+  }
+
+  else if (cartTotal >= step1 && cartTotal < step2) {
+    progressWidth = "33%";
+    offerText = "Congrats! You unlocked Gift 1!";
+    $('.circle:nth-child(2)').addClass('active'); 
+  }
+
+  else if (cartTotal >= step2 && cartTotal < step3) {
+    progressWidth = "66%";
+    offerText = "Awesome! You unlocked Gift 1 & Gift 2!";
+    $('.circle:nth-child(2), .circle:nth-child(3)').addClass('active');
+  }
+
+  else if (cartTotal >= step3) {
+    progressWidth = "100%";
+    offerText = "You unlocked ALL gifts! Gift 1 + Gift 2 + Gift 3!";
+    $('.circle').addClass('active');
+  }
+
+  // Apply progress width
+  $('#progress').css({ width: progressWidth });
+
+  // Update text
+  $('.progress_offer_wrap p').text(offerText);
+}
+
+// Start
+$(document).ready(function () {
+  getCartData();
+  setInterval(getCartData, 1500); // refresh every 1.5 sec
+});
+
+</script>
+
+  <script>
+    // OLD PROGRESS BAR CODE
+        {% comment %} console.log("wrokin[0]");
+        function getCartData() {
+          fetch('/cart.js')
+            .then(response => {
+              if (!response.ok) {
+                throw new Error("Network response was not ok");
+              }
+              return response.json();
+            })
+            .then(data => {
+              let cartTotalPrice = data.total_price / 100;
+              // console.log("Total Price:", cartTotalPrice);
+        
+              updateProgressBar(cartTotalPrice);
+            })
+            .catch(error => {
+              console.error("Error fetching cart data:", error);
+            });
+        } {% endcomment %}
+        
+        // function updateProgressBar(cartTotal) {
+        //   $('#progress').css({ width: '0%' });
+        
+        //   $('.circle').removeClass('active');
+        
+        //   if (cartTotal >= 100 && cartTotal < 900) {
+        //     $('#progress').css({ width: '25%' });
+        //     $('.progress_offer_wrap p').text('Yay! You availed Buy 1 Get 1 FREE. Add 1 more product to avail Buy 2 Get 2 FREE + Free Gift.');
+        //     $('.circle:nth-child(2)').addClass('active');
+        //   } else if (cartTotal >= 900 && cartTotal < 1300) {
+        //     $('#progress').css({ width: '50%' });
+        //     $('.progress_offer_wrap p').text('Yay! You availed Buy 1 Get 1 FREE. Add 1 more product to avail Buy 2 Get 2 FREE + Free Gift - 01');
+        //     $('.circle:nth-child(2)').addClass('active');
+        //     $('.circle:nth-child(3)').addClass('active');
+        //   } else if (cartTotal >= 1300 && cartTotal < 2000) {
+        //     $('#progress').css({ width: '75%' });
+        //     $('.progress_offer_wrap p').text('Yay! You availed Buy 1 Get 1 FREE. Add 1 more product to avail Buy 2 Get 2 FREE + Free Gift - 02');
+        //     $('.circle:nth-child(2)').addClass('active');
+        //     $('.circle:nth-child(3)').addClass('active');
+        //     $('.circle:nth-child(4)').addClass('active');
+        //   } else if (cartTotal >= 2000) {
+        //     $('#progress').css({ width: '100%' });
+        //     $('.progress_offer_wrap p').text('Congratulations! You unlocked Buy 2 Get 2 FREE + Free Gift!');
+        //     $('.circle:not(:nth-child(1))').addClass('active');
+        //   }
+        // }
+    {% comment %}       
+        function updateProgressBar(cartTotal) {
+          $('.progress-note').hide();
+ $('.progress-container-bg-color , .progress_offer_wrap').show();
+          if(cartTotal > 1299){
+            $('.progress-container-bg-color , .progress_offer_wrap').show();
+            $('.progress-note').hide();
+          }
+
+          
+          let progressWidth = '0%';
+          let offerText = '';
+          
+          $('.circle').removeClass('active');
+        
+          if (cartTotal >= 1299 && cartTotal < 1598) {
+            progressWidth = '25%';
+            offerText = 'Woohoo! You got a FREE Reusable Face Sponge! 💖';
+            $('.circle:nth-child(2)').addClass('active');
+          } else if (cartTotal >= 1599 && cartTotal < 2198) {
+            progressWidth = '50%';
+            offerText = ' Woohoo! You got a FREE Keychain Mirror! 💖';
+            $('.circle:nth-child(2), .circle:nth-child(3)').addClass('active');
+          } else if (cartTotal >= 2199) {
+            progressWidth = '100%';
+            offerText = 'Woohoo! You got a FREEMakeup Pouch! 💖';
+            $('.circle:not(:nth-child(1))').addClass('active');
+          } 
+        
+          $('#progress').css({ width: progressWidth });
+          $('.progress_offer_wrap p').text(offerText);
+        }
+
+{% endcomment %}
+{% comment %} function updateProgressBar(cartTotal) {
+          $('.progress-note').hide();
+ $('.progress-container-bg-color , .progress_offer_wrap').show();
+          if(cartTotal > 1299){
+            $('.progress-container-bg-color , .progress_offer_wrap').show();
+            $('.progress-note').hide();
+          }
+
+          
+          let progressWidth = '0%';
+          let offerText = '';
+          
+          $('.circle').removeClass('active');
+        
+          if (cartTotal >= 1299 && cartTotal < 2198) {
+            progressWidth = '25%';
+            offerText = 'Woohoo! You got a FREE Reusable Face Sponge! 💖';
+            $('.circle:nth-child(2)').addClass('active');
+          } else if (cartTotal >= 2199) {
+            progressWidth = '100%';
+            offerText = 'Woohoo! You got a FREEMakeup Pouch! 💖';
+            $('.circle:not(:nth-child(1))').addClass('active');
+          } 
+        
+          $('#progress').css({ width: progressWidth });
+          $('.progress_offer_wrap p').text(offerText);
+        }
+    
+    
+        $(document).ready(function () {
+          getCartData();
+          setInterval(getCartData, 1000); 
+        });
+            console.log("wroking[1]"); {% endcomment %}
+</script>
+
+<style>
+ body.js-drawer-open.drawer--right {
+  overflow: hidden;
+  position: relative;
+}
+
+#shopify-section-cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  max-width: 100%;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  transform: translateX(0%);
+  transition: transform 0.3s ease;
+}
+
+#shopify-section-cart-drawer.hidden {
+  transform: translateX(100%);
+}
+
+
+</style>
+{% comment %}
+  
+
+  <div id="cart-popup" class="cart-popup">
+  <div class="cart-popup-content">
+     <h2>Bundle Added to Cart</h2>
+
+    <!-- New explanatory message -->
+   <p style="text-align: center; font-size: 14px; margin-top: -10px; margin-bottom: 20px; color: #555;">
+      This bundle has been added as <strong>one product</strong> with your selected variants.
+    </p> 
+
+    <!-- List of selected variants -->
+   <div class="cart-popup-products" id="cart-popup-products"></div> 
+    <!-- {% render 'cart-item' %} -->
+
+    <!-- Action buttons -->
+  <div class="cart-popup-actions">
+      <button id="continue-shopping">Continue Shopping</button> 
+
+      <!-- Optional: Mini cart integration -->
+    <div class="shiprocket-headless" data-type="mini-cart"></div>
+    </div>
+  </div>
+</div>
+{% endcomment %}
+ 
+ 
+
+{% render 'custom -cart -drawer' %}
+<!-- ============ cart hide progress =========== -->
+<script>
+function checkProductid() {
+    fetch('/cart.js')
+        .then(response => response.json())
+        .then(cart => {
+            const targetProductIds = [46327280042241, 46327279255809, 46327276536065, 46327276273921, 46325872853249, 46325872263425, 46325858533633, 46285009486081];
+
+            const containsTargetProduct = cart.items.some(item => targetProductIds.includes(item.id));
+
+            if (containsTargetProduct) {
+                document.querySelector('.progress-main').style.display = 'none';
+            }
+        });
+}
+
+setInterval(checkProductid, 1000);
+</script>
+
+
+ {% comment %} <script src="{{ 'christmas-changes.js' | asset_url }}" defer="defer"></script> {% endcomment %}
+ {% comment %} {% render 'all-duo-eyebrow-popup' %} {% endcomment %}
+ {% comment %} <script src="{{ 'all-duo-eyebrow-popup.js' | asset_url }}"></script> {% endcomment %}
+</body>
+</html>

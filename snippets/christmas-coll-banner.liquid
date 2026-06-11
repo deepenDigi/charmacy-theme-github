@@ -1,0 +1,76 @@
+<div class="col-img-wrap">
+  <img class="chri-disk" src="https://cdn.shopify.com/s/files/1/0734/0366/2650/files/mini_banner-01-01.png?v=1765792283" alt="">
+  <img class="chri-mob" src="https://cdn.shopify.com/s/files/1/0734/0366/2650/files/mini_banner_4-03.jpg?v=1765794368" alt="">
+  <div class="offer-com-box">
+    <h2>Glam Up for the Festive Season</h2>
+    {% comment %} <p>Add 2 products and get 1 absolutely free</p> {% endcomment %}
+  </div>
+</div>
+
+<style>
+.col-img-wrap img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.offer-com-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.col-img-wrap {
+    position: relative;
+}
+
+.offer-com-box h2 {
+    color: #fff;
+    font-size: 3vw;
+    margin: 0;
+    line-height: 1;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    font-weight: 700;
+}
+
+.offer-com-box p {
+    line-height: 1;
+    margin: 0;
+    font-size: 21px;
+    background: #ffffff96;
+    color: #000;
+    border-radius: 30px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+.col-img-wrap img.chri-mob {
+    display: none;
+}
+@media(max-width: 768px){
+.col-img-wrap img.chri-mob {
+    display: block;
+}
+.col-img-wrap img.chri-disk {
+    display: none;
+}
+.offer-com-box p {
+    font-size: 10px;
+    background: #ffffffb8;
+    padding: 6px 8px;
+}
+
+.offer-com-box {
+    width: 80%;
+}
+
+.offer-com-box h2 {
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+}
+</style>

@@ -1,0 +1,13 @@
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'announcement_text' -%}
+          {%- if block.settings.announcement_link != blank -%}
+            <a href="{{ block.settings.announcement_link }}" class="announcement__link">
+          {%- endif -%}
+            <span class="announcement__scroll announcement__text">{{ block.settings.announcement_text }}</span>
+          {%- if block.settings.announcement_link != blank -%}
+            </a>
+          {%- endif -%}
+      {%- endcase -%}
+    {%- endfor -%}
+ 
