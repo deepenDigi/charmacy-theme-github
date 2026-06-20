@@ -446,6 +446,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}" data-transitions="{{ settings.animate_page_transitions }}" data-type_header_capitalize="{{ settings.type_header_capitalize }}" data-type_base_accent_transform="{{ settings.type_base_accent_transform }}" data-type_header_accent_transform="{{ settings.type_header_accent_transform }}" data-animate_sections="{{ settings.animate_sections }}" data-animate_underlines="{{ settings.animate_underlines }}" data-animate_buttons="{{ settings.animate_buttons }}" data-animate_images="{{ settings.animate_images }}" data-animate_page_transition_style="{{ settings.animate_page_transition_style }}" data-type_header_text_alignment="{{ settings.type_headers_align_text }}" data-animate_images_style="{{ settings.animate_images_style | default: "zoom-fade" }}">
    {% comment %} {% render 'blackfriday-timer' %} {% endcomment %}
     {% comment %} <canvas id="snowCanvas"></canvas> {% endcomment %}
+     
   {% render 'pincode-html' %}  
   
   {% if settings.animate_page_transitions %}
