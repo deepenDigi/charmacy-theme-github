@@ -27,10 +27,8 @@
         <p class="sf-step-title">1 · How deep is your skin?</p>
 
         <div class="sf-options" data-depth-options>
-          <button type="button" class="sf-pill is-active" data-depth="fair">Fair</button>
-          <button type="button" class="sf-pill" data-depth="light">Light</button>
+          <button type="button" class="sf-pill is-active" data-depth="light">Light</button>
           <button type="button" class="sf-pill" data-depth="medium">Medium</button>
-          <button type="button" class="sf-pill" data-depth="tan">Tan</button>
           <button type="button" class="sf-pill" data-depth="deep">Deep</button>
         </div>
       </div>
@@ -40,7 +38,7 @@
 
         <div class="sf-options" data-undertone-options>
           <button type="button" class="sf-pill sf-pill-wide is-active" data-undertone="warm">
-            Warm <span>· golden</span>
+            Warm 
           </button>
 
           <button type="button" class="sf-pill sf-pill-wide" data-undertone="neutral">
@@ -62,16 +60,18 @@
       <div class="sf-result-box">
         <div class="sf-swatch" data-shade-swatch></div>
 
-        <p class="sf-match-label" data-shade-code>Your Match · #MF-03</p>
+        <p class="sf-match-label" data-shade-code>Your Match · #MF-06</p>
 
-        <h3 class="sf-name" data-shade-name>Cream Beige</h3>
+        <h3 class="sf-name" data-shade-name>Soft Sand</h3>
 
         <p class="sf-description" data-shade-description>
-          Fair depth, warm undertone. Tap below to preview it and add to cart.
+          Light depth, warm undertone. Tap below to preview it and add to cart.
         </p>
 
+        <div class="sf-shades-list" data-shade-options></div>
+
         <button type="button" class="sf-select-btn" data-shade-add>
-          Select #MF-03
+          Add to Cart
         </button>
 
         <p class="sf-status" data-shade-status aria-live="polite"></p>
@@ -122,7 +122,7 @@
     margin: 0;
     color: #fffaf4;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(38px, 4vw, 58px);
+    font-size: clamp(32px, 4vw, 58px);
     line-height: 1;
     font-weight: 700;
     letter-spacing: -1.5px;
@@ -253,6 +253,10 @@
     font-size: 14px;
     line-height: 1.55;
     font-weight: 700;
+
+    @media(max-width: 900px) {
+      margin: 10px 0 5px;
+    }
   }
 
   #ShadeFinder-{{ sf_id }} .sf-select-btn {
@@ -266,6 +270,12 @@
     font-weight: 900;
     cursor: pointer;
     transition: 0.2s ease;
+    
+    @media(max-width: 900px) {
+      min-height: 35px;
+      padding: 0 20px;
+      font-size: 13px;
+    }
   }
 
   #ShadeFinder-{{ sf_id }} .sf-select-btn:hover {
@@ -286,6 +296,39 @@
     font-weight: 700;
   }
 
+  #ShadeFinder-{{ sf_id }} .sf-shades-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin: 0 0 16px;
+  }
+
+  #ShadeFinder-{{ sf_id }} .sf-shade-option {
+    min-height: 34px;
+    padding: 0 14px;
+    border: 1px solid rgba(255,255,255,0.24);
+    border-radius: 999px;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+
+  #ShadeFinder-{{ sf_id }} .sf-shade-option:hover {
+    border-color: #e7c38f;
+    transform: translateY(-1px);
+  }
+
+  #ShadeFinder-{{ sf_id }} .sf-shade-option.is-active {
+    background: #e7c38f;
+    color: #65001f;
+    border-color: #e7c38f;
+  }
+
   @media screen and (max-width: 900px) {
     #ShadeFinder-{{ sf_id }} {
       padding: 32px 14px;
@@ -293,8 +336,8 @@
 
     #ShadeFinder-{{ sf_id }} .sf-card {
       grid-template-columns: 1fr;
-      gap: 34px;
-      padding: 42px 24px;
+      gap: 20px;
+      padding: 20px;
       border-radius: 22px;
     }
 
@@ -303,7 +346,8 @@
     }
 
     #ShadeFinder-{{ sf_id }} .sf-subtext {
-      font-size: 15px;
+      font-size: 12px;
+      font-weight: 500;
     }
 
     #ShadeFinder-{{ sf_id }} .sf-options {
@@ -311,19 +355,20 @@
     }
 
     #ShadeFinder-{{ sf_id }} .sf-pill {
-      min-height: 42px;
+      min-height: 32px;
       padding: 0 17px;
       font-size: 13px;
+      font-weight: 100;
     }
 
     #ShadeFinder-{{ sf_id }} .sf-result-box {
       min-height: auto;
-      padding: 30px 18px;
+      padding: 10px;
     }
 
     #ShadeFinder-{{ sf_id }} .sf-swatch {
-      width: 104px;
-      height: 104px;
+      width: 80px;
+      height: 80px;
     }
   }
 </style>
@@ -338,128 +383,128 @@
     const variants = variantJson ? JSON.parse(variantJson.textContent || '[]') : [];
 
     /*
-      15 different shade combinations:
-      5 skin depths x 3 undertones.
+      9 different shade combinations:
+      3 skin depths x 3 undertones.
 
       To connect exact Shopify variants:
-      Option 1: Add shade code in variant title or SKU, example MF-01, MF-02.
+      Option 1: Add shade code in variant title or SKU, example MF-04, MF-05.
       Option 2: Add your real variant ID in variantId below.
     */
 
     const shadeData = {
-      'fair|cool': {
-        code: '#MF-01',
-        name: 'Porcelain',
-        color: '#f7d7bf',
-        description: 'Fair depth, cool undertone. Best for fair skin with a soft pink base.',
-        variantId: null
-      },
-      'fair|neutral': {
-        code: '#MF-02',
-        name: 'Fair Ivory',
-        color: '#f2caa9',
-        description: 'Fair depth, neutral undertone. Best for fair skin with balanced undertones.',
-        variantId: null
-      },
-      'fair|warm': {
-        code: '#MF-03',
-        name: 'Cream Beige',
-        color: '#efc197',
-        description: 'Fair depth, warm undertone. Best for fair skin with a golden base.',
-        variantId: null
-      },
-
       'light|cool': {
-        code: '#MF-04',
-        name: 'Shell Rose',
-        color: '#e8b792',
+        code: '07',
+        name: '07',
+        color: '#cea378',
         description: 'Light depth, cool undertone. Best for light skin with a soft pink beige finish.',
-        variantId: null
+        variantId: 43959401120001
       },
-      'light|neutral': {
-        code: '#MF-05',
-        name: 'Vanilla Beige',
-        color: '#e6b182',
-        description: 'Light depth, neutral undertone. Best for light skin with a balanced beige tone.',
-        variantId: null
-      },
+      'light|neutral': [
+        {
+          code: '02',
+          name: '02',
+          color: '#f1d5b3',
+          description: 'Light depth, neutral undertone. Best for light skin with a balanced beige tone.',
+          variantId: 43027890929921
+        },
+        {
+          code: '06',
+          name: '06',
+          color: '#d4a473',
+          description: 'Light depth, neutral undertone. Best for light skin with a slightly warmer balanced tone.',
+          variantId: 43027894993153
+        }
+      ],
       'light|warm': {
-        code: '#MF-06',
-        name: 'Soft Sand',
-        color: '#dea36f',
+        code: '03',
+        name: '03',
+        color: '#efba8e',
         description: 'Light depth, warm undertone. Best for light skin with a golden beige tone.',
-        variantId: null
+        variantId: 43027890962689
       },
 
-      'medium|cool': {
-        code: '#MF-07',
-        name: 'Rose Beige',
-        color: '#d59b74',
-        description: 'Medium depth, cool undertone. Best for medium skin with a rosy beige base.',
-        variantId: null
-      },
+      'medium|cool': [
+        {
+          code: '04',
+          name: '04',
+          color: '#bd824e',
+          description: 'Medium depth, cool undertone. Best for medium skin with a rosy beige base.',
+          variantId: 43027890995457
+        },
+        {
+          code: '08',
+          name: '08',
+          color: '#bc9874',
+          description: 'Medium depth, cool undertone. Best for medium skin with a deeper cool beige finish.',
+          variantId: 43959401152769
+        }
+      ],
       'medium|neutral': {
-        code: '#MF-08',
-        name: 'Natural Beige',
-        color: '#cf9469',
+        code: '01',
+        name: '01',
+        color: '#dfa46c',
         description: 'Medium depth, neutral undertone. Best for medium skin with balanced warmth.',
-        variantId: null
+        variantId: 43027890897153
       },
       'medium|warm': {
-        code: '#MF-09',
-        name: 'Warm Nude',
-        color: '#d4a26f',
+        code: '09',
+        name: '09',
+        color: '#b7885e',
         description: 'Medium depth, warm undertone. Best for medium skin with golden warmth.',
-        variantId: null
+        variantId: 43959401185537
       },
 
-      'tan|cool': {
-        code: '#MF-10',
-        name: 'Chestnut Rose',
-        color: '#b57545',
-        description: 'Tan depth, cool undertone. Best for tan skin with a muted rosy brown tone.',
-        variantId: null
-      },
-      'tan|neutral': {
-        code: '#MF-11',
-        name: 'Caramel',
-        color: '#b97943',
-        description: 'Tan depth, neutral undertone. Best for tan skin with a smooth caramel tone.',
-        variantId: null
-      },
-      'tan|warm': {
-        code: '#MF-12',
-        name: 'Golden Tan',
-        color: '#bd7c3f',
-        description: 'Tan depth, warm undertone. Best for tan skin with a golden brown base.',
-        variantId: null
-      },
-
-      'deep|cool': {
-        code: '#MF-13',
-        name: 'Espresso Rose',
-        color: '#7e4529',
-        description: 'Deep depth, cool undertone. Best for deep skin with a cool espresso finish.',
-        variantId: null
-      },
+      'deep|cool': [
+        {
+          code: '05',
+          name: '05',
+          color: '#bd793a',
+          description: 'Deep depth, cool undertone. Best for deep skin with a rich espresso finish.',
+          variantId: 43027894960385
+        },
+        {
+          code: '10',
+          name: '10',
+          color: '#bc9973',
+          description: 'Deep depth, cool undertone. Best for deep skin with a warm cocoa finish.',
+          variantId: 43959401251073
+        }
+      ],
       'deep|neutral': {
-        code: '#MF-14',
-        name: 'Mocha Brown',
-        color: '#84491f',
+        code: '11',
+        name: '11',
+        color: '#a07950',
         description: 'Deep depth, neutral undertone. Best for deep skin with a balanced mocha tone.',
-        variantId: null
+        variantId: 43959401283841
       },
-      'deep|warm': {
-        code: '#MF-15',
-        name: 'Toffee',
-        color: '#8d4d22',
-        description: 'Deep depth, warm undertone. Best for deep skin with a rich golden brown tone.',
-        variantId: null
-      }
+      'deep|warm': [
+        {
+          code: '05',
+          name: '05',
+          color: '#bd793a',
+          description: 'Deep depth, warm undertone. Best for deep skin with a rich golden brown tone.',
+          variantId: 43027894960385
+        },
+        {
+          code: '10',
+          name: '10',
+          color: '#bc9874',
+          description: 'Deep depth, warm undertone. Best for deep skin with a warm cocoa finish.',
+          variantId: 43959401251073
+        },
+        {
+          code: '12',
+          name: '12',
+          color: '#906845',
+          description: 'Deep depth, warm undertone. Best for deep skin with a deep bronze finish.',
+          variantId: 43959401316609
+        }
+      ]
     };
 
-    let selectedDepth = 'fair';
+    let selectedDepth = 'light';
     let selectedUndertone = 'warm';
+    let selectedShadeIndex = 0;
 
     const swatch = root.querySelector('[data-shade-swatch]');
     const codeEl = root.querySelector('[data-shade-code]');
@@ -467,11 +512,53 @@
     const descEl = root.querySelector('[data-shade-description]');
     const addBtn = root.querySelector('[data-shade-add]');
     const statusEl = root.querySelector('[data-shade-status]');
+    const optionsList = root.querySelector('[data-shade-options]');
     const depthButtons = root.querySelectorAll('[data-depth]');
     const undertoneButtons = root.querySelectorAll('[data-undertone]');
 
     function cleanText(value) {
       return String(value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    }
+
+    function normaliseShadeOptions(shade) {
+      if (!shade) return [];
+      return Array.isArray(shade) ? shade : [shade];
+    }
+
+    function getShadeOptionsForSelection() {
+      const key = selectedDepth + '|' + selectedUndertone;
+      return normaliseShadeOptions(shadeData[key]);
+    }
+
+    function getActiveShade() {
+      const shadeOptions = getShadeOptionsForSelection();
+      if (!shadeOptions.length) return null;
+
+      if (selectedShadeIndex >= shadeOptions.length) {
+        selectedShadeIndex = 0;
+      }
+
+      return shadeOptions[selectedShadeIndex] || shadeOptions[0];
+    }
+
+    function renderShadeOptions(shadeOptions, activeShade) {
+      if (!optionsList) return;
+      optionsList.innerHTML = '';
+
+      if (!shadeOptions || shadeOptions.length < 2) return;
+
+      shadeOptions.forEach(function (shade, index) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'sf-shade-option' + (activeShade && shade.code === activeShade.code ? ' is-active' : '');
+        button.textContent = shade.name;
+        button.dataset.shadeOptionIndex = String(index);
+        button.addEventListener('click', function () {
+          selectedShadeIndex = index;
+          updateShade();
+        });
+        optionsList.appendChild(button);
+      });
     }
 
     function getVariantForShade(shade) {
@@ -531,19 +618,27 @@
 
     function updateShade() {
       const key = selectedDepth + '|' + selectedUndertone;
-      const shade = shadeData[key];
+      const shadeOptions = getShadeOptionsForSelection();
 
-      if (!shade) return;
+      if (!shadeOptions.length) return;
+
+      if (selectedShadeIndex >= shadeOptions.length) {
+        selectedShadeIndex = 0;
+      }
+
+      const shade = shadeOptions[selectedShadeIndex] || shadeOptions[0];
 
       swatch.style.background = shade.color;
       codeEl.textContent = 'Your Match · ' + shade.code;
       nameEl.textContent = shade.name;
       descEl.textContent = shade.description;
-      addBtn.textContent = 'Select ' + shade.code;
+      addBtn.textContent = 'Add to cart';
       addBtn.dataset.selectedKey = key;
+      addBtn.dataset.selectedShadeIndex = String(selectedShadeIndex);
       statusEl.textContent = '';
 
       setActiveButtons();
+      renderShadeOptions(shadeOptions, shade);
 
       const matchedVariant = getVariantForShade(shade);
 
@@ -565,6 +660,7 @@
     depthButtons.forEach(function (button) {
       button.addEventListener('click', function () {
         selectedDepth = button.dataset.depth;
+        selectedShadeIndex = 0;
         updateShade();
       });
     });
@@ -572,12 +668,16 @@
     undertoneButtons.forEach(function (button) {
       button.addEventListener('click', function () {
         selectedUndertone = button.dataset.undertone;
+        selectedShadeIndex = 0;
         updateShade();
       });
     });
 
     addBtn.addEventListener('click', function () {
-      const shade = shadeData[addBtn.dataset.selectedKey];
+      const key = addBtn.dataset.selectedKey;
+      const shadeOptions = normaliseShadeOptions(shadeData[key]);
+      const shadeIndex = Number(addBtn.dataset.selectedShadeIndex || 0);
+      const shade = shadeOptions[shadeIndex] || shadeOptions[0];
 
       if (!shade) return;
 
@@ -621,10 +721,12 @@
 
         document.dispatchEvent(new CustomEvent('cart:refresh'));
         document.dispatchEvent(new CustomEvent('cart:updated'));
+        document.dispatchEvent(new CustomEvent('cart:build'));
 
         setTimeout(function () {
           addBtn.disabled = false;
           addBtn.textContent = 'Select ' + shade.code;
+          document.querySelector(".js-drawer-open-cart").click();
         }, 1400);
       })
       .catch(function () {
